@@ -20,6 +20,12 @@ const assets = {
   'bed-rose': 'assets/room/cozy-approved-v3/bed-rose.png',
   'bed-sky': 'assets/room/cozy-approved-v3/bed-sky.png',
   'bed-princess': 'assets/room/cozy-approved-v3/bed-princess.png',
+  'bed-canopy-lavender':
+    'assets/room/cozy-approved-v4/bed-canopy-lavender.png',
+  'bed-sleigh-navy': 'assets/room/cozy-approved-v4/bed-sleigh-navy.png',
+  'bed-iron-sage': 'assets/room/cozy-approved-v4/bed-iron-sage.png',
+  'bed-upholstered-wine':
+    'assets/room/cozy-approved-v4/bed-upholstered-wine.png',
   'plant-pothos': 'assets/room/cozy-approved/plant-floor.png',
   'plant-olive': 'assets/room/cozy-approved-v3/plant-fiddle.png',
   'plant-desk': 'assets/room/cozy-approved/plant-desk.png',

@@ -55,4 +55,19 @@ describe('fixed room slots', () => {
     expect(pothos?.assetId).not.toBe(olive?.assetId);
     expect(pothosSource).not.toEqual(oliveSource);
   });
+
+  it('adds four same-slot bed variants with distinct artwork', () => {
+    const ids = [
+      'bed-canopy-lavender',
+      'bed-sleigh-navy',
+      'bed-iron-sage',
+      'bed-upholstered-wine',
+    ];
+    const beds = ids.map((id) => roomItemDefinition(id));
+
+    expect(beds.every((bed) => bed?.slotId === 'BED_SLOT')).toBe(true);
+    expect(beds.every((bed) => bed?.scale === undefined)).toBe(true);
+    expect(new Set(beds.map((bed) => bed?.assetId)).size).toBe(4);
+    expect(beds.every((bed) => roomItemAsset(bed?.id ?? ''))).toBe(true);
+  });
 });
