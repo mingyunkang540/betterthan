@@ -10,6 +10,7 @@
     "build": "ait build",
     "release:check": "node scripts/release-check.cjs",
     "release:build": "npm run prepare:assets && npm run release:check && npm run typecheck && npm test -- --runInBand && npm run build",
+    "qa:room:visual": "python scripts/render-room-visual-qa.py",
     "test": "jest --passWithNoTests",
     "typecheck": "tsc --noEmit",
     "lint": "biome check --write",

@@ -608,17 +608,23 @@ def main() -> None:
         "combinations-contact-sheet.png",
         columns=3,
     )
+    failed_cases = [case["caseId"] for case in cases if case["result"] == "FAIL"]
     print(
         json.dumps(
             {
                 "assets": len(items),
                 "slots": len(slots),
                 "screenshots": len(cases),
+                "passed": len(cases) - len(failed_cases),
+                "failed": len(failed_cases),
+                "failedCases": failed_cases,
                 "output": str(OUTPUT_ROOT),
             },
             ensure_ascii=False,
         )
     )
+    if failed_cases:
+        raise SystemExit(1)
 
 
 if __name__ == "__main__":
