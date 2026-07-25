@@ -1,0 +1,100 @@
+{
+  "version": 1,
+  "status": "approved-reference",
+  "approvedImage": "최종승인-함께하는-방.png",
+  "sourceImage": "배치시안-3-함께하는-방-v2.png",
+  "canvas": {
+    "width": 1086,
+    "height": 1448,
+    "coordinateOrigin": "top-left",
+    "note": "좌표는 디자인 기준 이미지의 픽셀 좌표이며 실제 화면에서는 contain 스케일을 적용한다."
+  },
+  "fixedObjects": [
+    {
+      "id": "window",
+      "label": "창문과 커튼",
+      "bounds": { "x": 190, "y": 275, "width": 330, "height": 430 },
+      "locked": true
+    },
+    {
+      "id": "desk",
+      "label": "책상",
+      "bounds": { "x": 190, "y": 620, "width": 360, "height": 340 },
+      "locked": true
+    },
+    {
+      "id": "diary",
+      "label": "기본 일기장",
+      "bounds": { "x": 330, "y": 695, "width": 115, "height": 75 },
+      "locked": true,
+      "required": true
+    },
+    {
+      "id": "chair",
+      "label": "의자",
+      "bounds": { "x": 365, "y": 730, "width": 175, "height": 245 },
+      "locked": true
+    },
+    {
+      "id": "bed",
+      "label": "침대",
+      "bounds": { "x": 570, "y": 600, "width": 390, "height": 410 },
+      "locked": true
+    },
+    {
+      "id": "rug",
+      "label": "러그",
+      "bounds": { "x": 300, "y": 825, "width": 485, "height": 335 },
+      "locked": false,
+      "replaceable": true
+    },
+    {
+      "id": "wall-shelf",
+      "label": "벽 선반",
+      "bounds": { "x": 620, "y": 380, "width": 250, "height": 185 },
+      "locked": true
+    }
+  ],
+  "plantSlots": [
+    {
+      "id": "plant-desk",
+      "label": "책상 위",
+      "anchor": { "x": 255, "y": 760 },
+      "capacity": 1,
+      "defaultOccupied": true
+    },
+    {
+      "id": "plant-shelf",
+      "label": "선반 책 반대편",
+      "anchor": { "x": 810, "y": 500 },
+      "capacity": 1,
+      "defaultOccupied": true
+    },
+    {
+      "id": "plant-window",
+      "label": "창가",
+      "anchor": { "x": 460, "y": 650 },
+      "capacity": 1,
+      "defaultOccupied": false
+    },
+    {
+      "id": "plant-floor",
+      "label": "바닥",
+      "anchor": { "x": 215, "y": 1005 },
+      "capacity": 1,
+      "defaultOccupied": false
+    }
+  ],
+  "petSpawnSlots": [
+    { "id": "pet-left-floor", "anchor": { "x": 250, "y": 1020 } },
+    { "id": "pet-rug-left", "anchor": { "x": 430, "y": 1040 } },
+    { "id": "pet-rug-right", "anchor": { "x": 690, "y": 1050 } },
+    { "id": "pet-bedside", "anchor": { "x": 820, "y": 1050 } }
+  ],
+  "petEntryBehavior": {
+    "position": "방 화면에 들어올 때마다 사용 가능한 petSpawnSlots 중 하나를 선택",
+    "pose": "sit, turn, paw 중 직전 포즈와 다른 포즈를 우선 선택",
+    "sameSessionMotion": false,
+    "collisionRule": "동물끼리 같은 슬롯을 사용하지 않으며 고정 가구 영역과 겹치지 않는다"
+  }
+}

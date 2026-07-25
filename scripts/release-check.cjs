@@ -1,0 +1,55 @@
+const fs = require('node:fs');
+const path = require('node:path');
+
+const root = path.resolve(__dirname, '..');
+const configPath = path.join(root, 'granite.config.ts');
+const iconPath = path.join(root, 'assets', 'brand', 'app-icon-600-v1.png');
+const failures = [];
+
+function pngDimensions(filePath) {
+  const buffer = fs.readFileSync(filePath);
+  const pngSignature = '89504e470d0a1a0a';
+  if (buffer.subarray(0, 8).toString('hex') !== pngSignature) return undefined;
+  return { width: buffer.readUInt32BE(16), height: buffer.readUInt32BE(20) };
+}
+
+const config = fs.readFileSync(configPath, 'utf8');
+if (!config.includes("appName: 'betterthan'"))
+  failures.push('granite.config.ts의 appName이 betterthan이 아니에요.');
+if (!config.includes("displayName: '어제보다'"))
+  failures.push('granite.config.ts의 표시 이름이 어제보다가 아니에요.');
+if (!config.includes("permissions: []"))
+  failures.push('1차 출시 권한 목록이 비어 있지 않아요.');
+
+const iconUrl = process.env.AIT_ICON_URL?.trim();
+if (!iconUrl) {
+  failures.push('AIT_ICON_URL 환경 변수에 콘솔 아이콘 URL을 입력해 주세요.');
+} else {
+  try {
+    const parsed = new URL(iconUrl);
+    if (parsed.protocol !== 'https:')
+      failures.push('AIT_ICON_URL은 https URL이어야 해요.');
+  } catch {
+    failures.push('AIT_ICON_URL이 올바른 URL 형식이 아니에요.');
+  }
+}
+
+if (!fs.existsSync(iconPath)) {
+  failures.push('600×600 앱 아이콘 파일이 없어요.');
+} else {
+  const dimensions = pngDimensions(iconPath);
+  if (!dimensions || dimensions.width !== 600 || dimensions.height !== 600)
+    failures.push('앱 아이콘은 600×600 PNG여야 해요.');
+}
+
+if (failures.length > 0) {
+  console.error('출시 전 검사를 통과하지 못했어요.');
+  for (const failure of failures) console.error(`- ${failure}`);
+  process.exitCode = 1;
+} else {
+  console.log('출시 필수 설정 검사를 통과했어요.');
+  console.log('- appName: betterthan');
+  console.log('- displayName: 어제보다');
+  console.log('- icon: 600×600 PNG + HTTPS URL');
+  console.log('- permissions: 없음');
+}

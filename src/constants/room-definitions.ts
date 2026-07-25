@@ -1,0 +1,527 @@
+import type { RoomItemCategory, RoomSlotId } from '../models/decoration';
+import { roomAssetSource } from './room-assets';
+
+export interface RoomSlotDefinition {
+  id: RoomSlotId;
+  category?: RoomItemCategory;
+  x: number;
+  y: number;
+  width: number;
+  height: number;
+  zIndex: number;
+  anchor: 'bottomCenter';
+}
+
+export interface RoomItemDefinition {
+  id: string;
+  name: string;
+  category: RoomItemCategory;
+  slotId: RoomSlotId;
+  assetId: string;
+  price: number;
+  renderOffsetX?: number;
+  renderOffsetY?: number;
+  scale?: number;
+  symbol?: string;
+}
+
+export interface PetSceneVariant {
+  assetId: string;
+  x: number;
+  y: number;
+  width: number;
+  height: number;
+}
+
+export const ROOM_SLOT_IDS: RoomSlotId[] = [
+  'BED_SLOT',
+  'DESK_SLOT',
+  'CHAIR_SLOT',
+  'SIDE_TABLE_SLOT',
+  'RUG_SLOT',
+  'FLOOR_LAMP_SLOT',
+  'PLANT_SLOT_1',
+  'PLANT_SLOT_2',
+  'WALL_DECOR_SLOT',
+  'SHELF_SLOT',
+  'APPLIANCE_SLOT',
+  'WALL_ART_SLOT',
+  'DESK_DRINK_SLOT',
+  'PET_SLOT',
+  'PET_SLOT_2',
+];
+
+export const STUDIO_001_SLOTS: RoomSlotDefinition[] = [
+  {
+    id: 'RUG_SLOT',
+    x: 384,
+    y: 820,
+    width: 430,
+    height: 250,
+    zIndex: 10,
+    anchor: 'bottomCenter',
+  },
+  {
+    id: 'BED_SLOT',
+    category: 'BED',
+    x: 545,
+    y: 715,
+    width: 300,
+    height: 300,
+    zIndex: 20,
+    anchor: 'bottomCenter',
+  },
+  {
+    id: 'DESK_SLOT',
+    category: 'DESK',
+    x: 270,
+    y: 710,
+    width: 350,
+    height: 300,
+    zIndex: 30,
+    anchor: 'bottomCenter',
+  },
+  {
+    id: 'DESK_DRINK_SLOT',
+    category: 'DRINK',
+    x: 350,
+    y: 525,
+    width: 65,
+    height: 65,
+    zIndex: 37,
+    anchor: 'bottomCenter',
+  },
+  {
+    id: 'SIDE_TABLE_SLOT',
+    category: 'PLANT',
+    x: 180,
+    y: 537,
+    width: 105,
+    height: 120,
+    zIndex: 35,
+    anchor: 'bottomCenter',
+  },
+  {
+    id: 'CHAIR_SLOT',
+    category: 'CHAIR',
+    x: 330,
+    y: 745,
+    width: 165,
+    height: 220,
+    zIndex: 40,
+    anchor: 'bottomCenter',
+  },
+  {
+    id: 'WALL_ART_SLOT',
+    category: 'WALL_ART',
+    x: 535,
+    y: 410,
+    width: 125,
+    height: 150,
+    zIndex: 69,
+    anchor: 'bottomCenter',
+  },
+  {
+    id: 'FLOOR_LAMP_SLOT',
+    category: 'PLANT',
+    x: 573,
+    y: 354,
+    width: 95,
+    height: 115,
+    zIndex: 75,
+    anchor: 'bottomCenter',
+  },
+  {
+    id: 'PLANT_SLOT_1',
+    category: 'PLANT',
+    x: 152,
+    y: 711,
+    width: 130,
+    height: 175,
+    zIndex: 50,
+    anchor: 'bottomCenter',
+  },
+  {
+    id: 'PLANT_SLOT_2',
+    category: 'PLANT',
+    x: 325,
+    y: 460,
+    width: 105,
+    height: 125,
+    zIndex: 51,
+    anchor: 'bottomCenter',
+  },
+  {
+    id: 'PET_SLOT',
+    category: 'PET',
+    x: 300,
+    y: 760,
+    width: 135,
+    height: 145,
+    zIndex: 60,
+    anchor: 'bottomCenter',
+  },
+  {
+    id: 'PET_SLOT_2',
+    category: 'PET',
+    x: 565,
+    y: 790,
+    width: 135,
+    height: 145,
+    zIndex: 61,
+    anchor: 'bottomCenter',
+  },
+  {
+    id: 'WALL_DECOR_SLOT',
+    category: 'CURTAIN',
+    x: 250,
+    y: 535,
+    width: 270,
+    height: 390,
+    zIndex: 70,
+    anchor: 'bottomCenter',
+  },
+  {
+    id: 'SHELF_SLOT',
+    category: 'SHELF',
+    x: 575,
+    y: 500,
+    width: 225,
+    height: 150,
+    zIndex: 71,
+    anchor: 'bottomCenter',
+  },
+  {
+    id: 'APPLIANCE_SLOT',
+    category: 'BOOKCASE',
+    x: 135,
+    y: 750,
+    width: 150,
+    height: 180,
+    zIndex: 72,
+    anchor: 'bottomCenter',
+  },
+];
+
+export const ROOM_ITEMS: RoomItemDefinition[] = [
+  {
+    id: 'bed-basic',
+    name: '포근한 침대',
+    category: 'BED',
+    slotId: 'BED_SLOT',
+    assetId: 'bed-basic',
+    price: 0,
+  },
+  {
+    id: 'bed-mint',
+    name: '민트 침대',
+    category: 'BED',
+    slotId: 'BED_SLOT',
+    assetId: 'bed-mint',
+    price: 420,
+  },
+  {
+    id: 'bed-rose',
+    name: '로즈 침대',
+    category: 'BED',
+    slotId: 'BED_SLOT',
+    assetId: 'bed-rose',
+    price: 480,
+  },
+  {
+    id: 'bed-sky',
+    name: '하늘 침대',
+    category: 'BED',
+    slotId: 'BED_SLOT',
+    assetId: 'bed-sky',
+    price: 480,
+  },
+  {
+    id: 'bed-princess',
+    name: '공주님 캐노피 침대',
+    category: 'BED',
+    slotId: 'BED_SLOT',
+    assetId: 'bed-princess',
+    price: 900,
+    scale: 1.08,
+  },
+  {
+    id: 'desk-basic',
+    name: '나무 책상',
+    category: 'DESK',
+    slotId: 'DESK_SLOT',
+    assetId: 'desk-basic',
+    price: 0,
+  },
+  {
+    id: 'desk-cream',
+    name: '크림 책상',
+    category: 'DESK',
+    slotId: 'DESK_SLOT',
+    assetId: 'desk-cream',
+    price: 360,
+  },
+  {
+    id: 'chair-cushion',
+    name: '쿠션 의자',
+    category: 'CHAIR',
+    slotId: 'CHAIR_SLOT',
+    assetId: 'chair-cushion',
+    price: 0,
+  },
+  {
+    id: 'chair-mint',
+    name: '민트 의자',
+    category: 'CHAIR',
+    slotId: 'CHAIR_SLOT',
+    assetId: 'chair-mint',
+    price: 240,
+  },
+  {
+    id: 'plant-pothos',
+    name: '포토스 화분',
+    category: 'PLANT',
+    slotId: 'PLANT_SLOT_1',
+    assetId: 'plant-pothos',
+    price: 0,
+  },
+  {
+    id: 'plant-olive',
+    name: '올리브 화분',
+    category: 'PLANT',
+    slotId: 'PLANT_SLOT_1',
+    assetId: 'plant-olive',
+    price: 280,
+  },
+  {
+    id: 'plant-succulent',
+    name: '다육이 화분',
+    category: 'PLANT',
+    slotId: 'PLANT_SLOT_1',
+    assetId: 'plant-succulent',
+    price: 180,
+    scale: 0.72,
+  },
+  {
+    id: 'plant-fern',
+    name: '풍성한 고사리',
+    category: 'PLANT',
+    slotId: 'PLANT_SLOT_1',
+    assetId: 'plant-fern',
+    price: 340,
+    scale: 1.05,
+  },
+  {
+    id: 'plant-fiddle',
+    name: '키 큰 떡갈고무나무',
+    category: 'PLANT',
+    slotId: 'PLANT_SLOT_1',
+    assetId: 'plant-fiddle',
+    price: 420,
+    scale: 1.15,
+  },
+  {
+    id: 'shelf-basic',
+    name: '작은 벽 선반',
+    category: 'SHELF',
+    slotId: 'SHELF_SLOT',
+    assetId: 'shelf-basic',
+    price: 0,
+  },
+  {
+    id: 'rug-round',
+    name: '크림 원형 러그',
+    category: 'RUG',
+    slotId: 'RUG_SLOT',
+    assetId: 'rug-round',
+    price: 180,
+    symbol: '◯',
+  },
+  {
+    id: 'curtain-linen',
+    name: '린넨 커튼',
+    category: 'CURTAIN',
+    slotId: 'WALL_DECOR_SLOT',
+    assetId: 'curtain-linen',
+    price: 220,
+    symbol: '🪟',
+  },
+  {
+    id: 'bookcase-small',
+    name: '작은 책장',
+    category: 'BOOKCASE',
+    slotId: 'APPLIANCE_SLOT',
+    assetId: 'bookcase-small',
+    price: 300,
+    symbol: '📚',
+  },
+  {
+    id: 'wall-calendar',
+    name: '포근한 달력',
+    category: 'WALL_ART',
+    slotId: 'WALL_ART_SLOT',
+    assetId: 'wall-calendar',
+    price: 160,
+  },
+  {
+    id: 'wall-poster',
+    name: '보태니컬 포스터',
+    category: 'WALL_ART',
+    slotId: 'WALL_ART_SLOT',
+    assetId: 'wall-poster',
+    price: 200,
+  },
+  {
+    id: 'drink-coffee',
+    name: '따뜻한 커피',
+    category: 'DRINK',
+    slotId: 'DESK_DRINK_SLOT',
+    assetId: 'drink-coffee',
+    price: 100,
+  },
+  {
+    id: 'drink-beer',
+    name: '시원한 캔맥주',
+    category: 'DRINK',
+    slotId: 'DESK_DRINK_SLOT',
+    assetId: 'drink-beer',
+    price: 140,
+    scale: 0.82,
+  },
+  {
+    id: 'drink-barley',
+    name: '얼음 보리차',
+    category: 'DRINK',
+    slotId: 'DESK_DRINK_SLOT',
+    assetId: 'drink-barley',
+    price: 120,
+  },
+  {
+    id: 'pet-cat',
+    name: '창가 고양이',
+    category: 'PET',
+    slotId: 'PET_SLOT',
+    assetId: 'pet-cat',
+    price: 500,
+    symbol: '🐈',
+  },
+  {
+    id: 'pet-dog',
+    name: '포근한 강아지',
+    category: 'PET',
+    slotId: 'PET_SLOT',
+    assetId: 'pet-dog',
+    price: 650,
+    symbol: '🐕',
+  },
+  {
+    id: 'pet-cat-gray',
+    name: '회색 줄무늬 고양이',
+    category: 'PET',
+    slotId: 'PET_SLOT',
+    assetId: 'pet-cat-gray',
+    price: 550,
+    symbol: '🐈',
+  },
+  {
+    id: 'pet-dog-brown',
+    name: '초콜릿 강아지',
+    category: 'PET',
+    slotId: 'PET_SLOT',
+    assetId: 'pet-dog-brown',
+    price: 700,
+    symbol: '🐕',
+  },
+];
+
+export const ROOM_EDIT_CATEGORIES: { id: RoomItemCategory; label: string }[] = [
+  { id: 'BED', label: '침대' },
+  { id: 'DESK', label: '책상' },
+  { id: 'CHAIR', label: '의자' },
+  { id: 'SHELF', label: '선반' },
+  { id: 'RUG', label: '러그' },
+  { id: 'CURTAIN', label: '커튼' },
+  { id: 'BOOKCASE', label: '책장' },
+  { id: 'WALL_ART', label: '벽 장식' },
+  { id: 'DRINK', label: '음료' },
+  { id: 'PLANT', label: '식물' },
+  { id: 'PET', label: '반려동물' },
+];
+
+export const STUDIO_001 = {
+  id: 'studio_001' as const,
+  name: '작은 원룸',
+  designWidth: 768,
+  designHeight: 1024,
+  slots: STUDIO_001_SLOTS,
+};
+
+export const PET_SCENE_VARIANTS: Record<string, PetSceneVariant[]> = {
+  'pet-cat': [
+    { assetId: 'pet-cat-window', x: 300, y: 575, width: 120, height: 120 },
+    { assetId: 'pet-cat-bed', x: 590, y: 620, width: 145, height: 105 },
+    { assetId: 'pet-cat-shelf', x: 620, y: 410, width: 88, height: 105 },
+    { assetId: 'pet-cat-plant', x: 190, y: 720, width: 120, height: 135 },
+  ],
+  'pet-dog': [
+    { assetId: 'pet-dog-chair', x: 330, y: 670, width: 110, height: 125 },
+    { assetId: 'pet-dog-rug', x: 430, y: 815, width: 150, height: 105 },
+    { assetId: 'pet-dog-scratch', x: 525, y: 725, width: 105, height: 150 },
+    { assetId: 'pet-dog-eat', x: 590, y: 835, width: 155, height: 120 },
+  ],
+  'pet-cat-gray': [
+    { assetId: 'pet-cat-gray-window', x: 300, y: 575, width: 120, height: 120 },
+    { assetId: 'pet-cat-gray-bed', x: 590, y: 620, width: 145, height: 105 },
+    { assetId: 'pet-cat-gray-shelf', x: 620, y: 410, width: 88, height: 105 },
+    { assetId: 'pet-cat-gray-plant', x: 190, y: 720, width: 120, height: 135 },
+  ],
+  'pet-dog-brown': [
+    { assetId: 'pet-dog-brown-chair', x: 330, y: 670, width: 110, height: 125 },
+    { assetId: 'pet-dog-brown-rug', x: 430, y: 815, width: 150, height: 105 },
+    {
+      assetId: 'pet-dog-brown-scratch',
+      x: 525,
+      y: 725,
+      width: 105,
+      height: 150,
+    },
+    { assetId: 'pet-dog-brown-eat', x: 590, y: 835, width: 155, height: 120 },
+  ],
+};
+
+export function roomItemDefinition(itemId: string) {
+  return ROOM_ITEMS.find((item) => item.id === itemId);
+}
+export function roomSlotDefinition(slotId: RoomSlotId) {
+  return STUDIO_001_SLOTS.find((slot) => slot.id === slotId);
+}
+export function roomItemAsset(
+  itemId: string,
+  slotId?: RoomSlotId,
+  visitVariant = 0,
+) {
+  const item = roomItemDefinition(itemId);
+  if (!item) return undefined;
+  if (item.category === 'PLANT') {
+    if (
+      item.id === 'plant-succulent' ||
+      item.id === 'plant-fern' ||
+      item.id === 'plant-fiddle'
+    ) {
+      return roomAssetSource(item.assetId);
+    }
+    const slotAssets: Partial<Record<RoomSlotId, string>> = {
+      SIDE_TABLE_SLOT: 'plant-desk',
+      FLOOR_LAMP_SLOT: 'plant-desk',
+      PLANT_SLOT_2: 'plant-window',
+      PLANT_SLOT_1: 'plant-floor',
+    };
+    return roomAssetSource(slotAssets[slotId ?? item.slotId] ?? item.assetId);
+  }
+  if (item.category === 'PET') {
+    const variants = PET_SCENE_VARIANTS[item.id];
+    const variant = variants?.[visitVariant % variants.length];
+    return variant ? roomAssetSource(variant.assetId) : undefined;
+  }
+  return roomAssetSource(item.assetId);
+}

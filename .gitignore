@@ -1,0 +1,23 @@
+node_modules/
+dist/
+npm-debug.log
+
+.yarn/*
+.pnp.*
+yarn-error.log
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+.env
+.granite
+.swc
+.DS_Store
+
+# Local build artifacts and temporary working files
+*.ait
+tmp/
+.tmp-smoke/
+.omx/
