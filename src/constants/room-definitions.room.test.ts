@@ -70,4 +70,26 @@ describe('fixed room slots', () => {
     expect(new Set(beds.map((bed) => bed?.assetId)).size).toBe(4);
     expect(beds.every((bed) => roomItemAsset(bed?.id ?? ''))).toBe(true);
   });
+
+  it.each([
+    ['BED', 'BED_SLOT', 5],
+    ['DESK', 'DESK_SLOT', 5],
+    ['CHAIR', 'CHAIR_SLOT', 5],
+    ['SHELF', 'SHELF_SLOT', 5],
+  ] as const)(
+    '%s offers at least five fixed-slot variants',
+    (category, slotId, minimum) => {
+      const items = ROOM_ITEMS.filter((item) => item.category === category);
+
+      expect(items.length).toBeGreaterThanOrEqual(minimum);
+      expect(items.every((item) => item.slotId === slotId)).toBe(true);
+      if (category !== 'BED') {
+        expect(items.every((item) => item.scale === undefined)).toBe(true);
+      }
+      expect(new Set(items.map((item) => item.assetId)).size).toBe(
+        items.length,
+      );
+      expect(items.every((item) => roomItemAsset(item.id))).toBe(true);
+    },
+  );
 });
