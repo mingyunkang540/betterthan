@@ -24,20 +24,13 @@ describe('embedded room assets', () => {
   });
 
   it.each(['pet-cat', 'pet-dog', 'pet-cat-gray', 'pet-dog-brown'])(
-    'provides four scene poses for %s',
+    'provides one stable floor pose for %s',
     (itemId) => {
-      const sources = [0, 1, 2, 3].map(
-        (variant) =>
-          (
-            roomItemAsset(itemId, 'PET_SLOT', variant) as
-              | { uri?: string }
-              | undefined
-          )?.uri,
-      );
-      expect(
-        sources.every((source) => source?.startsWith('data:image/png;base64,')),
-      ).toBe(true);
-      expect(new Set(sources).size).toBe(4);
+      const first = roomItemAsset(itemId) as { uri?: string } | undefined;
+      const second = roomItemAsset(itemId) as { uri?: string } | undefined;
+
+      expect(first?.uri).toMatch(/^data:image\/png;base64,/);
+      expect(second).toEqual(first);
     },
   );
 });

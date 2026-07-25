@@ -23,14 +23,7 @@ export interface RoomItemDefinition {
   renderOffsetY?: number;
   scale?: number;
   symbol?: string;
-}
-
-export interface PetSceneVariant {
-  assetId: string;
-  x: number;
-  y: number;
-  width: number;
-  height: number;
+  allowedSlotIds?: RoomSlotId[];
 }
 
 export const ROOM_SLOT_IDS: RoomSlotId[] = [
@@ -104,10 +97,10 @@ export const STUDIO_001_SLOTS: RoomSlotDefinition[] = [
   {
     id: 'CHAIR_SLOT',
     category: 'CHAIR',
-    x: 330,
-    y: 745,
-    width: 165,
-    height: 220,
+    x: 338,
+    y: 752,
+    width: 172,
+    height: 224,
     zIndex: 40,
     anchor: 'bottomCenter',
   },
@@ -124,11 +117,11 @@ export const STUDIO_001_SLOTS: RoomSlotDefinition[] = [
   {
     id: 'FLOOR_LAMP_SLOT',
     category: 'PLANT',
-    x: 573,
-    y: 354,
-    width: 95,
-    height: 115,
-    zIndex: 75,
+    x: 606,
+    y: 457,
+    width: 72,
+    height: 86,
+    zIndex: 73,
     anchor: 'bottomCenter',
   },
   {
@@ -154,21 +147,21 @@ export const STUDIO_001_SLOTS: RoomSlotDefinition[] = [
   {
     id: 'PET_SLOT',
     category: 'PET',
-    x: 300,
-    y: 760,
-    width: 135,
-    height: 145,
-    zIndex: 60,
+    x: 208,
+    y: 822,
+    width: 122,
+    height: 142,
+    zIndex: 52,
     anchor: 'bottomCenter',
   },
   {
     id: 'PET_SLOT_2',
     category: 'PET',
-    x: 565,
-    y: 790,
-    width: 135,
-    height: 145,
-    zIndex: 61,
+    x: 545,
+    y: 858,
+    width: 132,
+    height: 148,
+    zIndex: 53,
     anchor: 'bottomCenter',
   },
   {
@@ -194,11 +187,11 @@ export const STUDIO_001_SLOTS: RoomSlotDefinition[] = [
   {
     id: 'APPLIANCE_SLOT',
     category: 'BOOKCASE',
-    x: 135,
+    x: 648,
     y: 750,
-    width: 150,
-    height: 180,
-    zIndex: 72,
+    width: 128,
+    height: 154,
+    zIndex: 32,
     anchor: 'bottomCenter',
   },
 ];
@@ -284,6 +277,12 @@ export const ROOM_ITEMS: RoomItemDefinition[] = [
     slotId: 'PLANT_SLOT_1',
     assetId: 'plant-pothos',
     price: 0,
+    allowedSlotIds: [
+      'PLANT_SLOT_1',
+      'PLANT_SLOT_2',
+      'SIDE_TABLE_SLOT',
+      'FLOOR_LAMP_SLOT',
+    ],
   },
   {
     id: 'plant-olive',
@@ -292,6 +291,7 @@ export const ROOM_ITEMS: RoomItemDefinition[] = [
     slotId: 'PLANT_SLOT_1',
     assetId: 'plant-olive',
     price: 280,
+    allowedSlotIds: ['PLANT_SLOT_1'],
   },
   {
     id: 'plant-succulent',
@@ -301,6 +301,12 @@ export const ROOM_ITEMS: RoomItemDefinition[] = [
     assetId: 'plant-succulent',
     price: 180,
     scale: 0.72,
+    allowedSlotIds: [
+      'PLANT_SLOT_1',
+      'PLANT_SLOT_2',
+      'SIDE_TABLE_SLOT',
+      'FLOOR_LAMP_SLOT',
+    ],
   },
   {
     id: 'plant-fern',
@@ -310,6 +316,7 @@ export const ROOM_ITEMS: RoomItemDefinition[] = [
     assetId: 'plant-fern',
     price: 340,
     scale: 1.05,
+    allowedSlotIds: ['PLANT_SLOT_1'],
   },
   {
     id: 'plant-fiddle',
@@ -319,6 +326,7 @@ export const ROOM_ITEMS: RoomItemDefinition[] = [
     assetId: 'plant-fiddle',
     price: 420,
     scale: 1.15,
+    allowedSlotIds: ['PLANT_SLOT_1'],
   },
   {
     id: 'shelf-basic',
@@ -401,36 +409,40 @@ export const ROOM_ITEMS: RoomItemDefinition[] = [
     name: '창가 고양이',
     category: 'PET',
     slotId: 'PET_SLOT',
-    assetId: 'pet-cat',
+    assetId: 'pet-cat-floor',
     price: 500,
     symbol: '🐈',
+    allowedSlotIds: ['PET_SLOT'],
   },
   {
     id: 'pet-dog',
     name: '포근한 강아지',
     category: 'PET',
-    slotId: 'PET_SLOT',
-    assetId: 'pet-dog',
+    slotId: 'PET_SLOT_2',
+    assetId: 'pet-dog-floor',
     price: 650,
     symbol: '🐕',
+    allowedSlotIds: ['PET_SLOT_2'],
   },
   {
     id: 'pet-cat-gray',
     name: '회색 줄무늬 고양이',
     category: 'PET',
     slotId: 'PET_SLOT',
-    assetId: 'pet-cat-gray',
+    assetId: 'pet-cat-gray-floor',
     price: 550,
     symbol: '🐈',
+    allowedSlotIds: ['PET_SLOT'],
   },
   {
     id: 'pet-dog-brown',
     name: '초콜릿 강아지',
     category: 'PET',
-    slotId: 'PET_SLOT',
-    assetId: 'pet-dog-brown',
+    slotId: 'PET_SLOT_2',
+    assetId: 'pet-dog-brown-floor',
     price: 700,
     symbol: '🐕',
+    allowedSlotIds: ['PET_SLOT_2'],
   },
 ];
 
@@ -456,54 +468,18 @@ export const STUDIO_001 = {
   slots: STUDIO_001_SLOTS,
 };
 
-export const PET_SCENE_VARIANTS: Record<string, PetSceneVariant[]> = {
-  'pet-cat': [
-    { assetId: 'pet-cat-window', x: 300, y: 575, width: 120, height: 120 },
-    { assetId: 'pet-cat-bed', x: 590, y: 620, width: 145, height: 105 },
-    { assetId: 'pet-cat-shelf', x: 620, y: 410, width: 88, height: 105 },
-    { assetId: 'pet-cat-plant', x: 190, y: 720, width: 120, height: 135 },
-  ],
-  'pet-dog': [
-    { assetId: 'pet-dog-chair', x: 330, y: 670, width: 110, height: 125 },
-    { assetId: 'pet-dog-rug', x: 430, y: 815, width: 150, height: 105 },
-    { assetId: 'pet-dog-scratch', x: 525, y: 725, width: 105, height: 150 },
-    { assetId: 'pet-dog-eat', x: 590, y: 835, width: 155, height: 120 },
-  ],
-  'pet-cat-gray': [
-    { assetId: 'pet-cat-gray-window', x: 300, y: 575, width: 120, height: 120 },
-    { assetId: 'pet-cat-gray-bed', x: 590, y: 620, width: 145, height: 105 },
-    { assetId: 'pet-cat-gray-shelf', x: 620, y: 410, width: 88, height: 105 },
-    { assetId: 'pet-cat-gray-plant', x: 190, y: 720, width: 120, height: 135 },
-  ],
-  'pet-dog-brown': [
-    { assetId: 'pet-dog-brown-chair', x: 330, y: 670, width: 110, height: 125 },
-    { assetId: 'pet-dog-brown-rug', x: 430, y: 815, width: 150, height: 105 },
-    {
-      assetId: 'pet-dog-brown-scratch',
-      x: 525,
-      y: 725,
-      width: 105,
-      height: 150,
-    },
-    { assetId: 'pet-dog-brown-eat', x: 590, y: 835, width: 155, height: 120 },
-  ],
-};
-
 export function roomItemDefinition(itemId: string) {
   return ROOM_ITEMS.find((item) => item.id === itemId);
 }
 export function roomSlotDefinition(slotId: RoomSlotId) {
   return STUDIO_001_SLOTS.find((slot) => slot.id === slotId);
 }
-export function roomItemAsset(
-  itemId: string,
-  slotId?: RoomSlotId,
-  visitVariant = 0,
-) {
+export function roomItemAsset(itemId: string, slotId?: RoomSlotId) {
   const item = roomItemDefinition(itemId);
   if (!item) return undefined;
   if (item.category === 'PLANT') {
     if (
+      item.id === 'plant-olive' ||
       item.id === 'plant-succulent' ||
       item.id === 'plant-fern' ||
       item.id === 'plant-fiddle'
@@ -512,16 +488,17 @@ export function roomItemAsset(
     }
     const slotAssets: Partial<Record<RoomSlotId, string>> = {
       SIDE_TABLE_SLOT: 'plant-desk',
-      FLOOR_LAMP_SLOT: 'plant-desk',
+      FLOOR_LAMP_SLOT: 'plant-shelf',
       PLANT_SLOT_2: 'plant-window',
       PLANT_SLOT_1: 'plant-floor',
     };
     return roomAssetSource(slotAssets[slotId ?? item.slotId] ?? item.assetId);
   }
-  if (item.category === 'PET') {
-    const variants = PET_SCENE_VARIANTS[item.id];
-    const variant = variants?.[visitVariant % variants.length];
-    return variant ? roomAssetSource(variant.assetId) : undefined;
-  }
   return roomAssetSource(item.assetId);
+}
+
+export function canPlaceRoomItem(item: RoomItemDefinition, slotId: RoomSlotId) {
+  if (item.allowedSlotIds) return item.allowedSlotIds.includes(slotId);
+  const slot = roomSlotDefinition(slotId);
+  return item.slotId === slotId || item.category === slot?.category;
 }

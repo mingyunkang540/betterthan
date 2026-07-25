@@ -14,10 +14,10 @@ import {
   roomAssetSource,
 } from '../constants/room-assets';
 import {
-  PET_SCENE_VARIANTS,
   ROOM_EDIT_CATEGORIES,
   ROOM_ITEMS,
   STUDIO_001,
+  canPlaceRoomItem,
   roomItemAsset,
 } from '../constants/room-definitions';
 import type {
@@ -28,14 +28,6 @@ import type {
 import { useApp } from '../state/app-context';
 
 export const Route = createRoute('/room', { component: RoomPage });
-
-let lastPetVisitVariant = Math.floor(Math.random() * 4);
-
-function nextPetVisitVariant() {
-  lastPetVisitVariant =
-    (lastPetVisitVariant + 1 + Math.floor(Math.random() * 3)) % 4;
-  return lastPetVisitVariant;
-}
 
 function RoomPage() {
   const navigation = Route.useNavigation();
@@ -50,22 +42,24 @@ function RoomPage() {
   const [sceneWidth, setSceneWidth] = useState(0);
   const [error, setError] = useState<string>();
   const [saving, setSaving] = useState(false);
-  const [petVisitVariant] = useState(nextPetVisitVariant);
   const scale = sceneWidth ? sceneWidth / STUDIO_001.designWidth : 1;
   const ownedIds = useMemo(
     () => new Set(decorationState.owned.map((item) => item.itemId)),
     [decorationState.owned],
   );
   const visibleSlots = editing ? draft : decorationState.roomState.slots;
-  const categoryItems = ROOM_ITEMS.filter(
-    (item) => item.category === category && ownedIds.has(item.id),
-  );
   const activeSlot =
     category === 'PLANT'
       ? plantSlot
       : category === 'PET'
         ? petSlot
         : ROOM_ITEMS.find((item) => item.category === category)?.slotId;
+  const categoryItems = ROOM_ITEMS.filter(
+    (item) =>
+      item.category === category &&
+      ownedIds.has(item.id) &&
+      (!activeSlot || canPlaceRoomItem(item, activeSlot)),
+  );
 
   const beginEdit = () => {
     setDraft({ ...decorationState.roomState.slots });
@@ -100,7 +94,9 @@ function RoomPage() {
             원하는 아이템을 골라 포근하게 채워보세요.
           </Text>
         </View>
-        <Text style={styles.balance}>{rewardBalance}조각</Text>
+        <Text numberOfLines={1} adjustsFontSizeToFit style={styles.balance}>
+          {rewardBalance.toLocaleString('ko-KR')}조각
+        </Text>
       </View>
       <View
         style={styles.scene}
@@ -117,11 +113,11 @@ function RoomPage() {
             resizeMode="contain"
             style={{
               position: 'absolute',
-              zIndex: 36,
-              left: 248 * scale,
-              top: 490 * scale,
-              width: 100 * scale,
-              height: 88 * scale,
+              zIndex: 38,
+              left: 268 * scale,
+              top: 502 * scale,
+              width: 92 * scale,
+              height: 78 * scale,
             }}
           />
         ) : null}
@@ -134,23 +130,15 @@ function RoomPage() {
               ? ROOM_ITEMS.find((candidate) => candidate.id === itemId)
               : undefined;
             if (!item) return null;
-            const source = roomItemAsset(item.id, slot.id, petVisitVariant);
-            const petVariants =
-              item.category === 'PET' ? PET_SCENE_VARIANTS[item.id] : undefined;
-            const petVariant =
-              petVariants?.[petVisitVariant % petVariants.length];
-            const width =
-              (petVariant?.width ?? slot.width) * scale * (item.scale ?? 1);
-            const height =
-              (petVariant?.height ?? slot.height) * scale * (item.scale ?? 1);
-            const anchorX = petVariant?.x ?? slot.x;
-            const anchorY = petVariant?.y ?? slot.y;
+            const source = roomItemAsset(item.id, slot.id);
+            const width = slot.width * scale * (item.scale ?? 1);
+            const height = slot.height * scale * (item.scale ?? 1);
             const frame = {
               position: 'absolute' as const,
-              zIndex: item.category === 'PET' ? 80 : slot.zIndex,
+              zIndex: slot.zIndex,
               left:
-                anchorX * scale - width / 2 + (item.renderOffsetX ?? 0) * scale,
-              top: anchorY * scale - height + (item.renderOffsetY ?? 0) * scale,
+                slot.x * scale - width / 2 + (item.renderOffsetX ?? 0) * scale,
+              top: slot.y * scale - height + (item.renderOffsetY ?? 0) * scale,
               width,
               height,
             };

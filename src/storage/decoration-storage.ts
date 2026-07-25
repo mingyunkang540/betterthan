@@ -1,6 +1,6 @@
 import {
   ROOM_SLOT_IDS,
-  STUDIO_001_SLOTS,
+  canPlaceRoomItem,
   roomItemDefinition,
 } from '../constants/room-definitions';
 import { DEFAULT_DECORATION_IDS, SHOP_ITEMS } from '../constants/shop-items';
@@ -22,10 +22,6 @@ function emptyRoomState(timestamp: string): RoomState {
   const slots = Object.fromEntries(
     ROOM_SLOT_IDS.map((id) => [id, null]),
   ) as RoomState['slots'];
-  slots.BED_SLOT = 'bed-basic';
-  slots.DESK_SLOT = 'desk-basic';
-  slots.CHAIR_SLOT = 'chair-cushion';
-  slots.SHELF_SLOT = 'shelf-basic';
   return {
     roomId: 'studio_001',
     slots,
@@ -91,9 +87,15 @@ function normalizeState(value: unknown): DecorationState | null {
         typeof itemId === 'string' ? roomItemDefinition(itemId) : undefined;
       if (
         itemId === null ||
-        (definition?.slotId === slotId && ownedIds.has(itemId))
+        (definition &&
+          canPlaceRoomItem(definition, slotId) &&
+          ownedIds.has(itemId))
       )
         slots[slotId] = itemId;
+      else if (definition && ownedIds.has(itemId)) {
+        const targetSlot = definition.slotId;
+        if (slots[targetSlot] === null) slots[targetSlot] = itemId;
+      }
     }
   } else if (Array.isArray(state.placedRoomItems)) {
     for (const placed of state.placedRoomItems) {
@@ -236,12 +238,9 @@ export function saveRoomSlots(
       continue;
     }
     const definition = roomItemDefinition(itemId);
-    const slotCategory = STUDIO_001_SLOTS.find(
-      (slot) => slot.id === slotId,
-    )?.category;
     if (
       !definition ||
-      (definition.slotId !== slotId && definition.category !== slotCategory) ||
+      !canPlaceRoomItem(definition, slotId) ||
       !ownedIds.has(itemId)
     )
       throw new Error('이 슬롯에 배치할 수 없는 아이템이에요.');

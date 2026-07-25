@@ -1,0 +1,58 @@
+import {
+  ROOM_ITEMS,
+  canPlaceRoomItem,
+  roomItemAsset,
+  roomItemDefinition,
+} from './room-definitions';
+
+describe('fixed room slots', () => {
+  it('keeps tall floor plants off furniture', () => {
+    const fern = roomItemDefinition('plant-fern');
+    const fiddle = roomItemDefinition('plant-fiddle');
+
+    expect(fern && canPlaceRoomItem(fern, 'PLANT_SLOT_1')).toBe(true);
+    expect(fern && canPlaceRoomItem(fern, 'FLOOR_LAMP_SLOT')).toBe(false);
+    expect(fiddle && canPlaceRoomItem(fiddle, 'SIDE_TABLE_SLOT')).toBe(false);
+  });
+
+  it('allows small plants in all four plant positions', () => {
+    const succulent = roomItemDefinition('plant-succulent');
+
+    for (const slotId of [
+      'PLANT_SLOT_1',
+      'PLANT_SLOT_2',
+      'SIDE_TABLE_SLOT',
+      'FLOOR_LAMP_SLOT',
+    ] as const) {
+      expect(succulent && canPlaceRoomItem(succulent, slotId)).toBe(true);
+    }
+  });
+
+  it('fixes cats and dogs to separate floor slots', () => {
+    const cat = roomItemDefinition('pet-cat');
+    const dog = roomItemDefinition('pet-dog');
+
+    expect(cat && canPlaceRoomItem(cat, 'PET_SLOT')).toBe(true);
+    expect(cat && canPlaceRoomItem(cat, 'PET_SLOT_2')).toBe(false);
+    expect(dog && canPlaceRoomItem(dog, 'PET_SLOT')).toBe(false);
+    expect(dog && canPlaceRoomItem(dog, 'PET_SLOT_2')).toBe(true);
+  });
+
+  it('uses a shelf-specific plant asset without visit randomness', () => {
+    const first = roomItemAsset('plant-pothos', 'FLOOR_LAMP_SLOT');
+    const second = roomItemAsset('plant-pothos', 'FLOOR_LAMP_SLOT');
+
+    expect(first).toEqual(second);
+    expect(first).toBeDefined();
+  });
+
+  it('does not expose duplicate floor art for pothos and olive', () => {
+    const pothos = ROOM_ITEMS.find((item) => item.id === 'plant-pothos');
+    const olive = ROOM_ITEMS.find((item) => item.id === 'plant-olive');
+    const pothosSource = roomItemAsset('plant-pothos', 'PLANT_SLOT_1');
+    const oliveSource = roomItemAsset('plant-olive', 'PLANT_SLOT_1');
+
+    expect(pothos?.assetId).not.toBe(olive?.assetId);
+    expect(pothosSource).not.toEqual(oliveSource);
+  });
+});
