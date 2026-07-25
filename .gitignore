@@ -22,3 +22,4 @@ tmp/
 .tmp-smoke/
 .omx/
 assets/room/**/sources/
+__pycache__/
