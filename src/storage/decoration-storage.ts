@@ -4,6 +4,7 @@ import {
   roomItemDefinition,
 } from '../constants/room-definitions';
 import { DEFAULT_DECORATION_IDS, SHOP_ITEMS } from '../constants/shop-items';
+import { TESTER_ROOM_ITEMS_UNLOCKED } from '../constants/tester-config';
 import type {
   DecorationState,
   RoomPosition,
@@ -22,6 +23,10 @@ function emptyRoomState(timestamp: string): RoomState {
   const slots = Object.fromEntries(
     ROOM_SLOT_IDS.map((id) => [id, null]),
   ) as RoomState['slots'];
+  slots.BED_SLOT = 'bed-basic';
+  slots.DESK_SLOT = 'desk-basic';
+  slots.CHAIR_SLOT = 'chair-cushion';
+  slots.SHELF_SLOT = 'shelf-basic';
   return {
     roomId: 'studio_001',
     slots,
@@ -33,7 +38,11 @@ export function createDefaultDecorationState(
   now = new Date(),
 ): DecorationState {
   const timestamp = now.toISOString();
-  const defaults = SHOP_ITEMS.filter((item) => item.isDefault);
+  const defaults = SHOP_ITEMS.filter(
+    (item) =>
+      item.isDefault ||
+      (TESTER_ROOM_ITEMS_UNLOCKED && Boolean(roomItemDefinition(item.id))),
+  );
   return {
     owned: defaults.map((item) => ({
       itemId: item.id,

@@ -46,7 +46,7 @@ describe('fixed room slots', () => {
 
     expect(slot('PET_SLOT')).toMatchObject({ x: 218, y: 822 });
     expect(slot('PET_SLOT_2')).toMatchObject({ x: 529, y: 828 });
-    expect(slot('APPLIANCE_SLOT')).toMatchObject({ x: 634, y: 750 });
+    expect(slot('APPLIANCE_SLOT')).toMatchObject({ x: 105, y: 755 });
   });
 
   it('uses a shelf-specific plant asset without visit randomness', () => {
@@ -87,6 +87,9 @@ describe('fixed room slots', () => {
     ['DESK', 'DESK_SLOT', 5],
     ['CHAIR', 'CHAIR_SLOT', 5],
     ['SHELF', 'SHELF_SLOT', 5],
+    ['RUG', 'RUG_SLOT', 5],
+    ['CURTAIN', 'WALL_DECOR_SLOT', 5],
+    ['BOOKCASE', 'APPLIANCE_SLOT', 5],
   ] as const)(
     '%s offers at least five fixed-slot variants',
     (category, slotId, minimum) => {

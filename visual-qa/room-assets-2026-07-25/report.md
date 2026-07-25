@@ -13,10 +13,10 @@
 
 ## 요약
 
-- 테스트한 Room Asset: 41개
+- 테스트한 Room Asset: 53개
 - 테스트한 Slot: 15개
-- 생성한 스크린샷: 57장
-- PASS: 57개 Case
+- 생성한 스크린샷: 69장
+- PASS: 69개 Case
 - FAIL: 0개 Case
 - BLOCKER: 0건
 - MAJOR: 0건

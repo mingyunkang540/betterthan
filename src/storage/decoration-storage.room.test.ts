@@ -4,14 +4,20 @@ import {
 } from './decoration-storage';
 
 describe('room state compatibility', () => {
-  it('starts new users with a completely empty room', () => {
+  it('starts new users with removable starter furniture', () => {
     const state = createDefaultDecorationState(
       new Date('2026-07-25T00:00:00Z'),
     );
 
-    expect(
-      Object.values(state.roomState.slots).every((item) => item === null),
-    ).toBe(true);
+    expect(state.roomState.slots).toMatchObject({
+      BED_SLOT: 'bed-basic',
+      DESK_SLOT: 'desk-basic',
+      CHAIR_SLOT: 'chair-cushion',
+      SHELF_SLOT: 'shelf-basic',
+    });
+    expect(Object.values(state.roomState.slots).filter(Boolean)).toHaveLength(
+      4,
+    );
   });
 
   it('rejects a tall plant on the shelf slot', () => {
