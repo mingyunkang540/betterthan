@@ -35,7 +35,7 @@ const assets = {
   'bed-upholstered-wine':
     'assets/room/cozy-approved-v4/bed-upholstered-wine.png',
   'plant-pothos': 'assets/room/cozy-approved/plant-floor.png',
-  'plant-olive': 'assets/room/cozy-approved-v3/plant-fiddle.png',
+  'plant-olive': 'assets/room/cozy-approved-v3/plant-olive.png',
   'plant-desk': 'assets/room/cozy-approved/plant-desk.png',
   'plant-shelf': 'assets/room/cozy-approved-v3/plant-succulent.png',
   'plant-window': 'assets/room/cozy-approved/plant-window.png',

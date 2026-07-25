@@ -1,5 +1,6 @@
 import {
   ROOM_ITEMS,
+  STUDIO_001_SLOTS,
   canPlaceRoomItem,
   roomItemAsset,
   roomItemDefinition,
@@ -18,6 +19,7 @@ describe('fixed room slots', () => {
   it('allows small plants in all four plant positions', () => {
     const succulent = roomItemDefinition('plant-succulent');
 
+    expect(succulent?.scale).toBe(1.3);
     for (const slotId of [
       'PLANT_SLOT_1',
       'PLANT_SLOT_2',
@@ -36,6 +38,15 @@ describe('fixed room slots', () => {
     expect(cat && canPlaceRoomItem(cat, 'PET_SLOT_2')).toBe(false);
     expect(dog && canPlaceRoomItem(dog, 'PET_SLOT')).toBe(false);
     expect(dog && canPlaceRoomItem(dog, 'PET_SLOT_2')).toBe(true);
+  });
+
+  it('keeps pets and the bookcase inside the front floor boundary', () => {
+    const slot = (id: string) =>
+      STUDIO_001_SLOTS.find((candidate) => candidate.id === id);
+
+    expect(slot('PET_SLOT')).toMatchObject({ x: 218, y: 822 });
+    expect(slot('PET_SLOT_2')).toMatchObject({ x: 529, y: 828 });
+    expect(slot('APPLIANCE_SLOT')).toMatchObject({ x: 634, y: 750 });
   });
 
   it('uses a shelf-specific plant asset without visit randomness', () => {

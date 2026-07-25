@@ -956,26 +956,16 @@
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            63,
+            60,
             284,
-            91,
-            346
+            94,
+            347
           ],
           "clipped": false
         }
       ],
-      "issues": [
-        {
-          "severity": "MAJOR",
-          "itemId": "plant-olive",
-          "assetFile": "assets/room/cozy-approved-v3/plant-fiddle.png",
-          "slotId": "PLANT_SLOT_1",
-          "description": "올리브 화분이 떡갈고무나무와 동일한 원본 Asset을 사용해 서로 다른 상품이 크기만 다르게 표시됩니다.",
-          "expected": "올리브 화분 전용 수형과 잎 형태가 보여야 합니다.",
-          "recommendation": "plant-olive에 고유한 투명 PNG Asset을 연결합니다."
-        }
-      ],
-      "result": "FAIL"
+      "issues": [],
+      "result": "PASS"
     },
     {
       "caseId": "CASE_026",
@@ -993,18 +983,18 @@
           "itemId": "plant-succulent",
           "assetId": "plant-succulent",
           "slotId": "PLANT_SLOT_1",
-          "x": 53,
-          "y": 297,
-          "width": 48,
-          "height": 64,
+          "x": 34,
+          "y": 245,
+          "width": 86,
+          "height": 116,
           "zIndex": 50,
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            67,
-            316,
-            87,
-            340
+            60,
+            282,
+            94,
+            321
           ],
           "clipped": false
         }
@@ -1028,18 +1018,18 @@
           "itemId": "plant-succulent",
           "assetId": "plant-succulent",
           "slotId": "PLANT_SLOT_2",
-          "x": 146,
-          "y": 188,
-          "width": 38,
-          "height": 46,
+          "x": 131,
+          "y": 151,
+          "width": 69,
+          "height": 83,
           "zIndex": 51,
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            156,
-            200,
-            174,
-            220
+            152,
+            175,
+            179,
+            207
           ],
           "clipped": false
         }
@@ -1063,18 +1053,18 @@
           "itemId": "plant-succulent",
           "assetId": "plant-succulent",
           "slotId": "SIDE_TABLE_SLOT",
-          "x": 72,
-          "y": 229,
-          "width": 38,
-          "height": 44,
+          "x": 57,
+          "y": 194,
+          "width": 69,
+          "height": 79,
           "zIndex": 35,
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            82,
-            240,
-            100,
-            260
+            78,
+            216,
+            105,
+            248
           ],
           "clipped": false
         }
@@ -1098,34 +1088,24 @@
           "itemId": "plant-succulent",
           "assetId": "plant-succulent",
           "slotId": "FLOOR_LAMP_SLOT",
-          "x": 295,
-          "y": 201,
-          "width": 26,
-          "height": 31,
+          "x": 284,
+          "y": 175,
+          "width": 48,
+          "height": 57,
           "zIndex": 73,
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            301,
-            208,
-            315,
-            223
+            298,
+            190,
+            318,
+            214
           ],
           "clipped": false
         }
       ],
-      "issues": [
-        {
-          "severity": "MAJOR",
-          "itemId": "plant-succulent",
-          "assetFile": "assets/room/cozy-approved-v3/plant-succulent.png",
-          "slotId": "FLOOR_LAMP_SLOT",
-          "description": "선반 슬롯에서 실제 가시 영역이 14×15px에 불과해 화분 형태를 식별하기 어렵습니다.",
-          "expected": "책과 함께 놓였을 때 작은 화분이라는 점을 바로 알아볼 수 있어야 합니다.",
-          "recommendation": "선반 전용 Asset을 사용하거나 FLOOR_LAMP_SLOT에서만 scale을 약 1.15~1.3배로 보정합니다."
-        }
-      ],
-      "result": "FAIL"
+      "issues": [],
+      "result": "PASS"
     },
     {
       "caseId": "CASE_030",
@@ -1194,18 +1174,8 @@
           "clipped": false
         }
       ],
-      "issues": [
-        {
-          "severity": "MAJOR",
-          "itemId": "plant-fiddle",
-          "assetFile": "assets/room/cozy-approved-v3/plant-fiddle.png",
-          "slotId": "PLANT_SLOT_1",
-          "description": "떡갈고무나무가 올리브 화분과 동일한 원본 Asset을 사용합니다.",
-          "expected": "떡갈고무나무의 큰 잎과 키가 독립적인 상품 이미지로 표현돼야 합니다.",
-          "recommendation": "plant-fiddle 또는 plant-olive 중 하나에 고유 Asset을 제작·연결합니다."
-        }
-      ],
-      "result": "FAIL"
+      "issues": [],
+      "result": "PASS"
     },
     {
       "caseId": "CASE_032",
@@ -1468,7 +1438,7 @@
           "itemId": "bookcase-small",
           "assetId": "bookcase-small",
           "slotId": "APPLIANCE_SLOT",
-          "x": 297,
+          "x": 289,
           "y": 303,
           "width": 65,
           "height": 78,
@@ -1476,26 +1446,16 @@
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            308,
+            300,
             313,
-            350,
+            342,
             368
           ],
           "clipped": false
         }
       ],
-      "issues": [
-        {
-          "severity": "MINOR",
-          "itemId": "bookcase-small",
-          "assetFile": "assets/room/cozy-approved-v3/bookcase-small.png",
-          "slotId": "APPLIANCE_SLOT",
-          "description": "책장이 우측 전면 바닥 테두리에 매우 가깝고 일부가 테두리 위에 걸쳐 보입니다.",
-          "expected": "책장 다리가 바닥 안쪽에 안정적으로 놓여 보여야 합니다.",
-          "recommendation": "APPLIANCE_SLOT x를 약 10~16 design px 왼쪽으로 검토합니다."
-        }
-      ],
-      "result": "FAIL"
+      "issues": [],
+      "result": "PASS"
     },
     {
       "caseId": "CASE_040",
@@ -1688,7 +1648,7 @@
           "itemId": "pet-cat",
           "assetId": "pet-cat-floor",
           "slotId": "PET_SLOT",
-          "x": 75,
+          "x": 80,
           "y": 345,
           "width": 62,
           "height": 72,
@@ -1696,26 +1656,16 @@
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            91,
+            96,
             356,
-            123,
+            128,
             402
           ],
           "clipped": false
         }
       ],
-      "issues": [
-        {
-          "severity": "MINOR",
-          "itemId": "pet-cat",
-          "assetFile": "assets/room/cozy-approved/cat-sit.png",
-          "slotId": "PET_SLOT",
-          "description": "고양이가 좌측 전면 바닥 테두리와 가까워 여백이 좁습니다.",
-          "expected": "발 주변에 바닥 여백이 남아 안정적으로 서 있어야 합니다.",
-          "recommendation": "PET_SLOT x를 약 8~12 design px 오른쪽으로 검토합니다."
-        }
-      ],
-      "result": "FAIL"
+      "issues": [],
+      "result": "PASS"
     },
     {
       "caseId": "CASE_046",
@@ -1733,34 +1683,24 @@
           "itemId": "pet-dog",
           "assetId": "pet-dog-floor",
           "slotId": "PET_SLOT_2",
-          "x": 243,
-          "y": 361,
+          "x": 235,
+          "y": 345,
           "width": 67,
           "height": 75,
           "zIndex": 53,
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            255,
-            366,
-            305,
-            431
+            247,
+            350,
+            297,
+            415
           ],
           "clipped": false
         }
       ],
-      "issues": [
-        {
-          "severity": "MAJOR",
-          "itemId": "pet-dog",
-          "assetFile": "assets/room/cozy-approved/dog-sit.png",
-          "slotId": "PET_SLOT_2",
-          "description": "강아지의 발과 몸 일부가 방의 우측 전면 바닥 경계 밖으로 내려가 보입니다.",
-          "expected": "강아지 전체가 방 바닥 면 안에 놓여야 합니다.",
-          "recommendation": "PET_SLOT_2를 약 24~36 design px 위쪽, 12~20 design px 왼쪽으로 이동 검토합니다."
-        }
-      ],
-      "result": "FAIL"
+      "issues": [],
+      "result": "PASS"
     },
     {
       "caseId": "CASE_047",
@@ -1778,7 +1718,7 @@
           "itemId": "pet-cat-gray",
           "assetId": "pet-cat-gray-floor",
           "slotId": "PET_SLOT",
-          "x": 75,
+          "x": 80,
           "y": 345,
           "width": 62,
           "height": 72,
@@ -1786,26 +1726,16 @@
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            90,
+            95,
             356,
-            124,
+            129,
             404
           ],
           "clipped": false
         }
       ],
-      "issues": [
-        {
-          "severity": "MINOR",
-          "itemId": "pet-cat-gray",
-          "assetFile": "assets/room/cozy-approved-v3/cat-gray-plant.png",
-          "slotId": "PET_SLOT",
-          "description": "회색 고양이가 좌측 전면 바닥 테두리와 가까워 여백이 좁습니다.",
-          "expected": "꼬리와 발 주변에 바닥 여백이 남아야 합니다.",
-          "recommendation": "PET_SLOT x를 약 8~12 design px 오른쪽으로 검토합니다."
-        }
-      ],
-      "result": "FAIL"
+      "issues": [],
+      "result": "PASS"
     },
     {
       "caseId": "CASE_048",
@@ -1823,34 +1753,24 @@
           "itemId": "pet-dog-brown",
           "assetId": "pet-dog-brown-floor",
           "slotId": "PET_SLOT_2",
-          "x": 243,
-          "y": 361,
+          "x": 235,
+          "y": 345,
           "width": 67,
           "height": 75,
           "zIndex": 53,
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            251,
-            373,
-            304,
-            423
+            243,
+            357,
+            296,
+            407
           ],
           "clipped": false
         }
       ],
-      "issues": [
-        {
-          "severity": "MAJOR",
-          "itemId": "pet-dog-brown",
-          "assetFile": "assets/room/cozy-approved-v3/dog-brown-eat.png",
-          "slotId": "PET_SLOT_2",
-          "description": "강아지와 밥그릇이 우측 전면 바닥 경계에 걸쳐 방 밖에 있는 것처럼 보입니다.",
-          "expected": "강아지와 밥그릇 전체가 바닥 면 안에 들어와야 합니다.",
-          "recommendation": "PET_SLOT_2를 약 24~36 design px 위쪽, 12~20 design px 왼쪽으로 이동 검토합니다."
-        }
-      ],
-      "result": "FAIL"
+      "issues": [],
+      "result": "PASS"
     },
     {
       "caseId": "CASE_101",
@@ -2053,7 +1973,7 @@
           "itemId": "bookcase-small",
           "assetId": "bookcase-small",
           "slotId": "APPLIANCE_SLOT",
-          "x": 297,
+          "x": 289,
           "y": 303,
           "width": 65,
           "height": 78,
@@ -2061,9 +1981,9 @@
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            308,
+            300,
             313,
-            350,
+            342,
             368
           ],
           "clipped": false
@@ -2157,7 +2077,7 @@
           "itemId": "pet-cat",
           "assetId": "pet-cat-floor",
           "slotId": "PET_SLOT",
-          "x": 75,
+          "x": 80,
           "y": 345,
           "width": 62,
           "height": 72,
@@ -2165,9 +2085,9 @@
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            91,
+            96,
             356,
-            123,
+            128,
             402
           ],
           "clipped": false
@@ -2176,34 +2096,24 @@
           "itemId": "pet-dog",
           "assetId": "pet-dog-floor",
           "slotId": "PET_SLOT_2",
-          "x": 243,
-          "y": 361,
+          "x": 235,
+          "y": 345,
           "width": 67,
           "height": 75,
           "zIndex": 53,
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            255,
-            366,
-            305,
-            431
+            247,
+            350,
+            297,
+            415
           ],
           "clipped": false
         }
       ],
-      "issues": [
-        {
-          "severity": "MAJOR",
-          "itemId": "pet-dog",
-          "assetFile": "assets/room/cozy-approved/dog-sit.png",
-          "slotId": "PET_SLOT_2",
-          "description": "PET_SET에서도 강아지가 우측 전면 바닥 경계를 넘어 보입니다.",
-          "expected": "러그와 식물 사이에서 두 동물이 모두 바닥 안에 놓여야 합니다.",
-          "recommendation": "PET_SLOT_2 위치 보정을 우선 검토합니다."
-        }
-      ],
-      "result": "FAIL"
+      "issues": [],
+      "result": "PASS"
     },
     {
       "caseId": "CASE_105",
@@ -2392,7 +2302,7 @@
           "itemId": "bookcase-small",
           "assetId": "bookcase-small",
           "slotId": "APPLIANCE_SLOT",
-          "x": 297,
+          "x": 289,
           "y": 303,
           "width": 65,
           "height": 78,
@@ -2400,9 +2310,9 @@
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            308,
+            300,
             313,
-            350,
+            342,
             368
           ],
           "clipped": false
@@ -2411,18 +2321,18 @@
           "itemId": "plant-succulent",
           "assetId": "plant-succulent",
           "slotId": "SIDE_TABLE_SLOT",
-          "x": 72,
-          "y": 229,
-          "width": 38,
-          "height": 44,
+          "x": 57,
+          "y": 194,
+          "width": 69,
+          "height": 79,
           "zIndex": 35,
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            82,
-            240,
-            100,
-            260
+            78,
+            216,
+            105,
+            248
           ],
           "clipped": false
         },
@@ -2506,18 +2416,18 @@
           "itemId": "plant-succulent",
           "assetId": "plant-succulent",
           "slotId": "PLANT_SLOT_2",
-          "x": 146,
-          "y": 188,
-          "width": 38,
-          "height": 46,
+          "x": 131,
+          "y": 151,
+          "width": 69,
+          "height": 83,
           "zIndex": 51,
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            156,
-            200,
-            174,
-            220
+            152,
+            175,
+            179,
+            207
           ],
           "clipped": false
         },
@@ -2525,7 +2435,7 @@
           "itemId": "pet-cat-gray",
           "assetId": "pet-cat-gray-floor",
           "slotId": "PET_SLOT",
-          "x": 75,
+          "x": 80,
           "y": 345,
           "width": 62,
           "height": 72,
@@ -2533,9 +2443,9 @@
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            90,
+            95,
             356,
-            124,
+            129,
             404
           ],
           "clipped": false
@@ -2544,18 +2454,18 @@
           "itemId": "pet-dog-brown",
           "assetId": "pet-dog-brown-floor",
           "slotId": "PET_SLOT_2",
-          "x": 243,
-          "y": 361,
+          "x": 235,
+          "y": 345,
           "width": 67,
           "height": 75,
           "zIndex": 53,
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            251,
-            373,
-            304,
-            423
+            243,
+            357,
+            296,
+            407
           ],
           "clipped": false
         },
@@ -2636,27 +2546,8 @@
           "clipped": false
         }
       ],
-      "issues": [
-        {
-          "severity": "MAJOR",
-          "itemId": "pet-dog-brown",
-          "assetFile": "assets/room/cozy-approved-v3/dog-brown-eat.png",
-          "slotId": "PET_SLOT_2",
-          "description": "Stress Test에서 강아지와 밥그릇이 방 바닥 경계 밖으로 내려가 보입니다.",
-          "expected": "모든 슬롯을 채운 상태에서도 동물 전체가 방 안에 보여야 합니다.",
-          "recommendation": "PET_SLOT_2 위치 보정을 우선 검토합니다."
-        },
-        {
-          "severity": "MINOR",
-          "itemId": "bookcase-small",
-          "assetFile": "assets/room/cozy-approved-v3/bookcase-small.png",
-          "slotId": "APPLIANCE_SLOT",
-          "description": "책장이 캐노피 침대 발치와 우측 바닥 테두리 사이에 끼어 여백이 매우 좁습니다.",
-          "expected": "책장과 침대 사이 및 바닥 외곽에 최소한의 여백이 보여야 합니다.",
-          "recommendation": "APPLIANCE_SLOT을 왼쪽으로 소폭 이동하거나 가장 큰 침대와의 조합 여백을 재검토합니다."
-        }
-      ],
-      "result": "FAIL"
+      "issues": [],
+      "result": "PASS"
     },
     {
       "caseId": "CASE_301",
@@ -2787,7 +2678,7 @@
           "itemId": "bookcase-small",
           "assetId": "bookcase-small",
           "slotId": "APPLIANCE_SLOT",
-          "x": 274,
+          "x": 267,
           "y": 280,
           "width": 60,
           "height": 72,
@@ -2795,9 +2686,9 @@
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            284,
+            277,
             289,
-            323,
+            316,
             341
           ],
           "clipped": false
@@ -2806,18 +2697,18 @@
           "itemId": "plant-succulent",
           "assetId": "plant-succulent",
           "slotId": "SIDE_TABLE_SLOT",
-          "x": 67,
-          "y": 212,
-          "width": 35,
-          "height": 40,
+          "x": 52,
+          "y": 179,
+          "width": 64,
+          "height": 73,
           "zIndex": 35,
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            76,
-            221,
-            93,
-            240
+            71,
+            199,
+            97,
+            229
           ],
           "clipped": false
         },
@@ -2901,18 +2792,18 @@
           "itemId": "plant-succulent",
           "assetId": "plant-succulent",
           "slotId": "PLANT_SLOT_2",
-          "x": 135,
-          "y": 174,
-          "width": 35,
-          "height": 42,
+          "x": 120,
+          "y": 140,
+          "width": 64,
+          "height": 76,
           "zIndex": 51,
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            144,
-            184,
-            161,
-            203
+            139,
+            162,
+            165,
+            192
           ],
           "clipped": false
         },
@@ -2920,7 +2811,7 @@
           "itemId": "pet-cat-gray",
           "assetId": "pet-cat-gray-floor",
           "slotId": "PET_SLOT",
-          "x": 69,
+          "x": 74,
           "y": 318,
           "width": 57,
           "height": 67,
@@ -2928,9 +2819,9 @@
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            82,
+            87,
             329,
-            114,
+            119,
             373
           ],
           "clipped": false
@@ -2939,18 +2830,18 @@
           "itemId": "pet-dog-brown",
           "assetId": "pet-dog-brown-floor",
           "slotId": "PET_SLOT_2",
-          "x": 224,
-          "y": 333,
+          "x": 217,
+          "y": 319,
           "width": 62,
           "height": 69,
           "zIndex": 53,
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            231,
-            344,
-            280,
-            390
+            224,
+            330,
+            273,
+            376
           ],
           "clipped": false
         },
@@ -3031,17 +2922,8 @@
           "clipped": false
         }
       ],
-      "issues": [
-        {
-          "severity": "MAJOR",
-          "itemId": "pet-dog-brown",
-          "slotId": "PET_SLOT_2",
-          "description": "360px에서도 강아지가 우측 전면 바닥 경계를 넘어 보입니다.",
-          "expected": "반응형 축소 후에도 동물이 방 바닥 안에 있어야 합니다.",
-          "recommendation": "PET_SLOT_2의 design 좌표를 보정합니다."
-        }
-      ],
-      "result": "FAIL"
+      "issues": [],
+      "result": "PASS"
     },
     {
       "caseId": "CASE_302",
@@ -3172,7 +3054,7 @@
           "itemId": "bookcase-small",
           "assetId": "bookcase-small",
           "slotId": "APPLIANCE_SLOT",
-          "x": 297,
+          "x": 289,
           "y": 303,
           "width": 65,
           "height": 78,
@@ -3180,9 +3062,9 @@
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            308,
+            300,
             313,
-            350,
+            342,
             368
           ],
           "clipped": false
@@ -3191,18 +3073,18 @@
           "itemId": "plant-succulent",
           "assetId": "plant-succulent",
           "slotId": "SIDE_TABLE_SLOT",
-          "x": 72,
-          "y": 229,
-          "width": 38,
-          "height": 44,
+          "x": 57,
+          "y": 194,
+          "width": 69,
+          "height": 79,
           "zIndex": 35,
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            82,
-            240,
-            100,
-            260
+            78,
+            216,
+            105,
+            248
           ],
           "clipped": false
         },
@@ -3286,18 +3168,18 @@
           "itemId": "plant-succulent",
           "assetId": "plant-succulent",
           "slotId": "PLANT_SLOT_2",
-          "x": 146,
-          "y": 188,
-          "width": 38,
-          "height": 46,
+          "x": 131,
+          "y": 151,
+          "width": 69,
+          "height": 83,
           "zIndex": 51,
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            156,
-            200,
-            174,
-            220
+            152,
+            175,
+            179,
+            207
           ],
           "clipped": false
         },
@@ -3305,7 +3187,7 @@
           "itemId": "pet-cat-gray",
           "assetId": "pet-cat-gray-floor",
           "slotId": "PET_SLOT",
-          "x": 75,
+          "x": 80,
           "y": 345,
           "width": 62,
           "height": 72,
@@ -3313,9 +3195,9 @@
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            90,
+            95,
             356,
-            124,
+            129,
             404
           ],
           "clipped": false
@@ -3324,18 +3206,18 @@
           "itemId": "pet-dog-brown",
           "assetId": "pet-dog-brown-floor",
           "slotId": "PET_SLOT_2",
-          "x": 243,
-          "y": 361,
+          "x": 235,
+          "y": 345,
           "width": 67,
           "height": 75,
           "zIndex": 53,
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            251,
-            373,
-            304,
-            423
+            243,
+            357,
+            296,
+            407
           ],
           "clipped": false
         },
@@ -3416,17 +3298,8 @@
           "clipped": false
         }
       ],
-      "issues": [
-        {
-          "severity": "MAJOR",
-          "itemId": "pet-dog-brown",
-          "slotId": "PET_SLOT_2",
-          "description": "390px에서도 강아지가 우측 전면 바닥 경계를 넘어 보입니다.",
-          "expected": "반응형 축소 후에도 동물이 방 바닥 안에 있어야 합니다.",
-          "recommendation": "PET_SLOT_2의 design 좌표를 보정합니다."
-        }
-      ],
-      "result": "FAIL"
+      "issues": [],
+      "result": "PASS"
     },
     {
       "caseId": "CASE_303",
@@ -3557,7 +3430,7 @@
           "itemId": "bookcase-small",
           "assetId": "bookcase-small",
           "slotId": "APPLIANCE_SLOT",
-          "x": 327,
+          "x": 319,
           "y": 334,
           "width": 72,
           "height": 86,
@@ -3565,9 +3438,9 @@
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            340,
+            332,
             345,
-            386,
+            378,
             406
           ],
           "clipped": false
@@ -3576,18 +3449,18 @@
           "itemId": "plant-succulent",
           "assetId": "plant-succulent",
           "slotId": "SIDE_TABLE_SLOT",
-          "x": 80,
-          "y": 253,
-          "width": 42,
-          "height": 48,
+          "x": 63,
+          "y": 214,
+          "width": 76,
+          "height": 87,
           "zIndex": 35,
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            92,
-            265,
-            110,
-            287
+            86,
+            238,
+            116,
+            273
           ],
           "clipped": false
         },
@@ -3671,18 +3544,18 @@
           "itemId": "plant-succulent",
           "assetId": "plant-succulent",
           "slotId": "PLANT_SLOT_2",
-          "x": 161,
-          "y": 208,
-          "width": 42,
-          "height": 50,
+          "x": 144,
+          "y": 167,
+          "width": 76,
+          "height": 91,
           "zIndex": 51,
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            173,
-            221,
-            191,
-            243
+            167,
+            193,
+            197,
+            228
           ],
           "clipped": false
         },
@@ -3690,7 +3563,7 @@
           "itemId": "pet-cat-gray",
           "assetId": "pet-cat-gray-floor",
           "slotId": "PET_SLOT",
-          "x": 82,
+          "x": 88,
           "y": 380,
           "width": 68,
           "height": 80,
@@ -3698,9 +3571,9 @@
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            98,
+            104,
             393,
-            136,
+            142,
             445
           ],
           "clipped": false
@@ -3709,18 +3582,18 @@
           "itemId": "pet-dog-brown",
           "assetId": "pet-dog-brown-floor",
           "slotId": "PET_SLOT_2",
-          "x": 268,
-          "y": 397,
+          "x": 259,
+          "y": 381,
           "width": 74,
           "height": 83,
           "zIndex": 53,
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            277,
-            411,
-            335,
-            465
+            268,
+            395,
+            326,
+            449
           ],
           "clipped": false
         },
@@ -3801,17 +3674,8 @@
           "clipped": false
         }
       ],
-      "issues": [
-        {
-          "severity": "MAJOR",
-          "itemId": "pet-dog-brown",
-          "slotId": "PET_SLOT_2",
-          "description": "430px에서도 강아지가 우측 전면 바닥 경계를 넘어 보입니다.",
-          "expected": "반응형 확대 후에도 동물이 방 바닥 안에 있어야 합니다.",
-          "recommendation": "PET_SLOT_2의 design 좌표를 보정합니다."
-        }
-      ],
-      "result": "FAIL"
+      "issues": [],
+      "result": "PASS"
     }
   ]
 }

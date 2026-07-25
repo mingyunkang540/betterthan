@@ -147,7 +147,7 @@ export const STUDIO_001_SLOTS: RoomSlotDefinition[] = [
   {
     id: 'PET_SLOT',
     category: 'PET',
-    x: 208,
+    x: 218,
     y: 822,
     width: 122,
     height: 142,
@@ -157,8 +157,8 @@ export const STUDIO_001_SLOTS: RoomSlotDefinition[] = [
   {
     id: 'PET_SLOT_2',
     category: 'PET',
-    x: 545,
-    y: 858,
+    x: 529,
+    y: 828,
     width: 132,
     height: 148,
     zIndex: 53,
@@ -187,7 +187,7 @@ export const STUDIO_001_SLOTS: RoomSlotDefinition[] = [
   {
     id: 'APPLIANCE_SLOT',
     category: 'BOOKCASE',
-    x: 648,
+    x: 634,
     y: 750,
     width: 128,
     height: 154,
@@ -380,7 +380,7 @@ export const ROOM_ITEMS: RoomItemDefinition[] = [
     slotId: 'PLANT_SLOT_1',
     assetId: 'plant-succulent',
     price: 180,
-    scale: 0.72,
+    scale: 1.3,
     allowedSlotIds: [
       'PLANT_SLOT_1',
       'PLANT_SLOT_2',
