@@ -22,6 +22,7 @@ import {
   type ExperimentCategory,
   IMPROVEMENTS,
   MOODS,
+  recommendedExperiments,
 } from '../constants/check-in-options';
 import type { Score } from '../models/daily-record';
 import { useApp } from '../state/app-context';
@@ -79,10 +80,15 @@ export function CheckInPage() {
   const { draft, updateDraft, saveCurrentDraft } = useApp();
   const [step, setStep] = useState(() => migrateLegacyDraftStep(draft.step));
   const [saving, setSaving] = useState(false);
+  const [showAllExperiments, setShowAllExperiments] = useState(false);
   const [error, setError] = useState<string>();
   const savingRef = useRef(false);
 
   const requiredComplete = Boolean(draft.mood && draft.energy && draft.focus);
+  const recommendation = recommendedExperiments(draft.blocker);
+  const recommendedOptions = draft.experiment
+    ? Array.from(new Set([...recommendation.experiments, draft.experiment]))
+    : recommendation.experiments;
 
   const move = (next: number) => {
     setStep(next);
@@ -235,39 +241,23 @@ export function CheckInPage() {
         ) : null}
         {step === 3 ? (
           <>
-            <Text style={styles.sectionLabel}>카테고리</Text>
-            <View style={styles.chipGrid}>
-              {(Object.keys(EXPERIMENTS) as ExperimentCategory[]).map(
-                (category) => (
-                  <ChoiceChip
-                    key={category}
-                    label={category}
-                    selected={draft.experimentCategory === category}
-                    onPress={() =>
-                      updateDraft({
-                        experimentCategory: category,
-                        experiment: undefined,
-                      })
-                    }
-                  />
-                ),
-              )}
-            </View>
-            {draft.experimentCategory ? (
+            {!showAllExperiments ? (
               <>
-                <Text style={[styles.sectionLabel, styles.optionTitle]}>
-                  작은 실험
+                <Text style={styles.sectionLabel}>
+                  오늘의 회고에 맞춰 골라봤어요
+                </Text>
+                <Text style={styles.recommendationHint}>
+                  부담 없이 해볼 수 있는 것 하나만 골라보세요.
                 </Text>
                 <View style={styles.moodGrid}>
-                  {EXPERIMENTS[
-                    draft.experimentCategory as ExperimentCategory
-                  ].map((item) => (
+                  {recommendedOptions.map((item) => (
                     <ChoiceChip
                       key={item}
                       label={item}
                       selected={draft.experiment === item}
                       onPress={() =>
                         updateDraft({
+                          experimentCategory: recommendation.category,
                           experiment:
                             draft.experiment === item ? undefined : item,
                         })
@@ -276,7 +266,63 @@ export function CheckInPage() {
                   ))}
                 </View>
               </>
-            ) : null}
+            ) : (
+              <>
+                <Text style={styles.sectionLabel}>다른 카테고리</Text>
+                <View style={styles.chipGrid}>
+                  {(Object.keys(EXPERIMENTS) as ExperimentCategory[]).map(
+                    (category) => (
+                      <ChoiceChip
+                        key={category}
+                        label={category}
+                        selected={draft.experimentCategory === category}
+                        onPress={() =>
+                          updateDraft({
+                            experimentCategory: category,
+                            experiment: undefined,
+                          })
+                        }
+                      />
+                    ),
+                  )}
+                </View>
+                {draft.experimentCategory ? (
+                  <>
+                    <Text style={[styles.sectionLabel, styles.optionTitle]}>
+                      작은 실험
+                    </Text>
+                    <View style={styles.moodGrid}>
+                      {EXPERIMENTS[
+                        draft.experimentCategory as ExperimentCategory
+                      ].map((item) => (
+                        <ChoiceChip
+                          key={item}
+                          label={item}
+                          selected={draft.experiment === item}
+                          onPress={() =>
+                            updateDraft({
+                              experiment:
+                                draft.experiment === item ? undefined : item,
+                            })
+                          }
+                        />
+                      ))}
+                    </View>
+                  </>
+                ) : null}
+              </>
+            )}
+            <TouchableOpacity
+              accessibilityRole="button"
+              onPress={() => setShowAllExperiments((current) => !current)}
+              style={styles.exploreButton}
+            >
+              <Text style={styles.exploreButtonText}>
+                {showAllExperiments
+                  ? '추천 실험으로 돌아가기'
+                  : '다른 실험 보기'}
+              </Text>
+            </TouchableOpacity>
           </>
         ) : null}
         {step === 4 ? (
@@ -369,6 +415,19 @@ const styles = StyleSheet.create({
   scaleTextSelected: { color: colors.primary },
   optionTitle: { marginTop: 28 },
   reflectionSection: { marginTop: 36 },
+  recommendationHint: {
+    color: colors.secondary,
+    fontSize: 15,
+    lineHeight: 22,
+    marginTop: -4,
+    marginBottom: 16,
+  },
+  exploreButton: { alignItems: 'center', paddingVertical: 16, marginTop: 10 },
+  exploreButtonText: {
+    color: colors.primary,
+    fontSize: 15,
+    fontWeight: '700',
+  },
   input: {
     minHeight: 58,
     borderWidth: 1,

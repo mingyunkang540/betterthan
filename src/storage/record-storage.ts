@@ -1,4 +1,8 @@
-import type { CheckInDraft, DailyRecord } from '../models/daily-record';
+import type {
+  CheckInDraft,
+  DailyRecord,
+  ExperimentOutcome,
+} from '../models/daily-record';
 
 const RECORDS_KEY = 'better-than-yesterday:records:v1';
 const RECORDS_BACKUP_KEY = 'better-than-yesterday:records:backup:v1';
@@ -49,6 +53,7 @@ function isDailyRecord(value: unknown): value is DailyRecord {
     isOptionalString(record.improvement) &&
     isOptionalString(record.experimentCategory) &&
     isOptionalString(record.experiment) &&
+    isExperimentOutcome(record.experimentOutcome) &&
     (record.oneLine === undefined ||
       (typeof record.oneLine === 'string' && record.oneLine.length <= 40)) &&
     isNonEmptyString(record.createdAt) &&
@@ -72,6 +77,18 @@ function isDateKey(value: unknown): value is string {
 
 function isOptionalString(value: unknown): value is string | undefined {
   return value === undefined || isNonEmptyString(value);
+}
+
+function isExperimentOutcome(
+  value: unknown,
+): value is ExperimentOutcome | undefined {
+  return (
+    value === undefined ||
+    value === 'DONE' ||
+    value === 'PARTLY_DONE' ||
+    value === 'NOT_DONE' ||
+    value === 'DONT_REMEMBER'
+  );
 }
 
 function isScore(value: unknown): value is DailyRecord['mood'] {
@@ -122,6 +139,21 @@ export async function upsertRecord(
     ...records.filter((item) => item.date !== input.date),
   ].sort((a, b) => b.date.localeCompare(a.date));
   return { records: next, record };
+}
+
+export function setExperimentOutcome(
+  records: DailyRecord[],
+  recordId: string,
+  outcome: ExperimentOutcome,
+  now = new Date(),
+): DailyRecord[] {
+  if (!records.some((record) => record.id === recordId))
+    throw new Error('확인할 기록을 찾지 못했어요.');
+  return records.map((record) =>
+    record.id === recordId
+      ? { ...record, experimentOutcome: outcome, updatedAt: now.toISOString() }
+      : record,
+  );
 }
 
 export async function loadDraft(

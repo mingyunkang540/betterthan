@@ -129,6 +129,30 @@ describe('check-in screen', () => {
     expect(screen.getByText('내일 딱 하나만 바꾼다면?')).toBeTruthy();
   });
 
+  it('막힌 요인에 맞는 실험 세 개를 먼저 추천하고 전체 탐색을 연다', () => {
+    mockAppValue = {
+      draft: { ...mockDraft, step: 4, blocker: '집중이 안 됨' },
+      updateDraft: mockUpdateDraft,
+      saveCurrentDraft: mockSaveCurrentDraft,
+    };
+    const screen = render(<CheckInPage />);
+
+    expect(screen.getByText('알림 30분 끄기')).toBeTruthy();
+    expect(screen.getByText('휴대폰 멀리 두기')).toBeTruthy();
+    expect(screen.getByText('타이머 20분 켜기')).toBeTruthy();
+    expect(screen.queryByText('한 번에 하나만 하기')).toBeNull();
+
+    fireEvent.press(screen.getByText('알림 30분 끄기'));
+    expect(mockUpdateDraft).toHaveBeenCalledWith({
+      experimentCategory: '집중',
+      experiment: '알림 30분 끄기',
+    });
+
+    fireEvent.press(screen.getByText('다른 실험 보기'));
+    expect(screen.getByText('다른 카테고리')).toBeTruthy();
+    expect(screen.getByText('건강')).toBeTruthy();
+  });
+
   it('저장 중 연속 클릭을 한 번의 요청으로 제한한다', async () => {
     let resolveSave: (value: { id: string }) => void = () => undefined;
     mockSaveCurrentDraft.mockImplementation(

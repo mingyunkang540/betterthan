@@ -6,6 +6,7 @@ import {
   migrateLegacyDraftStep,
   saveDraft,
   saveRecords,
+  setExperimentOutcome,
   upsertRecord,
 } from './record-storage';
 
@@ -156,5 +157,34 @@ describe('record storage', () => {
     ]);
     expect(updated.records[1]?.id).toBe('older');
     expect(updated.records[1]?.focus).toBe(5);
+  });
+
+  it('어제의 실험 확인을 기존 기록에 선택적으로 저장한다', () => {
+    const next = setExperimentOutcome(
+      [{ ...baseRecord, experiment: '5분만 시작하기' }],
+      'record-1',
+      'PARTLY_DONE',
+      new Date('2026-07-18T09:00:00.000Z'),
+    );
+
+    expect(next[0]).toMatchObject({
+      experiment: '5분만 시작하기',
+      experimentOutcome: 'PARTLY_DONE',
+      updatedAt: '2026-07-18T09:00:00.000Z',
+    });
+    expect(baseRecord.experimentOutcome).toBeUndefined();
+  });
+
+  it('실험 확인값이 없는 기존 기록과 새 확인값이 있는 기록을 모두 읽는다', async () => {
+    const checked = {
+      ...baseRecord,
+      id: 'checked',
+      experimentOutcome: 'DONE' as const,
+    };
+    const driver = memoryDriver({
+      'better-than-yesterday:records:v1': JSON.stringify([baseRecord, checked]),
+    });
+
+    await expect(loadRecords(driver)).resolves.toEqual([baseRecord, checked]);
   });
 });

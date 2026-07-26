@@ -1,5 +1,5 @@
 import { createRoute } from '@granite-js/react-native';
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import {
   AppScreen,
@@ -10,6 +10,7 @@ import {
   colors,
 } from '../components/ui';
 import { MOODS } from '../constants/check-in-options';
+import type { ExperimentOutcome } from '../models/daily-record';
 import { useApp } from '../state/app-context';
 import {
   formatLocalDate,
@@ -19,14 +20,33 @@ import {
 
 export const Route = createRoute('/', { component: HomePage });
 
-function HomePage() {
+export function HomePage() {
   const navigation = Route.useNavigation();
-  const { loading, error, records, rewardBalance, draft, resetDraft } =
-    useApp();
+  const {
+    loading,
+    error,
+    records,
+    rewardBalance,
+    draft,
+    resetDraft,
+    saveExperimentOutcome,
+  } = useApp();
+  const [outcomeSaving, setOutcomeSaving] = useState(false);
+  const [outcomeError, setOutcomeError] = useState<string>();
   if (loading) return <LoadingScreen />;
 
   const today = toLocalDateKey(new Date());
+  const now = new Date();
+  const yesterday = toLocalDateKey(
+    new Date(now.getFullYear(), now.getMonth(), now.getDate() - 1),
+  );
   const todayRecord = records.find((record) => record.date === today);
+  const yesterdayExperiment = records.find(
+    (record) =>
+      record.date === yesterday &&
+      record.experiment &&
+      !record.experimentOutcome,
+  );
   const monthCount = records.filter((record) =>
     record.date.startsWith(toLocalMonthKey(new Date())),
   ).length;
@@ -40,6 +60,19 @@ function HomePage() {
   const start = async () => {
     if (todayRecord) await resetDraft();
     navigation.navigate('/check-in');
+  };
+
+  const recordOutcome = async (outcome: ExperimentOutcome) => {
+    if (!yesterdayExperiment || outcomeSaving) return;
+    setOutcomeSaving(true);
+    setOutcomeError(undefined);
+    try {
+      await saveExperimentOutcome(yesterdayExperiment.id, outcome);
+    } catch {
+      setOutcomeError('어제의 실험 확인을 저장하지 못했어요.');
+    } finally {
+      setOutcomeSaving(false);
+    }
   };
 
   return (
@@ -65,6 +98,38 @@ function HomePage() {
         </Text>
       </View>
       <ErrorMessage>{error}</ErrorMessage>
+      {yesterdayExperiment ? (
+        <Card style={styles.experimentCheckCard}>
+          <Text style={styles.experimentCheckEyebrow}>어제의 작은 실험</Text>
+          <Text style={styles.experimentCheckTitle}>
+            {yesterdayExperiment.experiment}
+          </Text>
+          <Text style={styles.experimentCheckDescription}>
+            어땠는지 가볍게 남겨주세요. 잘하고 못한 것을 평가하지 않아요.
+          </Text>
+          <View style={styles.outcomeGrid}>
+            {(
+              [
+                ['DONE', '해봤어요'],
+                ['PARTLY_DONE', '조금 해봤어요'],
+                ['NOT_DONE', '못 했어요'],
+                ['DONT_REMEMBER', '기억나지 않아요'],
+              ] as const
+            ).map(([outcome, label]) => (
+              <TouchableOpacity
+                accessibilityRole="button"
+                disabled={outcomeSaving}
+                key={outcome}
+                onPress={() => void recordOutcome(outcome)}
+                style={styles.outcomeButton}
+              >
+                <Text style={styles.outcomeButtonText}>{label}</Text>
+              </TouchableOpacity>
+            ))}
+          </View>
+          <ErrorMessage>{outcomeError}</ErrorMessage>
+        </Card>
+      ) : null}
       {todayRecord ? (
         <Card style={styles.todayCard}>
           <Text style={styles.cardEyebrow}>오늘 기록</Text>
@@ -157,6 +222,42 @@ const styles = StyleSheet.create({
   },
   description: { color: colors.secondary, fontSize: 16, lineHeight: 25 },
   todayCard: { marginBottom: 16 },
+  experimentCheckCard: { backgroundColor: '#E8F3FF', marginBottom: 16 },
+  experimentCheckEyebrow: {
+    color: '#1B64DA',
+    fontSize: 14,
+    fontWeight: '700',
+  },
+  experimentCheckTitle: {
+    color: colors.text,
+    fontSize: 20,
+    lineHeight: 29,
+    fontWeight: '800',
+    marginTop: 8,
+  },
+  experimentCheckDescription: {
+    color: colors.secondary,
+    fontSize: 14,
+    lineHeight: 21,
+    marginTop: 8,
+  },
+  outcomeGrid: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: 8,
+    marginTop: 16,
+  },
+  outcomeButton: {
+    backgroundColor: '#FFFFFF',
+    borderRadius: 14,
+    paddingHorizontal: 13,
+    paddingVertical: 11,
+  },
+  outcomeButtonText: {
+    color: '#1B64DA',
+    fontSize: 14,
+    fontWeight: '700',
+  },
   cardEyebrow: {
     color: colors.primary,
     fontSize: 14,

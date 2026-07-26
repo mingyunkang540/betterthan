@@ -13,6 +13,7 @@ import { rewardBalanceWithTesterGrant } from '../constants/tester-config';
 import {
   type CheckInDraft,
   type DailyRecord,
+  type ExperimentOutcome,
   createEmptyDraft,
 } from '../models/daily-record';
 import type {
@@ -39,6 +40,7 @@ import {
   loadRecords,
   saveDraft,
   saveRecords,
+  setExperimentOutcome,
   upsertRecord,
 } from '../storage/record-storage';
 import {
@@ -61,7 +63,12 @@ interface AppContextValue {
   draft: CheckInDraft;
   updateDraft(patch: Partial<CheckInDraft>): void;
   resetDraft(): Promise<void>;
+  editTodayRecord(record: DailyRecord): Promise<void>;
   saveCurrentDraft(): Promise<DailyRecord>;
+  saveExperimentOutcome(
+    recordId: string,
+    outcome: ExperimentOutcome,
+  ): Promise<void>;
   claimReward(milestone: MonthlyMilestone): Promise<RewardTransaction>;
   buyDecoration(item: ShopItem): Promise<void>;
   applyDecoration(item: ShopItem): Promise<void>;
@@ -203,6 +210,27 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     await clearDraft(nativeStorage);
   }, [today]);
 
+  const editTodayRecord = useCallback(async (record: DailyRecord) => {
+    const currentToday = toLocalDateKey(new Date());
+    if (record.date !== currentToday)
+      throw new Error('오늘 기록만 수정할 수 있어요.');
+    const next: CheckInDraft = {
+      date: currentToday,
+      mood: record.mood,
+      energy: record.energy,
+      focus: record.focus,
+      activities: record.activities,
+      blocker: record.blocker,
+      improvement: record.improvement,
+      experimentCategory: record.experimentCategory,
+      experiment: record.experiment,
+      oneLine: record.oneLine ?? '',
+      step: 0,
+    };
+    await saveDraft(next, nativeStorage);
+    setDraft(next);
+  }, []);
+
   const saveCurrentDraft = useCallback(async () => {
     const currentToday = toLocalDateKey(new Date());
     if (draft.date !== currentToday) throw new Error('작성 날짜가 바뀌었어요.');
@@ -234,6 +262,16 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     setDraft(createEmptyDraft(currentToday));
     return result.record;
   }, [draft]);
+
+  const saveExperimentOutcome = useCallback(
+    async (recordId: string, outcome: ExperimentOutcome) => {
+      const next = setExperimentOutcome(recordsRef.current, recordId, outcome);
+      await saveRecords(next, nativeStorage);
+      recordsRef.current = next;
+      setRecords(next);
+    },
+    [],
+  );
 
   const mutateDecoration = useCallback(
     async (build: (state: DecorationState) => DecorationState) => {
@@ -334,7 +372,9 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
       draft,
       updateDraft,
       resetDraft,
+      editTodayRecord,
       saveCurrentDraft,
+      saveExperimentOutcome,
       claimReward,
       buyDecoration,
       applyDecoration,
@@ -351,7 +391,9 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
       draft,
       updateDraft,
       resetDraft,
+      editTodayRecord,
       saveCurrentDraft,
+      saveExperimentOutcome,
       claimReward,
       buyDecoration,
       applyDecoration,
