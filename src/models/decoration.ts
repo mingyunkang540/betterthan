@@ -5,7 +5,8 @@ export type DecorationCategory =
   | 'furniture'
   | 'coffee'
   | 'plant'
-  | 'pet';
+  | 'pet'
+  | 'roomTheme';
 
 export type DecorationSlot =
   | 'diarySticker'
@@ -14,7 +15,15 @@ export type DecorationSlot =
   | 'roomFurniture'
   | 'roomCoffee'
   | 'roomPlant'
-  | 'roomPet';
+  | 'roomPet'
+  | 'roomTheme';
+
+export type RoomThemeId =
+  | 'room-theme-wood'
+  | 'room-theme-cream'
+  | 'room-theme-walnut'
+  | 'room-theme-sage'
+  | 'room-theme-rattan';
 
 export interface ShopItem {
   id: string;

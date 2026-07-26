@@ -11,6 +11,10 @@ const outputPath = path.join(
 
 const assets = {
   roomBackground: 'assets/room/cozy-approved-v2/room-empty.png',
+  'room-theme-cream': 'assets/room/cozy-approved-v7/room-cream.png',
+  'room-theme-walnut': 'assets/room/cozy-approved-v7/room-walnut.png',
+  'room-theme-sage': 'assets/room/cozy-approved-v7/room-sage.png',
+  'room-theme-rattan': 'assets/room/cozy-approved-v7/room-rattan.png',
   'bed-basic': 'assets/room/cozy-approved-v2/bed-basic.png',
   'bed-mint': 'assets/room/cozy-approved-v2/bed-mint.png',
   'desk-basic': 'assets/room/cozy-approved-v2/desk-basic.png',

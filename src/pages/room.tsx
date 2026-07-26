@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 import { AppScreen, BackButton, ErrorMessage, colors } from '../components/ui';
 import {
-  ROOM_BACKGROUND_SOURCE,
+  roomBackgroundSource,
   roomAssetSource,
 } from '../constants/room-assets';
 import {
@@ -100,7 +100,7 @@ function RoomPage() {
         onLayout={(event) => setSceneWidth(event.nativeEvent.layout.width)}
       >
         <Image
-          source={ROOM_BACKGROUND_SOURCE}
+          source={roomBackgroundSource(decorationState.equipped.roomTheme)}
           resizeMode="contain"
           style={StyleSheet.absoluteFill}
         />

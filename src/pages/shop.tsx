@@ -22,9 +22,9 @@ import {
 } from '../components/ui';
 import {
   ROOM_BACKGROUND_HEIGHT,
-  ROOM_BACKGROUND_SOURCE,
   ROOM_BACKGROUND_TOP,
   ROOM_SCENE_ASPECT_RATIO,
+  roomBackgroundSource,
   roomAssetSource,
 } from '../constants/room-assets';
 import {
@@ -58,7 +58,9 @@ function ShopPage() {
   const isOwned = (item: ShopItem) =>
     decorationState.owned.some((owned) => owned.itemId === item.id);
   const isEquipped = (item: ShopItem) =>
-    item.slot.startsWith('room')
+    item.slot === 'roomTheme'
+      ? decorationState.equipped.roomTheme === item.id
+      : item.slot.startsWith('room')
       ? (() => {
           const definition = roomItemDefinition(item.id);
           return definition
@@ -78,7 +80,11 @@ function ShopPage() {
     try {
       await purchaseOrApplyDecoration(item, position);
       setMessage(
-        item.slot.startsWith('room')
+        item.slot === 'roomTheme'
+          ? owned
+            ? `${item.name}을 적용했어요.`
+            : `${item.name}을 구매하고 적용했어요.`
+          : item.slot.startsWith('room')
           ? owned
             ? '보유한 아이템은 방 편집에서 선택할 수 있어요.'
             : `${item.name}을 구매했어요. 방 편집에서 선택해보세요.`
@@ -311,6 +317,7 @@ function RoomPreview({
   onPositionChange(position: RoomPosition): void;
   position?: RoomPosition;
 }) {
+  const roomTheme = item.slot === 'roomTheme';
   const source = roomItemAsset(item.id) ?? roomAssetSource(item.id);
   const initialPosition = DEFAULT_ROOM_POSITIONS[item.slot] ?? {
     x: 0.5,
@@ -354,17 +361,19 @@ function RoomPreview({
   return (
     <View>
       <Text style={styles.dragInstruction}>
-        물건을 손가락으로 끌어 어울리는 위치를 찾아보세요.
+        {roomTheme
+          ? '가구 배치는 그대로 두고 방 전체 색상만 바뀌어요.'
+          : '물건을 손가락으로 끌어 어울리는 위치를 찾아보세요.'}
       </Text>
       <View style={styles.roomPreview}>
         <Image
-          source={ROOM_BACKGROUND_SOURCE}
+          source={roomBackgroundSource(roomTheme ? item.id : undefined)}
           style={[
             styles.previewBackground,
             { height: ROOM_BACKGROUND_HEIGHT, top: ROOM_BACKGROUND_TOP },
           ]}
         />
-        {source ? (
+        {!roomTheme && source ? (
           <View
             {...panResponder.panHandlers}
             accessibilityHint="손가락으로 끌어 미리보기 위치를 바꿀 수 있어요."

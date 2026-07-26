@@ -8,12 +8,26 @@ import {
 
 describe('decoration room slots', () => {
   it('starts with only the simple starter furniture', () => {
-    const slots = createDefaultDecorationState().roomState.slots;
+    const state = createDefaultDecorationState();
+    const slots = state.roomState.slots;
     expect(slots.BED_SLOT).toBe('bed-basic');
     expect(slots.DESK_SLOT).toBe('desk-basic');
     expect(slots.CHAIR_SLOT).toBe('chair-cushion');
     expect(slots.SHELF_SLOT).toBe('shelf-basic');
     expect(Object.values(slots).filter(Boolean)).toHaveLength(4);
+    expect(state.equipped.roomTheme).toBe('room-theme-wood');
+  });
+
+  it('purchases and equips a room theme without changing furniture', () => {
+    const initial = createDefaultDecorationState();
+    const theme = SHOP_ITEMS.find(
+      (candidate) => candidate.id === 'room-theme-sage',
+    );
+    if (!theme) throw new Error('room-theme-sage fixture is missing');
+    const next = purchaseOrEquipDecoration(initial, theme, 1000);
+    expect(next.equipped.roomTheme).toBe(theme.id);
+    expect(next.roomState.slots).toEqual(initial.roomState.slots);
+    expect(next.purchases.at(-1)?.amount).toBe(-theme.price);
   });
 
   it('saves, replaces, and clears a fixed slot', () => {

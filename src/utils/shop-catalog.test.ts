@@ -33,4 +33,16 @@ describe('itemsForShopTab', () => {
     );
     expect(itemsForShopTab(SHOP_ITEMS, 'pet')).toEqual([]);
   });
+
+  it('returns all five room color themes in their own tab', () => {
+    expect(
+      itemsForShopTab(SHOP_ITEMS, 'roomTheme').map((item) => item.id),
+    ).toEqual([
+      'room-theme-wood',
+      'room-theme-cream',
+      'room-theme-walnut',
+      'room-theme-sage',
+      'room-theme-rattan',
+    ]);
+  });
 });
