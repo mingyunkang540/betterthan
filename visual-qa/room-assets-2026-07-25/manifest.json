@@ -1578,18 +1578,18 @@
           "itemId": "drink-coffee",
           "assetId": "drink-coffee",
           "slotId": "DESK_DRINK_SLOT",
-          "x": 146,
-          "y": 267,
+          "x": 95,
+          "y": 254,
           "width": 33,
           "height": 33,
           "zIndex": 37,
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            153,
-            274,
-            172,
-            293
+            102,
+            261,
+            121,
+            280
           ],
           "clipped": false
         }
@@ -1613,18 +1613,18 @@
           "itemId": "drink-beer",
           "assetId": "drink-beer",
           "slotId": "DESK_DRINK_SLOT",
-          "x": 149,
-          "y": 273,
+          "x": 98,
+          "y": 260,
           "width": 27,
           "height": 27,
           "zIndex": 37,
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            156,
-            277,
-            169,
-            295
+            105,
+            264,
+            118,
+            282
           ],
           "clipped": false
         }
@@ -1648,18 +1648,18 @@
           "itemId": "drink-barley",
           "assetId": "drink-barley",
           "slotId": "DESK_DRINK_SLOT",
-          "x": 146,
-          "y": 267,
+          "x": 95,
+          "y": 254,
           "width": 33,
           "height": 33,
           "zIndex": 37,
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            152,
-            271,
-            173,
-            296
+            101,
+            258,
+            122,
+            283
           ],
           "clipped": false
         }
@@ -1850,18 +1850,18 @@
           "itemId": "drink-coffee",
           "assetId": "drink-coffee",
           "slotId": "DESK_DRINK_SLOT",
-          "x": 146,
-          "y": 267,
+          "x": 95,
+          "y": 254,
           "width": 33,
           "height": 33,
           "zIndex": 37,
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            153,
-            274,
-            172,
-            293
+            102,
+            261,
+            121,
+            280
           ],
           "clipped": false
         },
@@ -2240,18 +2240,18 @@
           "itemId": "drink-barley",
           "assetId": "drink-barley",
           "slotId": "DESK_DRINK_SLOT",
-          "x": 146,
-          "y": 267,
+          "x": 95,
+          "y": 254,
           "width": 33,
           "height": 33,
           "zIndex": 37,
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            152,
-            271,
-            173,
-            296
+            101,
+            258,
+            122,
+            283
           ],
           "clipped": false
         },
@@ -2524,18 +2524,18 @@
           "itemId": "drink-barley",
           "assetId": "drink-barley",
           "slotId": "DESK_DRINK_SLOT",
-          "x": 135,
-          "y": 247,
+          "x": 88,
+          "y": 235,
           "width": 30,
           "height": 30,
           "zIndex": 37,
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            141,
-            251,
-            159,
-            273
+            94,
+            239,
+            112,
+            261
           ],
           "clipped": false
         },
@@ -2808,18 +2808,18 @@
           "itemId": "drink-barley",
           "assetId": "drink-barley",
           "slotId": "DESK_DRINK_SLOT",
-          "x": 146,
-          "y": 267,
+          "x": 95,
+          "y": 254,
           "width": 33,
           "height": 33,
           "zIndex": 37,
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            152,
-            271,
-            173,
-            296
+            101,
+            258,
+            122,
+            283
           ],
           "clipped": false
         },
@@ -3092,18 +3092,18 @@
           "itemId": "drink-barley",
           "assetId": "drink-barley",
           "slotId": "DESK_DRINK_SLOT",
-          "x": 161,
-          "y": 294,
+          "x": 105,
+          "y": 280,
           "width": 36,
           "height": 36,
           "zIndex": 37,
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            168,
-            299,
-            190,
-            325
+            112,
+            285,
+            134,
+            311
           ],
           "clipped": false
         },

@@ -74,8 +74,22 @@ function normalizeState(value: unknown): DecorationState | null {
     return null;
   const defaults = createDefaultDecorationState();
   const validIds = new Set(SHOP_ITEMS.map((item) => item.id));
+  const actualDefaultIds = new Set(DEFAULT_DECORATION_IDS);
+  const hasTesterDefaultUnlock =
+    !TESTER_ROOM_ITEMS_UNLOCKED &&
+    state.owned.some(
+      (item) =>
+        item?.acquisitionType === 'DEFAULT' &&
+        !actualDefaultIds.has(item.itemId),
+    );
   const savedOwned = state.owned.filter(
-    (item) => item && validIds.has(item.itemId),
+    (item) =>
+      item &&
+      !hasTesterDefaultUnlock &&
+      validIds.has(item.itemId) &&
+      (TESTER_ROOM_ITEMS_UNLOCKED ||
+        item.acquisitionType !== 'DEFAULT' ||
+        actualDefaultIds.has(item.itemId)),
   );
   const owned = [
     ...defaults.owned.filter(
@@ -131,9 +145,11 @@ function normalizeState(value: unknown): DecorationState | null {
       slots,
       updatedAt: state.roomState?.updatedAt ?? timestamp,
     },
-    purchases: state.purchases.filter(
-      (item) => item && validIds.has(item.itemId) && item.amount < 0,
-    ),
+    purchases: hasTesterDefaultUnlock
+      ? []
+      : state.purchases.filter(
+          (item) => item && validIds.has(item.itemId) && item.amount < 0,
+        ),
     updatedAt: timestamp,
   };
 }

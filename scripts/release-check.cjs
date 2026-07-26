@@ -3,6 +3,12 @@ const path = require('node:path');
 
 const root = path.resolve(__dirname, '..');
 const configPath = path.join(root, 'granite.config.ts');
+const testerConfigPath = path.join(
+  root,
+  'src',
+  'constants',
+  'tester-config.ts',
+);
 const iconPath = path.join(root, 'assets', 'brand', 'app-icon-600-v1.png');
 const failures = [];
 
@@ -14,12 +20,15 @@ function pngDimensions(filePath) {
 }
 
 const config = fs.readFileSync(configPath, 'utf8');
+const testerConfig = fs.readFileSync(testerConfigPath, 'utf8');
 if (!config.includes("appName: 'betterthan'"))
   failures.push('granite.config.ts의 appName이 betterthan이 아니에요.');
 if (!config.includes("displayName: '어제보다'"))
   failures.push('granite.config.ts의 표시 이름이 어제보다가 아니에요.');
 if (!config.includes("permissions: []"))
   failures.push('1차 출시 권한 목록이 비어 있지 않아요.');
+if (!testerConfig.includes('export const TESTER_REWARD_GRANT = 0;'))
+  failures.push('공개 출시 빌드에 테스터용 기록 조각이 남아 있어요.');
 
 const iconUrl = process.env.AIT_ICON_URL?.trim();
 if (!iconUrl) {
@@ -52,4 +61,5 @@ if (failures.length > 0) {
   console.log('- displayName: 어제보다');
   console.log('- icon: 600×600 PNG + HTTPS URL');
   console.log('- permissions: 없음');
+  console.log('- initial tester grant: 0조각');
 }

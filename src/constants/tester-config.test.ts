@@ -3,9 +3,9 @@ import {
   rewardBalanceWithTesterGrant,
 } from './tester-config';
 
-describe('private deployment tester balance', () => {
-  it('starts testers with the maximum shard grant', () => {
-    expect(TESTER_REWARD_GRANT).toBe(999_999);
-    expect(rewardBalanceWithTesterGrant(12, 220)).toBe(999_791);
+describe('public release balance', () => {
+  it('starts without a tester shard grant', () => {
+    expect(TESTER_REWARD_GRANT).toBe(0);
+    expect(rewardBalanceWithTesterGrant(12, 5)).toBe(7);
   });
 });

@@ -1,8 +1,5 @@
-/**
- * Private deployment tester grant.
- * Set this to 0 before the public release after the production base amount is decided.
- */
-export const TESTER_REWARD_GRANT = 999_999;
+/** Public release starts from earned record shards only. */
+export const TESTER_REWARD_GRANT = 0;
 export const TESTER_ROOM_ITEMS_UNLOCKED = TESTER_REWARD_GRANT > 0;
 
 export function rewardBalanceWithTesterGrant(earned: number, spent: number) {

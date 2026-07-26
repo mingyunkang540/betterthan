@@ -117,4 +117,53 @@ describe('decoration room slots', () => {
       Object.values(loaded.roomState.slots).every((item) => item === null),
     ).toBe(true);
   });
+
+  it('removes tester-only default unlocks from public release saves', async () => {
+    const initial = createDefaultDecorationState();
+    const testerSave = {
+      ...initial,
+      owned: [
+        ...initial.owned,
+        {
+          itemId: 'bed-mint',
+          acquiredAt: '2026-07-19T00:00:00.000Z',
+          acquisitionType: 'DEFAULT' as const,
+        },
+        {
+          itemId: 'pet-cat',
+          acquiredAt: '2026-07-19T00:00:00.000Z',
+          acquisitionType: 'PURCHASE' as const,
+        },
+      ],
+      purchases: [
+        {
+          id: 'purchase:pet-cat',
+          itemId: 'pet-cat',
+          amount: -500,
+          createdAt: '2026-07-19T00:00:00.000Z',
+        },
+      ],
+      roomState: {
+        ...initial.roomState,
+        slots: { ...initial.roomState.slots, BED_SLOT: 'bed-mint' },
+      },
+    };
+    const values = new Map<string, string>([
+      ['better-than-yesterday:decoration:v1', JSON.stringify(testerSave)],
+    ]);
+    const loaded = await loadDecorationState({
+      getItem: async (key) => values.get(key) ?? null,
+      setItem: async (key, value) => {
+        values.set(key, value);
+      },
+      removeItem: async (key) => {
+        values.delete(key);
+      },
+    });
+
+    expect(loaded.owned.some((item) => item.itemId === 'bed-mint')).toBe(false);
+    expect(loaded.owned.some((item) => item.itemId === 'pet-cat')).toBe(false);
+    expect(loaded.purchases).toEqual([]);
+    expect(loaded.roomState.slots.BED_SLOT).toBe('bed-basic');
+  });
 });
