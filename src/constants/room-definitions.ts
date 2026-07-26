@@ -73,8 +73,8 @@ export const STUDIO_001_SLOTS: RoomSlotDefinition[] = [
   {
     id: 'DESK_DRINK_SLOT',
     category: 'DRINK',
-    x: 320,
-    y: 590,
+    x: 220,
+    y: 565,
     width: 65,
     height: 65,
     zIndex: 37,

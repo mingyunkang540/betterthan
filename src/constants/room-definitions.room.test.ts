@@ -49,7 +49,7 @@ describe('fixed room slots', () => {
       STUDIO_001_SLOTS.find((candidate) => candidate.id === id);
 
     expect(slot('BED_SLOT')).toMatchObject({ x: 525, y: 725 });
-    expect(slot('DESK_DRINK_SLOT')).toMatchObject({ x: 320, y: 590 });
+    expect(slot('DESK_DRINK_SLOT')).toMatchObject({ x: 220, y: 565 });
     expect(slot('PLANT_SLOT_1')).toMatchObject({ x: 625, y: 745 });
   });
 
