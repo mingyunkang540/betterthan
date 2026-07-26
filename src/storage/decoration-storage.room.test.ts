@@ -20,7 +20,7 @@ describe('room state compatibility', () => {
     );
   });
 
-  it('rejects a tall plant on the shelf slot', () => {
+  it('rejects a plant outside the floor slot', () => {
     const state = createDefaultDecorationState();
     state.owned.push({
       itemId: 'plant-fiddle',
@@ -31,12 +31,12 @@ describe('room state compatibility', () => {
     expect(() =>
       saveRoomSlots(state, {
         ...state.roomState.slots,
-        FLOOR_LAMP_SLOT: 'plant-fiddle',
+        SHELF_SLOT: 'plant-fiddle',
       }),
     ).toThrow('이 슬롯에 배치할 수 없는 아이템이에요.');
   });
 
-  it('accepts a small plant on the shelf slot', () => {
+  it('accepts a plant on the floor slot', () => {
     const state = createDefaultDecorationState();
     state.owned.push({
       itemId: 'plant-succulent',
@@ -46,9 +46,9 @@ describe('room state compatibility', () => {
 
     const next = saveRoomSlots(state, {
       ...state.roomState.slots,
-      FLOOR_LAMP_SLOT: 'plant-succulent',
+      PLANT_SLOT_1: 'plant-succulent',
     });
 
-    expect(next.roomState.slots.FLOOR_LAMP_SLOT).toBe('plant-succulent');
+    expect(next.roomState.slots.PLANT_SLOT_1).toBe('plant-succulent');
   });
 });

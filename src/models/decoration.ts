@@ -35,7 +35,6 @@ export type RoomItemCategory =
   | 'CHAIR'
   | 'SHELF'
   | 'RUG'
-  | 'CURTAIN'
   | 'BOOKCASE'
   | 'WALL_ART'
   | 'DRINK'

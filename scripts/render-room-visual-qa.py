@@ -130,16 +130,7 @@ def load_asset_map() -> dict[str, Path]:
 
 
 def item_asset_id(item: Item, slot_id: str) -> str:
-    if item.category != "PLANT":
-        return item.asset_id
-    if item.id in {"plant-olive", "plant-succulent", "plant-fern", "plant-fiddle"}:
-        return item.asset_id
-    return {
-        "SIDE_TABLE_SLOT": "plant-desk",
-        "FLOOR_LAMP_SLOT": "plant-shelf",
-        "PLANT_SLOT_2": "plant-window",
-        "PLANT_SLOT_1": "plant-floor",
-    }.get(slot_id, item.asset_id)
+    return item.asset_id
 
 
 def contain(image: Image.Image, width: int, height: int) -> Image.Image:
@@ -284,7 +275,6 @@ def build_cases(
             "SHELF_SET",
             {
                 "SHELF_SLOT": "shelf-basic",
-                "FLOOR_LAMP_SLOT": "plant-pothos",
             },
         ),
         (
@@ -306,14 +296,6 @@ def build_cases(
                 "PLANT_SLOT_1": "plant-fiddle",
             },
         ),
-        (
-            "CASE_105",
-            "WINDOW_SET",
-            {
-                "WALL_DECOR_SLOT": "curtain-linen",
-                "PLANT_SLOT_2": "plant-pothos",
-            },
-        ),
     ]
     for case_id, name, placements in relations:
         cases.append(
@@ -330,15 +312,11 @@ def build_cases(
         "BED_SLOT": "bed-princess",
         "DESK_SLOT": "desk-walnut-drawers",
         "DESK_DRINK_SLOT": "drink-barley",
-        "SIDE_TABLE_SLOT": "plant-succulent",
         "CHAIR_SLOT": "chair-rattan-blue",
         "WALL_ART_SLOT": "wall-poster",
-        "FLOOR_LAMP_SLOT": "plant-pothos",
         "PLANT_SLOT_1": "plant-fiddle",
-        "PLANT_SLOT_2": "plant-succulent",
         "PET_SLOT": "pet-cat-gray",
         "PET_SLOT_2": "pet-dog-brown",
-        "WALL_DECOR_SLOT": "curtain-linen",
         "SHELF_SLOT": "shelf-navy",
         "APPLIANCE_SLOT": "bookcase-small",
     }
@@ -530,6 +508,9 @@ def write_report(manifest: dict[str, Any]) -> None:
 def main() -> None:
     SCREENSHOT_DIR.mkdir(parents=True, exist_ok=True)
     CONTACT_DIR.mkdir(parents=True, exist_ok=True)
+    for output_dir in (SCREENSHOT_DIR, CONTACT_DIR):
+        for stale_image in output_dir.glob("*.png"):
+            stale_image.unlink()
     slots, items = load_definitions()
     asset_map = load_asset_map()
     cases = build_cases(slots, items)

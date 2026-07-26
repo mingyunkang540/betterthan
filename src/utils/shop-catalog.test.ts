@@ -25,7 +25,6 @@ describe('itemsForShopTab', () => {
         'chair-cushion',
         'shelf-basic',
         'rug-round',
-        'curtain-linen',
         'bookcase-small',
         'plant-pothos',
         'pet-cat',

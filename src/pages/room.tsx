@@ -34,7 +34,6 @@ function RoomPage() {
   const { decorationState, rewardBalance, saveRoom } = useApp();
   const [editing, setEditing] = useState(false);
   const [category, setCategory] = useState<RoomItemCategory>('BED');
-  const [plantSlot, setPlantSlot] = useState<RoomSlotId>('PLANT_SLOT_1');
   const [petSlot, setPetSlot] = useState<RoomSlotId>('PET_SLOT');
   const [draft, setDraft] = useState<RoomState['slots']>({
     ...decorationState.roomState.slots,
@@ -49,11 +48,9 @@ function RoomPage() {
   );
   const visibleSlots = editing ? draft : decorationState.roomState.slots;
   const activeSlot =
-    category === 'PLANT'
-      ? plantSlot
-      : category === 'PET'
-        ? petSlot
-        : ROOM_ITEMS.find((item) => item.category === category)?.slotId;
+    category === 'PET'
+      ? petSlot
+      : ROOM_ITEMS.find((item) => item.category === category)?.slotId;
   const categoryItems = ROOM_ITEMS.filter(
     (item) =>
       item.category === category &&
@@ -200,29 +197,6 @@ function RoomPage() {
               </TouchableOpacity>
             ))}
           </ScrollView>
-          {category === 'PLANT' ? (
-            <View style={styles.locationRow}>
-              {(
-                [
-                  ['PLANT_SLOT_1', '바닥'],
-                  ['PLANT_SLOT_2', '창가'],
-                  ['SIDE_TABLE_SLOT', '책상'],
-                  ['FLOOR_LAMP_SLOT', '선반'],
-                ] as const
-              ).map(([slotId, label]) => (
-                <TouchableOpacity
-                  key={slotId}
-                  style={[
-                    styles.locationChip,
-                    plantSlot === slotId && styles.locationChipActive,
-                  ]}
-                  onPress={() => setPlantSlot(slotId)}
-                >
-                  <Text style={styles.locationText}>{label}</Text>
-                </TouchableOpacity>
-              ))}
-            </View>
-          ) : null}
           {category === 'PET' ? (
             <View style={styles.locationRow}>
               {(

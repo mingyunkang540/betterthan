@@ -50,7 +50,7 @@ describe('decoration room slots', () => {
     expect(purchased.roomState.slots).toEqual(initial.roomState.slots);
   });
 
-  it('supports four independent plant slots and two pet slots', () => {
+  it('supports one floor plant slot and two pet slots', () => {
     const initial = createDefaultDecorationState();
     const owned = {
       ...initial,
@@ -71,16 +71,10 @@ describe('decoration room slots', () => {
     const saved = saveRoomSlots(owned, {
       ...owned.roomState.slots,
       PLANT_SLOT_1: 'plant-pothos',
-      PLANT_SLOT_2: 'plant-pothos',
-      SIDE_TABLE_SLOT: 'plant-pothos',
-      FLOOR_LAMP_SLOT: 'plant-pothos',
       PET_SLOT: 'pet-cat',
       PET_SLOT_2: 'pet-dog',
     });
     expect(saved.roomState.slots.PLANT_SLOT_1).toBe('plant-pothos');
-    expect(saved.roomState.slots.PLANT_SLOT_2).toBe('plant-pothos');
-    expect(saved.roomState.slots.SIDE_TABLE_SLOT).toBe('plant-pothos');
-    expect(saved.roomState.slots.FLOOR_LAMP_SLOT).toBe('plant-pothos');
     expect(saved.roomState.slots.PET_SLOT).toBe('pet-cat');
     expect(saved.roomState.slots.PET_SLOT_2).toBe('pet-dog');
   });

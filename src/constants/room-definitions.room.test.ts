@@ -7,27 +7,22 @@ import {
 } from './room-definitions';
 
 describe('fixed room slots', () => {
-  it('keeps tall floor plants off furniture', () => {
-    const fern = roomItemDefinition('plant-fern');
-    const fiddle = roomItemDefinition('plant-fiddle');
+  it('keeps every plant in the single floor slot', () => {
+    const plants = ROOM_ITEMS.filter((item) => item.category === 'PLANT');
 
-    expect(fern && canPlaceRoomItem(fern, 'PLANT_SLOT_1')).toBe(true);
-    expect(fern && canPlaceRoomItem(fern, 'FLOOR_LAMP_SLOT')).toBe(false);
-    expect(fiddle && canPlaceRoomItem(fiddle, 'SIDE_TABLE_SLOT')).toBe(false);
-  });
-
-  it('allows small plants in all four plant positions', () => {
-    const succulent = roomItemDefinition('plant-succulent');
-
-    expect(succulent?.scale).toBe(1.3);
-    for (const slotId of [
-      'PLANT_SLOT_1',
-      'PLANT_SLOT_2',
-      'SIDE_TABLE_SLOT',
-      'FLOOR_LAMP_SLOT',
-    ] as const) {
-      expect(succulent && canPlaceRoomItem(succulent, slotId)).toBe(true);
-    }
+    expect(plants.length).toBeGreaterThan(0);
+    expect(
+      plants.every(
+        (plant) =>
+          canPlaceRoomItem(plant, 'PLANT_SLOT_1') &&
+          plant.allowedSlotIds?.length === 1,
+      ),
+    ).toBe(true);
+    expect(
+      STUDIO_001_SLOTS.filter((slot) => slot.category === 'PLANT').map(
+        (slot) => slot.id,
+      ),
+    ).toEqual(['PLANT_SLOT_1']);
   });
 
   it('fixes cats and dogs to separate floor slots', () => {
@@ -49,9 +44,9 @@ describe('fixed room slots', () => {
     expect(slot('APPLIANCE_SLOT')).toMatchObject({ x: 105, y: 755 });
   });
 
-  it('uses a shelf-specific plant asset without visit randomness', () => {
-    const first = roomItemAsset('plant-pothos', 'FLOOR_LAMP_SLOT');
-    const second = roomItemAsset('plant-pothos', 'FLOOR_LAMP_SLOT');
+  it('uses a stable floor plant asset without visit randomness', () => {
+    const first = roomItemAsset('plant-pothos', 'PLANT_SLOT_1');
+    const second = roomItemAsset('plant-pothos', 'PLANT_SLOT_1');
 
     expect(first).toEqual(second);
     expect(first).toBeDefined();
@@ -88,7 +83,6 @@ describe('fixed room slots', () => {
     ['CHAIR', 'CHAIR_SLOT', 5],
     ['SHELF', 'SHELF_SLOT', 5],
     ['RUG', 'RUG_SLOT', 5],
-    ['CURTAIN', 'WALL_DECOR_SLOT', 5],
     ['BOOKCASE', 'APPLIANCE_SLOT', 5],
   ] as const)(
     '%s offers at least five fixed-slot variants',

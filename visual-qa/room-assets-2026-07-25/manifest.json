@@ -18,9 +18,9 @@
       "Uses the production Room scene layout formula but not React Native rasterization"
     ]
   },
-  "assetCount": 53,
-  "slotCount": 15,
-  "screenshotCount": 69,
+  "assetCount": 48,
+  "slotCount": 11,
+  "screenshotCount": 57,
   "cases": [
     {
       "caseId": "CASE_001",
@@ -49,7 +49,7 @@
           "assetId": "bed-basic",
           "slotId": "BED_SLOT",
           "x": 201,
-          "y": 211,
+          "y": 226,
           "width": 152,
           "height": 152,
           "zIndex": 20,
@@ -57,9 +57,9 @@
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
             220,
-            229,
+            244,
             337,
-            344
+            359
           ],
           "clipped": false
         }
@@ -84,7 +84,7 @@
           "assetId": "bed-mint",
           "slotId": "BED_SLOT",
           "x": 201,
-          "y": 211,
+          "y": 226,
           "width": 152,
           "height": 152,
           "zIndex": 20,
@@ -92,9 +92,9 @@
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
             220,
-            229,
+            244,
             337,
-            344
+            359
           ],
           "clipped": false
         }
@@ -119,7 +119,7 @@
           "assetId": "bed-rose",
           "slotId": "BED_SLOT",
           "x": 201,
-          "y": 211,
+          "y": 226,
           "width": 152,
           "height": 152,
           "zIndex": 20,
@@ -127,9 +127,9 @@
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
             220,
-            229,
+            244,
             337,
-            344
+            359
           ],
           "clipped": false
         }
@@ -154,7 +154,7 @@
           "assetId": "bed-sky",
           "slotId": "BED_SLOT",
           "x": 201,
-          "y": 211,
+          "y": 226,
           "width": 152,
           "height": 152,
           "zIndex": 20,
@@ -162,9 +162,9 @@
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
             220,
-            229,
+            244,
             337,
-            344
+            359
           ],
           "clipped": false
         }
@@ -189,7 +189,7 @@
           "assetId": "bed-princess",
           "slotId": "BED_SLOT",
           "x": 194,
-          "y": 198,
+          "y": 213,
           "width": 165,
           "height": 165,
           "zIndex": 20,
@@ -197,9 +197,9 @@
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
             215,
-            209,
+            224,
             335,
-            353
+            368
           ],
           "clipped": false
         }
@@ -224,7 +224,7 @@
           "assetId": "bed-canopy-lavender",
           "slotId": "BED_SLOT",
           "x": 201,
-          "y": 211,
+          "y": 226,
           "width": 152,
           "height": 152,
           "zIndex": 20,
@@ -232,9 +232,9 @@
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
             219,
-            216,
+            231,
             335,
-            355
+            370
           ],
           "clipped": false
         }
@@ -259,7 +259,7 @@
           "assetId": "bed-sleigh-navy",
           "slotId": "BED_SLOT",
           "x": 201,
-          "y": 211,
+          "y": 226,
           "width": 152,
           "height": 152,
           "zIndex": 20,
@@ -267,9 +267,9 @@
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
             218,
-            225,
+            240,
             341,
-            347
+            362
           ],
           "clipped": false
         }
@@ -294,7 +294,7 @@
           "assetId": "bed-iron-sage",
           "slotId": "BED_SLOT",
           "x": 201,
-          "y": 211,
+          "y": 226,
           "width": 152,
           "height": 152,
           "zIndex": 20,
@@ -302,9 +302,9 @@
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
             221,
-            229,
+            244,
             337,
-            343
+            358
           ],
           "clipped": false
         }
@@ -329,7 +329,7 @@
           "assetId": "bed-upholstered-wine",
           "slotId": "BED_SLOT",
           "x": 201,
-          "y": 211,
+          "y": 226,
           "width": 152,
           "height": 152,
           "zIndex": 20,
@@ -337,9 +337,9 @@
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
             219,
-            225,
+            240,
             339,
-            347
+            362
           ],
           "clipped": false
         }
@@ -364,7 +364,7 @@
           "assetId": "desk-basic",
           "slotId": "DESK_SLOT",
           "x": 48,
-          "y": 209,
+          "y": 224,
           "width": 178,
           "height": 152,
           "zIndex": 30,
@@ -372,9 +372,9 @@
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
             77,
-            227,
+            242,
             198,
-            342
+            357
           ],
           "clipped": false
         },
@@ -418,7 +418,7 @@
           "assetId": "desk-cream",
           "slotId": "DESK_SLOT",
           "x": 48,
-          "y": 209,
+          "y": 224,
           "width": 178,
           "height": 152,
           "zIndex": 30,
@@ -426,9 +426,9 @@
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
             83,
-            228,
+            243,
             191,
-            340
+            355
           ],
           "clipped": false
         },
@@ -472,7 +472,7 @@
           "assetId": "desk-walnut-drawers",
           "slotId": "DESK_SLOT",
           "x": 48,
-          "y": 209,
+          "y": 224,
           "width": 178,
           "height": 152,
           "zIndex": 30,
@@ -480,9 +480,9 @@
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
             80,
-            230,
+            245,
             195,
-            339
+            354
           ],
           "clipped": false
         },
@@ -526,7 +526,7 @@
           "assetId": "desk-sage",
           "slotId": "DESK_SLOT",
           "x": 48,
-          "y": 209,
+          "y": 224,
           "width": 178,
           "height": 152,
           "zIndex": 30,
@@ -534,9 +534,9 @@
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
             79,
-            226,
+            241,
             198,
-            341
+            356
           ],
           "clipped": false
         },
@@ -580,7 +580,7 @@
           "assetId": "desk-rattan",
           "slotId": "DESK_SLOT",
           "x": 48,
-          "y": 209,
+          "y": 224,
           "width": 178,
           "height": 152,
           "zIndex": 30,
@@ -588,9 +588,9 @@
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
             79,
-            229,
+            244,
             196,
-            340
+            355
           ],
           "clipped": false
         },
@@ -806,20 +806,20 @@
       "measurements": [
         {
           "itemId": "plant-pothos",
-          "assetId": "plant-floor",
+          "assetId": "plant-pothos",
           "slotId": "PLANT_SLOT_1",
-          "x": 44,
-          "y": 272,
+          "x": 310,
+          "y": 299,
           "width": 66,
           "height": 89,
           "zIndex": 50,
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            56,
-            291,
-            96,
-            338
+            322,
+            318,
+            362,
+            365
           ],
           "clipped": false
         }
@@ -829,114 +829,9 @@
     },
     {
       "caseId": "CASE_022",
-      "name": "SINGLE_plant-pothos_PLANT_SLOT_2",
-      "viewportWidth": 390,
-      "screenshot": "room-case_022-single_plant-pothos_plant_slot_2-390.png",
-      "items": [
-        {
-          "itemId": "plant-pothos",
-          "slotId": "PLANT_SLOT_2"
-        }
-      ],
-      "measurements": [
-        {
-          "itemId": "plant-pothos",
-          "assetId": "plant-window",
-          "slotId": "PLANT_SLOT_2",
-          "x": 139,
-          "y": 171,
-          "width": 53,
-          "height": 63,
-          "zIndex": 51,
-          "renderOffsetX": 0,
-          "renderOffsetY": 0,
-          "visibleAlphaBounds": [
-            148,
-            186,
-            183,
-            220
-          ],
-          "clipped": false
-        }
-      ],
-      "issues": [],
-      "result": "PASS"
-    },
-    {
-      "caseId": "CASE_023",
-      "name": "SINGLE_plant-pothos_SIDE_TABLE_SLOT",
-      "viewportWidth": 390,
-      "screenshot": "room-case_023-single_plant-pothos_side_table_slot-390.png",
-      "items": [
-        {
-          "itemId": "plant-pothos",
-          "slotId": "SIDE_TABLE_SLOT"
-        }
-      ],
-      "measurements": [
-        {
-          "itemId": "plant-pothos",
-          "assetId": "plant-desk",
-          "slotId": "SIDE_TABLE_SLOT",
-          "x": 65,
-          "y": 212,
-          "width": 53,
-          "height": 61,
-          "zIndex": 35,
-          "renderOffsetX": 0,
-          "renderOffsetY": 0,
-          "visibleAlphaBounds": [
-            78,
-            224,
-            106,
-            258
-          ],
-          "clipped": false
-        }
-      ],
-      "issues": [],
-      "result": "PASS"
-    },
-    {
-      "caseId": "CASE_024",
-      "name": "SINGLE_plant-pothos_FLOOR_LAMP_SLOT",
-      "viewportWidth": 390,
-      "screenshot": "room-case_024-single_plant-pothos_floor_lamp_slot-390.png",
-      "items": [
-        {
-          "itemId": "plant-pothos",
-          "slotId": "FLOOR_LAMP_SLOT"
-        }
-      ],
-      "measurements": [
-        {
-          "itemId": "plant-pothos",
-          "assetId": "plant-shelf",
-          "slotId": "FLOOR_LAMP_SLOT",
-          "x": 289,
-          "y": 188,
-          "width": 37,
-          "height": 44,
-          "zIndex": 73,
-          "renderOffsetX": 0,
-          "renderOffsetY": 0,
-          "visibleAlphaBounds": [
-            299,
-            199,
-            316,
-            219
-          ],
-          "clipped": false
-        }
-      ],
-      "issues": [],
-      "result": "PASS"
-    },
-    {
-      "caseId": "CASE_025",
       "name": "SINGLE_plant-olive_PLANT_SLOT_1",
       "viewportWidth": 390,
-      "screenshot": "room-case_025-single_plant-olive_plant_slot_1-390.png",
+      "screenshot": "room-case_022-single_plant-olive_plant_slot_1-390.png",
       "items": [
         {
           "itemId": "plant-olive",
@@ -948,18 +843,18 @@
           "itemId": "plant-olive",
           "assetId": "plant-olive",
           "slotId": "PLANT_SLOT_1",
-          "x": 44,
-          "y": 272,
+          "x": 310,
+          "y": 299,
           "width": 66,
           "height": 89,
           "zIndex": 50,
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            60,
-            284,
-            94,
-            347
+            326,
+            311,
+            360,
+            374
           ],
           "clipped": false
         }
@@ -968,10 +863,10 @@
       "result": "PASS"
     },
     {
-      "caseId": "CASE_026",
+      "caseId": "CASE_023",
       "name": "SINGLE_plant-succulent_PLANT_SLOT_1",
       "viewportWidth": 390,
-      "screenshot": "room-case_026-single_plant-succulent_plant_slot_1-390.png",
+      "screenshot": "room-case_023-single_plant-succulent_plant_slot_1-390.png",
       "items": [
         {
           "itemId": "plant-succulent",
@@ -983,18 +878,18 @@
           "itemId": "plant-succulent",
           "assetId": "plant-succulent",
           "slotId": "PLANT_SLOT_1",
-          "x": 34,
-          "y": 245,
+          "x": 300,
+          "y": 272,
           "width": 86,
           "height": 116,
           "zIndex": 50,
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            60,
-            282,
-            94,
-            321
+            326,
+            309,
+            360,
+            348
           ],
           "clipped": false
         }
@@ -1003,115 +898,10 @@
       "result": "PASS"
     },
     {
-      "caseId": "CASE_027",
-      "name": "SINGLE_plant-succulent_PLANT_SLOT_2",
-      "viewportWidth": 390,
-      "screenshot": "room-case_027-single_plant-succulent_plant_slot_2-390.png",
-      "items": [
-        {
-          "itemId": "plant-succulent",
-          "slotId": "PLANT_SLOT_2"
-        }
-      ],
-      "measurements": [
-        {
-          "itemId": "plant-succulent",
-          "assetId": "plant-succulent",
-          "slotId": "PLANT_SLOT_2",
-          "x": 131,
-          "y": 151,
-          "width": 69,
-          "height": 83,
-          "zIndex": 51,
-          "renderOffsetX": 0,
-          "renderOffsetY": 0,
-          "visibleAlphaBounds": [
-            152,
-            175,
-            179,
-            207
-          ],
-          "clipped": false
-        }
-      ],
-      "issues": [],
-      "result": "PASS"
-    },
-    {
-      "caseId": "CASE_028",
-      "name": "SINGLE_plant-succulent_SIDE_TABLE_SLOT",
-      "viewportWidth": 390,
-      "screenshot": "room-case_028-single_plant-succulent_side_table_slot-390.png",
-      "items": [
-        {
-          "itemId": "plant-succulent",
-          "slotId": "SIDE_TABLE_SLOT"
-        }
-      ],
-      "measurements": [
-        {
-          "itemId": "plant-succulent",
-          "assetId": "plant-succulent",
-          "slotId": "SIDE_TABLE_SLOT",
-          "x": 57,
-          "y": 194,
-          "width": 69,
-          "height": 79,
-          "zIndex": 35,
-          "renderOffsetX": 0,
-          "renderOffsetY": 0,
-          "visibleAlphaBounds": [
-            78,
-            216,
-            105,
-            248
-          ],
-          "clipped": false
-        }
-      ],
-      "issues": [],
-      "result": "PASS"
-    },
-    {
-      "caseId": "CASE_029",
-      "name": "SINGLE_plant-succulent_FLOOR_LAMP_SLOT",
-      "viewportWidth": 390,
-      "screenshot": "room-case_029-single_plant-succulent_floor_lamp_slot-390.png",
-      "items": [
-        {
-          "itemId": "plant-succulent",
-          "slotId": "FLOOR_LAMP_SLOT"
-        }
-      ],
-      "measurements": [
-        {
-          "itemId": "plant-succulent",
-          "assetId": "plant-succulent",
-          "slotId": "FLOOR_LAMP_SLOT",
-          "x": 284,
-          "y": 175,
-          "width": 48,
-          "height": 57,
-          "zIndex": 73,
-          "renderOffsetX": 0,
-          "renderOffsetY": 0,
-          "visibleAlphaBounds": [
-            298,
-            190,
-            318,
-            214
-          ],
-          "clipped": false
-        }
-      ],
-      "issues": [],
-      "result": "PASS"
-    },
-    {
-      "caseId": "CASE_030",
+      "caseId": "CASE_024",
       "name": "SINGLE_plant-fern_PLANT_SLOT_1",
       "viewportWidth": 390,
-      "screenshot": "room-case_030-single_plant-fern_plant_slot_1-390.png",
+      "screenshot": "room-case_024-single_plant-fern_plant_slot_1-390.png",
       "items": [
         {
           "itemId": "plant-fern",
@@ -1123,18 +913,18 @@
           "itemId": "plant-fern",
           "assetId": "plant-fern",
           "slotId": "PLANT_SLOT_1",
-          "x": 43,
-          "y": 268,
+          "x": 308,
+          "y": 295,
           "width": 69,
           "height": 93,
           "zIndex": 50,
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            52,
-            284,
-            101,
-            344
+            317,
+            311,
+            366,
+            371
           ],
           "clipped": false
         }
@@ -1143,10 +933,10 @@
       "result": "PASS"
     },
     {
-      "caseId": "CASE_031",
+      "caseId": "CASE_025",
       "name": "SINGLE_plant-fiddle_PLANT_SLOT_1",
       "viewportWidth": 390,
-      "screenshot": "room-case_031-single_plant-fiddle_plant_slot_1-390.png",
+      "screenshot": "room-case_025-single_plant-fiddle_plant_slot_1-390.png",
       "items": [
         {
           "itemId": "plant-fiddle",
@@ -1158,18 +948,18 @@
           "itemId": "plant-fiddle",
           "assetId": "plant-fiddle",
           "slotId": "PLANT_SLOT_1",
-          "x": 39,
-          "y": 259,
+          "x": 305,
+          "y": 286,
           "width": 76,
           "height": 102,
           "zIndex": 50,
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            61,
-            274,
-            93,
-            344
+            327,
+            301,
+            359,
+            371
           ],
           "clipped": false
         }
@@ -1178,10 +968,10 @@
       "result": "PASS"
     },
     {
-      "caseId": "CASE_032",
+      "caseId": "CASE_026",
       "name": "SINGLE_shelf-basic_SHELF_SLOT",
       "viewportWidth": 390,
-      "screenshot": "room-case_032-single_shelf-basic_shelf_slot-390.png",
+      "screenshot": "room-case_026-single_shelf-basic_shelf_slot-390.png",
       "items": [
         {
           "itemId": "shelf-basic",
@@ -1213,10 +1003,10 @@
       "result": "PASS"
     },
     {
-      "caseId": "CASE_033",
+      "caseId": "CASE_027",
       "name": "SINGLE_shelf-walnut_SHELF_SLOT",
       "viewportWidth": 390,
-      "screenshot": "room-case_033-single_shelf-walnut_shelf_slot-390.png",
+      "screenshot": "room-case_027-single_shelf-walnut_shelf_slot-390.png",
       "items": [
         {
           "itemId": "shelf-walnut",
@@ -1248,10 +1038,10 @@
       "result": "PASS"
     },
     {
-      "caseId": "CASE_034",
+      "caseId": "CASE_028",
       "name": "SINGLE_shelf-cream_SHELF_SLOT",
       "viewportWidth": 390,
-      "screenshot": "room-case_034-single_shelf-cream_shelf_slot-390.png",
+      "screenshot": "room-case_028-single_shelf-cream_shelf_slot-390.png",
       "items": [
         {
           "itemId": "shelf-cream",
@@ -1283,10 +1073,10 @@
       "result": "PASS"
     },
     {
-      "caseId": "CASE_035",
+      "caseId": "CASE_029",
       "name": "SINGLE_shelf-sage_SHELF_SLOT",
       "viewportWidth": 390,
-      "screenshot": "room-case_035-single_shelf-sage_shelf_slot-390.png",
+      "screenshot": "room-case_029-single_shelf-sage_shelf_slot-390.png",
       "items": [
         {
           "itemId": "shelf-sage",
@@ -1318,10 +1108,10 @@
       "result": "PASS"
     },
     {
-      "caseId": "CASE_036",
+      "caseId": "CASE_030",
       "name": "SINGLE_shelf-navy_SHELF_SLOT",
       "viewportWidth": 390,
-      "screenshot": "room-case_036-single_shelf-navy_shelf_slot-390.png",
+      "screenshot": "room-case_030-single_shelf-navy_shelf_slot-390.png",
       "items": [
         {
           "itemId": "shelf-navy",
@@ -1353,10 +1143,10 @@
       "result": "PASS"
     },
     {
-      "caseId": "CASE_037",
+      "caseId": "CASE_031",
       "name": "SINGLE_rug-round_RUG_SLOT",
       "viewportWidth": 390,
-      "screenshot": "room-case_037-single_rug-round_rug_slot-390.png",
+      "screenshot": "room-case_031-single_rug-round_rug_slot-390.png",
       "items": [
         {
           "itemId": "rug-round",
@@ -1388,10 +1178,10 @@
       "result": "PASS"
     },
     {
-      "caseId": "CASE_038",
+      "caseId": "CASE_032",
       "name": "SINGLE_rug-mint-braid_RUG_SLOT",
       "viewportWidth": 390,
-      "screenshot": "room-case_038-single_rug-mint-braid_rug_slot-390.png",
+      "screenshot": "room-case_032-single_rug-mint-braid_rug_slot-390.png",
       "items": [
         {
           "itemId": "rug-mint-braid",
@@ -1423,10 +1213,10 @@
       "result": "PASS"
     },
     {
-      "caseId": "CASE_039",
+      "caseId": "CASE_033",
       "name": "SINGLE_rug-rose-floral_RUG_SLOT",
       "viewportWidth": 390,
-      "screenshot": "room-case_039-single_rug-rose-floral_rug_slot-390.png",
+      "screenshot": "room-case_033-single_rug-rose-floral_rug_slot-390.png",
       "items": [
         {
           "itemId": "rug-rose-floral",
@@ -1458,10 +1248,10 @@
       "result": "PASS"
     },
     {
-      "caseId": "CASE_040",
+      "caseId": "CASE_034",
       "name": "SINGLE_rug-sky-cloud_RUG_SLOT",
       "viewportWidth": 390,
-      "screenshot": "room-case_040-single_rug-sky-cloud_rug_slot-390.png",
+      "screenshot": "room-case_034-single_rug-sky-cloud_rug_slot-390.png",
       "items": [
         {
           "itemId": "rug-sky-cloud",
@@ -1493,10 +1283,10 @@
       "result": "PASS"
     },
     {
-      "caseId": "CASE_041",
+      "caseId": "CASE_035",
       "name": "SINGLE_rug-sun_RUG_SLOT",
       "viewportWidth": 390,
-      "screenshot": "room-case_041-single_rug-sun_rug_slot-390.png",
+      "screenshot": "room-case_035-single_rug-sun_rug_slot-390.png",
       "items": [
         {
           "itemId": "rug-sun",
@@ -1528,185 +1318,10 @@
       "result": "PASS"
     },
     {
-      "caseId": "CASE_042",
-      "name": "SINGLE_curtain-linen_WALL_DECOR_SLOT",
-      "viewportWidth": 390,
-      "screenshot": "room-case_042-single_curtain-linen_wall_decor_slot-390.png",
-      "items": [
-        {
-          "itemId": "curtain-linen",
-          "slotId": "WALL_DECOR_SLOT"
-        }
-      ],
-      "measurements": [
-        {
-          "itemId": "curtain-linen",
-          "assetId": "curtain-linen",
-          "slotId": "WALL_DECOR_SLOT",
-          "x": 51,
-          "y": 81,
-          "width": 152,
-          "height": 183,
-          "zIndex": 70,
-          "renderOffsetX": 0,
-          "renderOffsetY": 0,
-          "visibleAlphaBounds": [
-            80,
-            104,
-            177,
-            240
-          ],
-          "clipped": false
-        }
-      ],
-      "issues": [],
-      "result": "PASS"
-    },
-    {
-      "caseId": "CASE_043",
-      "name": "SINGLE_curtain-sage_WALL_DECOR_SLOT",
-      "viewportWidth": 390,
-      "screenshot": "room-case_043-single_curtain-sage_wall_decor_slot-390.png",
-      "items": [
-        {
-          "itemId": "curtain-sage",
-          "slotId": "WALL_DECOR_SLOT"
-        }
-      ],
-      "measurements": [
-        {
-          "itemId": "curtain-sage",
-          "assetId": "curtain-sage",
-          "slotId": "WALL_DECOR_SLOT",
-          "x": 51,
-          "y": 81,
-          "width": 152,
-          "height": 183,
-          "zIndex": 70,
-          "renderOffsetX": 0,
-          "renderOffsetY": 0,
-          "visibleAlphaBounds": [
-            77,
-            99,
-            179,
-            242
-          ],
-          "clipped": false
-        }
-      ],
-      "issues": [],
-      "result": "PASS"
-    },
-    {
-      "caseId": "CASE_044",
-      "name": "SINGLE_curtain-rose_WALL_DECOR_SLOT",
-      "viewportWidth": 390,
-      "screenshot": "room-case_044-single_curtain-rose_wall_decor_slot-390.png",
-      "items": [
-        {
-          "itemId": "curtain-rose",
-          "slotId": "WALL_DECOR_SLOT"
-        }
-      ],
-      "measurements": [
-        {
-          "itemId": "curtain-rose",
-          "assetId": "curtain-rose",
-          "slotId": "WALL_DECOR_SLOT",
-          "x": 51,
-          "y": 81,
-          "width": 152,
-          "height": 183,
-          "zIndex": 70,
-          "renderOffsetX": 0,
-          "renderOffsetY": 0,
-          "visibleAlphaBounds": [
-            80,
-            99,
-            176,
-            244
-          ],
-          "clipped": false
-        }
-      ],
-      "issues": [],
-      "result": "PASS"
-    },
-    {
-      "caseId": "CASE_045",
-      "name": "SINGLE_curtain-sky_WALL_DECOR_SLOT",
-      "viewportWidth": 390,
-      "screenshot": "room-case_045-single_curtain-sky_wall_decor_slot-390.png",
-      "items": [
-        {
-          "itemId": "curtain-sky",
-          "slotId": "WALL_DECOR_SLOT"
-        }
-      ],
-      "measurements": [
-        {
-          "itemId": "curtain-sky",
-          "assetId": "curtain-sky",
-          "slotId": "WALL_DECOR_SLOT",
-          "x": 51,
-          "y": 81,
-          "width": 152,
-          "height": 183,
-          "zIndex": 70,
-          "renderOffsetX": 0,
-          "renderOffsetY": 0,
-          "visibleAlphaBounds": [
-            76,
-            100,
-            179,
-            244
-          ],
-          "clipped": false
-        }
-      ],
-      "issues": [],
-      "result": "PASS"
-    },
-    {
-      "caseId": "CASE_046",
-      "name": "SINGLE_curtain-lavender_WALL_DECOR_SLOT",
-      "viewportWidth": 390,
-      "screenshot": "room-case_046-single_curtain-lavender_wall_decor_slot-390.png",
-      "items": [
-        {
-          "itemId": "curtain-lavender",
-          "slotId": "WALL_DECOR_SLOT"
-        }
-      ],
-      "measurements": [
-        {
-          "itemId": "curtain-lavender",
-          "assetId": "curtain-lavender",
-          "slotId": "WALL_DECOR_SLOT",
-          "x": 51,
-          "y": 81,
-          "width": 152,
-          "height": 183,
-          "zIndex": 70,
-          "renderOffsetX": 0,
-          "renderOffsetY": 0,
-          "visibleAlphaBounds": [
-            81,
-            99,
-            176,
-            243
-          ],
-          "clipped": false
-        }
-      ],
-      "issues": [],
-      "result": "PASS"
-    },
-    {
-      "caseId": "CASE_047",
+      "caseId": "CASE_036",
       "name": "SINGLE_bookcase-small_APPLIANCE_SLOT",
       "viewportWidth": 390,
-      "screenshot": "room-case_047-single_bookcase-small_appliance_slot-390.png",
+      "screenshot": "room-case_036-single_bookcase-small_appliance_slot-390.png",
       "items": [
         {
           "itemId": "bookcase-small",
@@ -1738,10 +1353,10 @@
       "result": "PASS"
     },
     {
-      "caseId": "CASE_048",
+      "caseId": "CASE_037",
       "name": "SINGLE_bookcase-cream_APPLIANCE_SLOT",
       "viewportWidth": 390,
-      "screenshot": "room-case_048-single_bookcase-cream_appliance_slot-390.png",
+      "screenshot": "room-case_037-single_bookcase-cream_appliance_slot-390.png",
       "items": [
         {
           "itemId": "bookcase-cream",
@@ -1773,10 +1388,10 @@
       "result": "PASS"
     },
     {
-      "caseId": "CASE_049",
+      "caseId": "CASE_038",
       "name": "SINGLE_bookcase-sage_APPLIANCE_SLOT",
       "viewportWidth": 390,
-      "screenshot": "room-case_049-single_bookcase-sage_appliance_slot-390.png",
+      "screenshot": "room-case_038-single_bookcase-sage_appliance_slot-390.png",
       "items": [
         {
           "itemId": "bookcase-sage",
@@ -1808,10 +1423,10 @@
       "result": "PASS"
     },
     {
-      "caseId": "CASE_050",
+      "caseId": "CASE_039",
       "name": "SINGLE_bookcase-walnut_APPLIANCE_SLOT",
       "viewportWidth": 390,
-      "screenshot": "room-case_050-single_bookcase-walnut_appliance_slot-390.png",
+      "screenshot": "room-case_039-single_bookcase-walnut_appliance_slot-390.png",
       "items": [
         {
           "itemId": "bookcase-walnut",
@@ -1843,10 +1458,10 @@
       "result": "PASS"
     },
     {
-      "caseId": "CASE_051",
+      "caseId": "CASE_040",
       "name": "SINGLE_bookcase-sky_APPLIANCE_SLOT",
       "viewportWidth": 390,
-      "screenshot": "room-case_051-single_bookcase-sky_appliance_slot-390.png",
+      "screenshot": "room-case_040-single_bookcase-sky_appliance_slot-390.png",
       "items": [
         {
           "itemId": "bookcase-sky",
@@ -1878,10 +1493,10 @@
       "result": "PASS"
     },
     {
-      "caseId": "CASE_052",
+      "caseId": "CASE_041",
       "name": "SINGLE_wall-calendar_WALL_ART_SLOT",
       "viewportWidth": 390,
-      "screenshot": "room-case_052-single_wall-calendar_wall_art_slot-390.png",
+      "screenshot": "room-case_041-single_wall-calendar_wall_art_slot-390.png",
       "items": [
         {
           "itemId": "wall-calendar",
@@ -1913,10 +1528,10 @@
       "result": "PASS"
     },
     {
-      "caseId": "CASE_053",
+      "caseId": "CASE_042",
       "name": "SINGLE_wall-poster_WALL_ART_SLOT",
       "viewportWidth": 390,
-      "screenshot": "room-case_053-single_wall-poster_wall_art_slot-390.png",
+      "screenshot": "room-case_042-single_wall-poster_wall_art_slot-390.png",
       "items": [
         {
           "itemId": "wall-poster",
@@ -1948,10 +1563,10 @@
       "result": "PASS"
     },
     {
-      "caseId": "CASE_054",
+      "caseId": "CASE_043",
       "name": "SINGLE_drink-coffee_DESK_DRINK_SLOT",
       "viewportWidth": 390,
-      "screenshot": "room-case_054-single_drink-coffee_desk_drink_slot-390.png",
+      "screenshot": "room-case_043-single_drink-coffee_desk_drink_slot-390.png",
       "items": [
         {
           "itemId": "drink-coffee",
@@ -1983,10 +1598,10 @@
       "result": "PASS"
     },
     {
-      "caseId": "CASE_055",
+      "caseId": "CASE_044",
       "name": "SINGLE_drink-beer_DESK_DRINK_SLOT",
       "viewportWidth": 390,
-      "screenshot": "room-case_055-single_drink-beer_desk_drink_slot-390.png",
+      "screenshot": "room-case_044-single_drink-beer_desk_drink_slot-390.png",
       "items": [
         {
           "itemId": "drink-beer",
@@ -2018,10 +1633,10 @@
       "result": "PASS"
     },
     {
-      "caseId": "CASE_056",
+      "caseId": "CASE_045",
       "name": "SINGLE_drink-barley_DESK_DRINK_SLOT",
       "viewportWidth": 390,
-      "screenshot": "room-case_056-single_drink-barley_desk_drink_slot-390.png",
+      "screenshot": "room-case_045-single_drink-barley_desk_drink_slot-390.png",
       "items": [
         {
           "itemId": "drink-barley",
@@ -2053,10 +1668,10 @@
       "result": "PASS"
     },
     {
-      "caseId": "CASE_057",
+      "caseId": "CASE_046",
       "name": "SINGLE_pet-cat_PET_SLOT",
       "viewportWidth": 390,
-      "screenshot": "room-case_057-single_pet-cat_pet_slot-390.png",
+      "screenshot": "room-case_046-single_pet-cat_pet_slot-390.png",
       "items": [
         {
           "itemId": "pet-cat",
@@ -2088,10 +1703,10 @@
       "result": "PASS"
     },
     {
-      "caseId": "CASE_058",
+      "caseId": "CASE_047",
       "name": "SINGLE_pet-dog_PET_SLOT_2",
       "viewportWidth": 390,
-      "screenshot": "room-case_058-single_pet-dog_pet_slot_2-390.png",
+      "screenshot": "room-case_047-single_pet-dog_pet_slot_2-390.png",
       "items": [
         {
           "itemId": "pet-dog",
@@ -2123,10 +1738,10 @@
       "result": "PASS"
     },
     {
-      "caseId": "CASE_059",
+      "caseId": "CASE_048",
       "name": "SINGLE_pet-cat-gray_PET_SLOT",
       "viewportWidth": 390,
-      "screenshot": "room-case_059-single_pet-cat-gray_pet_slot-390.png",
+      "screenshot": "room-case_048-single_pet-cat-gray_pet_slot-390.png",
       "items": [
         {
           "itemId": "pet-cat-gray",
@@ -2158,10 +1773,10 @@
       "result": "PASS"
     },
     {
-      "caseId": "CASE_060",
+      "caseId": "CASE_049",
       "name": "SINGLE_pet-dog-brown_PET_SLOT_2",
       "viewportWidth": 390,
-      "screenshot": "room-case_060-single_pet-dog-brown_pet_slot_2-390.png",
+      "screenshot": "room-case_049-single_pet-dog-brown_pet_slot_2-390.png",
       "items": [
         {
           "itemId": "pet-dog-brown",
@@ -2217,7 +1832,7 @@
           "assetId": "desk-basic",
           "slotId": "DESK_SLOT",
           "x": 48,
-          "y": 209,
+          "y": 224,
           "width": 178,
           "height": 152,
           "zIndex": 30,
@@ -2225,9 +1840,9 @@
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
             77,
-            227,
+            242,
             198,
-            342
+            357
           ],
           "clipped": false
         },
@@ -2301,10 +1916,6 @@
         {
           "itemId": "shelf-basic",
           "slotId": "SHELF_SLOT"
-        },
-        {
-          "itemId": "plant-pothos",
-          "slotId": "FLOOR_LAMP_SLOT"
         }
       ],
       "measurements": [
@@ -2324,25 +1935,6 @@
             190,
             320,
             238
-          ],
-          "clipped": false
-        },
-        {
-          "itemId": "plant-pothos",
-          "assetId": "plant-shelf",
-          "slotId": "FLOOR_LAMP_SLOT",
-          "x": 289,
-          "y": 188,
-          "width": 37,
-          "height": 44,
-          "zIndex": 73,
-          "renderOffsetX": 0,
-          "renderOffsetY": 0,
-          "visibleAlphaBounds": [
-            299,
-            199,
-            316,
-            219
           ],
           "clipped": false
         }
@@ -2375,7 +1967,7 @@
           "assetId": "bed-basic",
           "slotId": "BED_SLOT",
           "x": 201,
-          "y": 211,
+          "y": 226,
           "width": 152,
           "height": 152,
           "zIndex": 20,
@@ -2383,9 +1975,9 @@
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
             220,
-            229,
+            244,
             337,
-            344
+            359
           ],
           "clipped": false
         },
@@ -2478,18 +2070,18 @@
           "itemId": "plant-fiddle",
           "assetId": "plant-fiddle",
           "slotId": "PLANT_SLOT_1",
-          "x": 39,
-          "y": 259,
+          "x": 305,
+          "y": 286,
           "width": 76,
           "height": 102,
           "zIndex": 50,
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            61,
-            274,
-            93,
-            344
+            327,
+            301,
+            359,
+            371
           ],
           "clipped": false
         },
@@ -2536,64 +2128,6 @@
       "result": "PASS"
     },
     {
-      "caseId": "CASE_105",
-      "name": "WINDOW_SET",
-      "viewportWidth": 390,
-      "screenshot": "room-case_105-window_set-390.png",
-      "items": [
-        {
-          "itemId": "curtain-linen",
-          "slotId": "WALL_DECOR_SLOT"
-        },
-        {
-          "itemId": "plant-pothos",
-          "slotId": "PLANT_SLOT_2"
-        }
-      ],
-      "measurements": [
-        {
-          "itemId": "plant-pothos",
-          "assetId": "plant-window",
-          "slotId": "PLANT_SLOT_2",
-          "x": 139,
-          "y": 171,
-          "width": 53,
-          "height": 63,
-          "zIndex": 51,
-          "renderOffsetX": 0,
-          "renderOffsetY": 0,
-          "visibleAlphaBounds": [
-            148,
-            186,
-            183,
-            220
-          ],
-          "clipped": false
-        },
-        {
-          "itemId": "curtain-linen",
-          "assetId": "curtain-linen",
-          "slotId": "WALL_DECOR_SLOT",
-          "x": 51,
-          "y": 81,
-          "width": 152,
-          "height": 183,
-          "zIndex": 70,
-          "renderOffsetX": 0,
-          "renderOffsetY": 0,
-          "visibleAlphaBounds": [
-            80,
-            104,
-            177,
-            240
-          ],
-          "clipped": false
-        }
-      ],
-      "issues": [],
-      "result": "PASS"
-    },
-    {
       "caseId": "CASE_201",
       "name": "FULL_ROOM_STRESS",
       "viewportWidth": 390,
@@ -2616,10 +2150,6 @@
           "slotId": "DESK_DRINK_SLOT"
         },
         {
-          "itemId": "plant-succulent",
-          "slotId": "SIDE_TABLE_SLOT"
-        },
-        {
           "itemId": "chair-rattan-blue",
           "slotId": "CHAIR_SLOT"
         },
@@ -2628,16 +2158,8 @@
           "slotId": "WALL_ART_SLOT"
         },
         {
-          "itemId": "plant-pothos",
-          "slotId": "FLOOR_LAMP_SLOT"
-        },
-        {
           "itemId": "plant-fiddle",
           "slotId": "PLANT_SLOT_1"
-        },
-        {
-          "itemId": "plant-succulent",
-          "slotId": "PLANT_SLOT_2"
         },
         {
           "itemId": "pet-cat-gray",
@@ -2646,10 +2168,6 @@
         {
           "itemId": "pet-dog-brown",
           "slotId": "PET_SLOT_2"
-        },
-        {
-          "itemId": "curtain-linen",
-          "slotId": "WALL_DECOR_SLOT"
         },
         {
           "itemId": "shelf-navy",
@@ -2685,7 +2203,7 @@
           "assetId": "bed-princess",
           "slotId": "BED_SLOT",
           "x": 194,
-          "y": 198,
+          "y": 213,
           "width": 165,
           "height": 165,
           "zIndex": 20,
@@ -2693,9 +2211,9 @@
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
             215,
-            209,
+            224,
             335,
-            353
+            368
           ],
           "clipped": false
         },
@@ -2704,7 +2222,7 @@
           "assetId": "desk-walnut-drawers",
           "slotId": "DESK_SLOT",
           "x": 48,
-          "y": 209,
+          "y": 224,
           "width": 178,
           "height": 152,
           "zIndex": 30,
@@ -2712,28 +2230,9 @@
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
             80,
-            230,
+            245,
             195,
-            339
-          ],
-          "clipped": false
-        },
-        {
-          "itemId": "plant-succulent",
-          "assetId": "plant-succulent",
-          "slotId": "SIDE_TABLE_SLOT",
-          "x": 57,
-          "y": 194,
-          "width": 69,
-          "height": 79,
-          "zIndex": 35,
-          "renderOffsetX": 0,
-          "renderOffsetY": 0,
-          "visibleAlphaBounds": [
-            78,
-            216,
-            105,
-            248
+            354
           ],
           "clipped": false
         },
@@ -2817,37 +2316,18 @@
           "itemId": "plant-fiddle",
           "assetId": "plant-fiddle",
           "slotId": "PLANT_SLOT_1",
-          "x": 39,
-          "y": 259,
+          "x": 305,
+          "y": 286,
           "width": 76,
           "height": 102,
           "zIndex": 50,
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            61,
-            274,
-            93,
-            344
-          ],
-          "clipped": false
-        },
-        {
-          "itemId": "plant-succulent",
-          "assetId": "plant-succulent",
-          "slotId": "PLANT_SLOT_2",
-          "x": 131,
-          "y": 151,
-          "width": 69,
-          "height": 83,
-          "zIndex": 51,
-          "renderOffsetX": 0,
-          "renderOffsetY": 0,
-          "visibleAlphaBounds": [
-            152,
-            175,
-            179,
-            207
+            327,
+            301,
+            359,
+            371
           ],
           "clipped": false
         },
@@ -2909,25 +2389,6 @@
           "clipped": false
         },
         {
-          "itemId": "curtain-linen",
-          "assetId": "curtain-linen",
-          "slotId": "WALL_DECOR_SLOT",
-          "x": 51,
-          "y": 81,
-          "width": 152,
-          "height": 183,
-          "zIndex": 70,
-          "renderOffsetX": 0,
-          "renderOffsetY": 0,
-          "visibleAlphaBounds": [
-            80,
-            104,
-            177,
-            240
-          ],
-          "clipped": false
-        },
-        {
           "itemId": "shelf-navy",
           "assetId": "shelf-navy",
           "slotId": "SHELF_SLOT",
@@ -2943,25 +2404,6 @@
             191,
             323,
             241
-          ],
-          "clipped": false
-        },
-        {
-          "itemId": "plant-pothos",
-          "assetId": "plant-shelf",
-          "slotId": "FLOOR_LAMP_SLOT",
-          "x": 289,
-          "y": 188,
-          "width": 37,
-          "height": 44,
-          "zIndex": 73,
-          "renderOffsetX": 0,
-          "renderOffsetY": 0,
-          "visibleAlphaBounds": [
-            299,
-            199,
-            316,
-            219
           ],
           "clipped": false
         }
@@ -2992,10 +2434,6 @@
           "slotId": "DESK_DRINK_SLOT"
         },
         {
-          "itemId": "plant-succulent",
-          "slotId": "SIDE_TABLE_SLOT"
-        },
-        {
           "itemId": "chair-rattan-blue",
           "slotId": "CHAIR_SLOT"
         },
@@ -3004,16 +2442,8 @@
           "slotId": "WALL_ART_SLOT"
         },
         {
-          "itemId": "plant-pothos",
-          "slotId": "FLOOR_LAMP_SLOT"
-        },
-        {
           "itemId": "plant-fiddle",
           "slotId": "PLANT_SLOT_1"
-        },
-        {
-          "itemId": "plant-succulent",
-          "slotId": "PLANT_SLOT_2"
         },
         {
           "itemId": "pet-cat-gray",
@@ -3022,10 +2452,6 @@
         {
           "itemId": "pet-dog-brown",
           "slotId": "PET_SLOT_2"
-        },
-        {
-          "itemId": "curtain-linen",
-          "slotId": "WALL_DECOR_SLOT"
         },
         {
           "itemId": "shelf-navy",
@@ -3061,7 +2487,7 @@
           "assetId": "bed-princess",
           "slotId": "BED_SLOT",
           "x": 179,
-          "y": 183,
+          "y": 197,
           "width": 152,
           "height": 152,
           "zIndex": 20,
@@ -3069,9 +2495,9 @@
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
             198,
-            193,
+            207,
             309,
-            326
+            340
           ],
           "clipped": false
         },
@@ -3080,7 +2506,7 @@
           "assetId": "desk-walnut-drawers",
           "slotId": "DESK_SLOT",
           "x": 45,
-          "y": 192,
+          "y": 206,
           "width": 164,
           "height": 141,
           "zIndex": 30,
@@ -3088,28 +2514,9 @@
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
             74,
-            211,
+            225,
             180,
-            313
-          ],
-          "clipped": false
-        },
-        {
-          "itemId": "plant-succulent",
-          "assetId": "plant-succulent",
-          "slotId": "SIDE_TABLE_SLOT",
-          "x": 52,
-          "y": 179,
-          "width": 64,
-          "height": 73,
-          "zIndex": 35,
-          "renderOffsetX": 0,
-          "renderOffsetY": 0,
-          "visibleAlphaBounds": [
-            71,
-            199,
-            97,
-            229
+            327
           ],
           "clipped": false
         },
@@ -3193,37 +2600,18 @@
           "itemId": "plant-fiddle",
           "assetId": "plant-fiddle",
           "slotId": "PLANT_SLOT_1",
-          "x": 36,
-          "y": 239,
+          "x": 281,
+          "y": 265,
           "width": 70,
           "height": 94,
           "zIndex": 50,
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            56,
-            252,
-            86,
-            318
-          ],
-          "clipped": false
-        },
-        {
-          "itemId": "plant-succulent",
-          "assetId": "plant-succulent",
-          "slotId": "PLANT_SLOT_2",
-          "x": 120,
-          "y": 140,
-          "width": 64,
-          "height": 76,
-          "zIndex": 51,
-          "renderOffsetX": 0,
-          "renderOffsetY": 0,
-          "visibleAlphaBounds": [
-            139,
-            162,
-            165,
-            192
+            301,
+            278,
+            331,
+            344
           ],
           "clipped": false
         },
@@ -3285,25 +2673,6 @@
           "clipped": false
         },
         {
-          "itemId": "curtain-linen",
-          "assetId": "curtain-linen",
-          "slotId": "WALL_DECOR_SLOT",
-          "x": 47,
-          "y": 75,
-          "width": 141,
-          "height": 169,
-          "zIndex": 70,
-          "renderOffsetX": 0,
-          "renderOffsetY": 0,
-          "visibleAlphaBounds": [
-            74,
-            96,
-            164,
-            223
-          ],
-          "clipped": false
-        },
-        {
           "itemId": "shelf-navy",
           "assetId": "shelf-navy",
           "slotId": "SHELF_SLOT",
@@ -3319,25 +2688,6 @@
             176,
             298,
             222
-          ],
-          "clipped": false
-        },
-        {
-          "itemId": "plant-pothos",
-          "assetId": "plant-shelf",
-          "slotId": "FLOOR_LAMP_SLOT",
-          "x": 267,
-          "y": 174,
-          "width": 34,
-          "height": 40,
-          "zIndex": 73,
-          "renderOffsetX": 0,
-          "renderOffsetY": 0,
-          "visibleAlphaBounds": [
-            276,
-            184,
-            292,
-            203
           ],
           "clipped": false
         }
@@ -3368,10 +2718,6 @@
           "slotId": "DESK_DRINK_SLOT"
         },
         {
-          "itemId": "plant-succulent",
-          "slotId": "SIDE_TABLE_SLOT"
-        },
-        {
           "itemId": "chair-rattan-blue",
           "slotId": "CHAIR_SLOT"
         },
@@ -3380,16 +2726,8 @@
           "slotId": "WALL_ART_SLOT"
         },
         {
-          "itemId": "plant-pothos",
-          "slotId": "FLOOR_LAMP_SLOT"
-        },
-        {
           "itemId": "plant-fiddle",
           "slotId": "PLANT_SLOT_1"
-        },
-        {
-          "itemId": "plant-succulent",
-          "slotId": "PLANT_SLOT_2"
         },
         {
           "itemId": "pet-cat-gray",
@@ -3398,10 +2736,6 @@
         {
           "itemId": "pet-dog-brown",
           "slotId": "PET_SLOT_2"
-        },
-        {
-          "itemId": "curtain-linen",
-          "slotId": "WALL_DECOR_SLOT"
         },
         {
           "itemId": "shelf-navy",
@@ -3437,7 +2771,7 @@
           "assetId": "bed-princess",
           "slotId": "BED_SLOT",
           "x": 194,
-          "y": 198,
+          "y": 213,
           "width": 165,
           "height": 165,
           "zIndex": 20,
@@ -3445,9 +2779,9 @@
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
             215,
-            209,
+            224,
             335,
-            353
+            368
           ],
           "clipped": false
         },
@@ -3456,7 +2790,7 @@
           "assetId": "desk-walnut-drawers",
           "slotId": "DESK_SLOT",
           "x": 48,
-          "y": 209,
+          "y": 224,
           "width": 178,
           "height": 152,
           "zIndex": 30,
@@ -3464,28 +2798,9 @@
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
             80,
-            230,
+            245,
             195,
-            339
-          ],
-          "clipped": false
-        },
-        {
-          "itemId": "plant-succulent",
-          "assetId": "plant-succulent",
-          "slotId": "SIDE_TABLE_SLOT",
-          "x": 57,
-          "y": 194,
-          "width": 69,
-          "height": 79,
-          "zIndex": 35,
-          "renderOffsetX": 0,
-          "renderOffsetY": 0,
-          "visibleAlphaBounds": [
-            78,
-            216,
-            105,
-            248
+            354
           ],
           "clipped": false
         },
@@ -3569,37 +2884,18 @@
           "itemId": "plant-fiddle",
           "assetId": "plant-fiddle",
           "slotId": "PLANT_SLOT_1",
-          "x": 39,
-          "y": 259,
+          "x": 305,
+          "y": 286,
           "width": 76,
           "height": 102,
           "zIndex": 50,
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            61,
-            274,
-            93,
-            344
-          ],
-          "clipped": false
-        },
-        {
-          "itemId": "plant-succulent",
-          "assetId": "plant-succulent",
-          "slotId": "PLANT_SLOT_2",
-          "x": 131,
-          "y": 151,
-          "width": 69,
-          "height": 83,
-          "zIndex": 51,
-          "renderOffsetX": 0,
-          "renderOffsetY": 0,
-          "visibleAlphaBounds": [
-            152,
-            175,
-            179,
-            207
+            327,
+            301,
+            359,
+            371
           ],
           "clipped": false
         },
@@ -3661,25 +2957,6 @@
           "clipped": false
         },
         {
-          "itemId": "curtain-linen",
-          "assetId": "curtain-linen",
-          "slotId": "WALL_DECOR_SLOT",
-          "x": 51,
-          "y": 81,
-          "width": 152,
-          "height": 183,
-          "zIndex": 70,
-          "renderOffsetX": 0,
-          "renderOffsetY": 0,
-          "visibleAlphaBounds": [
-            80,
-            104,
-            177,
-            240
-          ],
-          "clipped": false
-        },
-        {
           "itemId": "shelf-navy",
           "assetId": "shelf-navy",
           "slotId": "SHELF_SLOT",
@@ -3695,25 +2972,6 @@
             191,
             323,
             241
-          ],
-          "clipped": false
-        },
-        {
-          "itemId": "plant-pothos",
-          "assetId": "plant-shelf",
-          "slotId": "FLOOR_LAMP_SLOT",
-          "x": 289,
-          "y": 188,
-          "width": 37,
-          "height": 44,
-          "zIndex": 73,
-          "renderOffsetX": 0,
-          "renderOffsetY": 0,
-          "visibleAlphaBounds": [
-            299,
-            199,
-            316,
-            219
           ],
           "clipped": false
         }
@@ -3744,10 +3002,6 @@
           "slotId": "DESK_DRINK_SLOT"
         },
         {
-          "itemId": "plant-succulent",
-          "slotId": "SIDE_TABLE_SLOT"
-        },
-        {
           "itemId": "chair-rattan-blue",
           "slotId": "CHAIR_SLOT"
         },
@@ -3756,16 +3010,8 @@
           "slotId": "WALL_ART_SLOT"
         },
         {
-          "itemId": "plant-pothos",
-          "slotId": "FLOOR_LAMP_SLOT"
-        },
-        {
           "itemId": "plant-fiddle",
           "slotId": "PLANT_SLOT_1"
-        },
-        {
-          "itemId": "plant-succulent",
-          "slotId": "PLANT_SLOT_2"
         },
         {
           "itemId": "pet-cat-gray",
@@ -3774,10 +3020,6 @@
         {
           "itemId": "pet-dog-brown",
           "slotId": "PET_SLOT_2"
-        },
-        {
-          "itemId": "curtain-linen",
-          "slotId": "WALL_DECOR_SLOT"
         },
         {
           "itemId": "shelf-navy",
@@ -3813,7 +3055,7 @@
           "assetId": "bed-princess",
           "slotId": "BED_SLOT",
           "x": 215,
-          "y": 219,
+          "y": 236,
           "width": 181,
           "height": 181,
           "zIndex": 20,
@@ -3821,9 +3063,9 @@
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
             238,
-            231,
+            248,
             369,
-            389
+            406
           ],
           "clipped": false
         },
@@ -3832,7 +3074,7 @@
           "assetId": "desk-walnut-drawers",
           "slotId": "DESK_SLOT",
           "x": 53,
-          "y": 230,
+          "y": 246,
           "width": 196,
           "height": 168,
           "zIndex": 30,
@@ -3840,28 +3082,9 @@
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
             89,
-            253,
+            269,
             215,
-            374
-          ],
-          "clipped": false
-        },
-        {
-          "itemId": "plant-succulent",
-          "assetId": "plant-succulent",
-          "slotId": "SIDE_TABLE_SLOT",
-          "x": 63,
-          "y": 214,
-          "width": 76,
-          "height": 87,
-          "zIndex": 35,
-          "renderOffsetX": 0,
-          "renderOffsetY": 0,
-          "visibleAlphaBounds": [
-            86,
-            238,
-            116,
-            273
+            390
           ],
           "clipped": false
         },
@@ -3945,37 +3168,18 @@
           "itemId": "plant-fiddle",
           "assetId": "plant-fiddle",
           "slotId": "PLANT_SLOT_1",
-          "x": 43,
-          "y": 285,
+          "x": 336,
+          "y": 315,
           "width": 84,
           "height": 113,
           "zIndex": 50,
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            68,
-            301,
-            102,
-            379
-          ],
-          "clipped": false
-        },
-        {
-          "itemId": "plant-succulent",
-          "assetId": "plant-succulent",
-          "slotId": "PLANT_SLOT_2",
-          "x": 144,
-          "y": 167,
-          "width": 76,
-          "height": 91,
-          "zIndex": 51,
-          "renderOffsetX": 0,
-          "renderOffsetY": 0,
-          "visibleAlphaBounds": [
-            167,
-            193,
-            197,
-            228
+            361,
+            331,
+            395,
+            409
           ],
           "clipped": false
         },
@@ -4037,25 +3241,6 @@
           "clipped": false
         },
         {
-          "itemId": "curtain-linen",
-          "assetId": "curtain-linen",
-          "slotId": "WALL_DECOR_SLOT",
-          "x": 56,
-          "y": 89,
-          "width": 168,
-          "height": 202,
-          "zIndex": 70,
-          "renderOffsetX": 0,
-          "renderOffsetY": 0,
-          "visibleAlphaBounds": [
-            88,
-            115,
-            195,
-            265
-          ],
-          "clipped": false
-        },
-        {
           "itemId": "shelf-navy",
           "assetId": "shelf-navy",
           "slotId": "SHELF_SLOT",
@@ -4071,25 +3256,6 @@
             210,
             356,
             265
-          ],
-          "clipped": false
-        },
-        {
-          "itemId": "plant-pothos",
-          "assetId": "plant-shelf",
-          "slotId": "FLOOR_LAMP_SLOT",
-          "x": 319,
-          "y": 208,
-          "width": 40,
-          "height": 48,
-          "zIndex": 73,
-          "renderOffsetX": 0,
-          "renderOffsetY": 0,
-          "visibleAlphaBounds": [
-            330,
-            221,
-            348,
-            242
           ],
           "clipped": false
         }
