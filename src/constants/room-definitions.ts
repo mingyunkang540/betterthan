@@ -167,7 +167,7 @@ export const ROOM_ITEMS: RoomItemDefinition[] = [
     category: 'BED',
     slotId: 'BED_SLOT',
     assetId: 'bed-mint',
-    price: 420,
+    price: 42,
   },
   {
     id: 'bed-rose',
@@ -175,7 +175,7 @@ export const ROOM_ITEMS: RoomItemDefinition[] = [
     category: 'BED',
     slotId: 'BED_SLOT',
     assetId: 'bed-rose',
-    price: 480,
+    price: 48,
   },
   {
     id: 'bed-sky',
@@ -183,7 +183,7 @@ export const ROOM_ITEMS: RoomItemDefinition[] = [
     category: 'BED',
     slotId: 'BED_SLOT',
     assetId: 'bed-sky',
-    price: 480,
+    price: 48,
   },
   {
     id: 'bed-princess',
@@ -191,7 +191,7 @@ export const ROOM_ITEMS: RoomItemDefinition[] = [
     category: 'BED',
     slotId: 'BED_SLOT',
     assetId: 'bed-princess',
-    price: 900,
+    price: 90,
     scale: 1.08,
   },
   {
@@ -200,7 +200,7 @@ export const ROOM_ITEMS: RoomItemDefinition[] = [
     category: 'BED',
     slotId: 'BED_SLOT',
     assetId: 'bed-canopy-lavender',
-    price: 980,
+    price: 98,
   },
   {
     id: 'bed-sleigh-navy',
@@ -208,7 +208,7 @@ export const ROOM_ITEMS: RoomItemDefinition[] = [
     category: 'BED',
     slotId: 'BED_SLOT',
     assetId: 'bed-sleigh-navy',
-    price: 760,
+    price: 76,
   },
   {
     id: 'bed-iron-sage',
@@ -216,7 +216,7 @@ export const ROOM_ITEMS: RoomItemDefinition[] = [
     category: 'BED',
     slotId: 'BED_SLOT',
     assetId: 'bed-iron-sage',
-    price: 680,
+    price: 68,
   },
   {
     id: 'bed-upholstered-wine',
@@ -224,7 +224,7 @@ export const ROOM_ITEMS: RoomItemDefinition[] = [
     category: 'BED',
     slotId: 'BED_SLOT',
     assetId: 'bed-upholstered-wine',
-    price: 820,
+    price: 82,
   },
   {
     id: 'desk-basic',
@@ -240,7 +240,7 @@ export const ROOM_ITEMS: RoomItemDefinition[] = [
     category: 'DESK',
     slotId: 'DESK_SLOT',
     assetId: 'desk-cream',
-    price: 360,
+    price: 36,
   },
   {
     id: 'desk-walnut-drawers',
@@ -248,7 +248,7 @@ export const ROOM_ITEMS: RoomItemDefinition[] = [
     category: 'DESK',
     slotId: 'DESK_SLOT',
     assetId: 'desk-walnut-drawers',
-    price: 520,
+    price: 52,
   },
   {
     id: 'desk-sage',
@@ -256,7 +256,7 @@ export const ROOM_ITEMS: RoomItemDefinition[] = [
     category: 'DESK',
     slotId: 'DESK_SLOT',
     assetId: 'desk-sage',
-    price: 460,
+    price: 46,
   },
   {
     id: 'desk-rattan',
@@ -264,7 +264,7 @@ export const ROOM_ITEMS: RoomItemDefinition[] = [
     category: 'DESK',
     slotId: 'DESK_SLOT',
     assetId: 'desk-rattan',
-    price: 580,
+    price: 58,
   },
   {
     id: 'chair-cushion',
@@ -272,7 +272,7 @@ export const ROOM_ITEMS: RoomItemDefinition[] = [
     category: 'CHAIR',
     slotId: 'CHAIR_SLOT',
     assetId: 'chair-cushion',
-    price: 0,
+    price: 22,
   },
   {
     id: 'chair-mint',
@@ -280,7 +280,7 @@ export const ROOM_ITEMS: RoomItemDefinition[] = [
     category: 'CHAIR',
     slotId: 'CHAIR_SLOT',
     assetId: 'chair-mint',
-    price: 240,
+    price: 24,
   },
   {
     id: 'chair-walnut',
@@ -288,7 +288,7 @@ export const ROOM_ITEMS: RoomItemDefinition[] = [
     category: 'CHAIR',
     slotId: 'CHAIR_SLOT',
     assetId: 'chair-walnut',
-    price: 320,
+    price: 32,
   },
   {
     id: 'chair-lavender',
@@ -296,7 +296,7 @@ export const ROOM_ITEMS: RoomItemDefinition[] = [
     category: 'CHAIR',
     slotId: 'CHAIR_SLOT',
     assetId: 'chair-lavender',
-    price: 340,
+    price: 34,
   },
   {
     id: 'chair-rattan-blue',
@@ -304,7 +304,7 @@ export const ROOM_ITEMS: RoomItemDefinition[] = [
     category: 'CHAIR',
     slotId: 'CHAIR_SLOT',
     assetId: 'chair-rattan-blue',
-    price: 390,
+    price: 39,
   },
   {
     id: 'plant-pothos',
@@ -312,7 +312,7 @@ export const ROOM_ITEMS: RoomItemDefinition[] = [
     category: 'PLANT',
     slotId: 'PLANT_SLOT_1',
     assetId: 'plant-pothos',
-    price: 0,
+    price: 15,
     allowedSlotIds: ['PLANT_SLOT_1'],
   },
   {
@@ -321,7 +321,7 @@ export const ROOM_ITEMS: RoomItemDefinition[] = [
     category: 'PLANT',
     slotId: 'PLANT_SLOT_1',
     assetId: 'plant-olive',
-    price: 280,
+    price: 28,
     allowedSlotIds: ['PLANT_SLOT_1'],
   },
   {
@@ -330,7 +330,7 @@ export const ROOM_ITEMS: RoomItemDefinition[] = [
     category: 'PLANT',
     slotId: 'PLANT_SLOT_1',
     assetId: 'plant-succulent',
-    price: 180,
+    price: 18,
     scale: 1.3,
     allowedSlotIds: ['PLANT_SLOT_1'],
   },
@@ -340,7 +340,7 @@ export const ROOM_ITEMS: RoomItemDefinition[] = [
     category: 'PLANT',
     slotId: 'PLANT_SLOT_1',
     assetId: 'plant-fern',
-    price: 340,
+    price: 34,
     scale: 1.05,
     allowedSlotIds: ['PLANT_SLOT_1'],
   },
@@ -350,7 +350,7 @@ export const ROOM_ITEMS: RoomItemDefinition[] = [
     category: 'PLANT',
     slotId: 'PLANT_SLOT_1',
     assetId: 'plant-fiddle',
-    price: 420,
+    price: 42,
     scale: 1.15,
     allowedSlotIds: ['PLANT_SLOT_1'],
   },
@@ -368,7 +368,7 @@ export const ROOM_ITEMS: RoomItemDefinition[] = [
     category: 'SHELF',
     slotId: 'SHELF_SLOT',
     assetId: 'shelf-walnut',
-    price: 280,
+    price: 28,
   },
   {
     id: 'shelf-cream',
@@ -376,7 +376,7 @@ export const ROOM_ITEMS: RoomItemDefinition[] = [
     category: 'SHELF',
     slotId: 'SHELF_SLOT',
     assetId: 'shelf-cream',
-    price: 260,
+    price: 26,
   },
   {
     id: 'shelf-sage',
@@ -384,7 +384,7 @@ export const ROOM_ITEMS: RoomItemDefinition[] = [
     category: 'SHELF',
     slotId: 'SHELF_SLOT',
     assetId: 'shelf-sage',
-    price: 300,
+    price: 30,
   },
   {
     id: 'shelf-navy',
@@ -392,7 +392,7 @@ export const ROOM_ITEMS: RoomItemDefinition[] = [
     category: 'SHELF',
     slotId: 'SHELF_SLOT',
     assetId: 'shelf-navy',
-    price: 340,
+    price: 34,
   },
   {
     id: 'rug-round',
@@ -400,7 +400,7 @@ export const ROOM_ITEMS: RoomItemDefinition[] = [
     category: 'RUG',
     slotId: 'RUG_SLOT',
     assetId: 'rug-round',
-    price: 180,
+    price: 18,
     symbol: '◯',
   },
   {
@@ -409,7 +409,7 @@ export const ROOM_ITEMS: RoomItemDefinition[] = [
     category: 'RUG',
     slotId: 'RUG_SLOT',
     assetId: 'rug-mint-braid',
-    price: 240,
+    price: 24,
   },
   {
     id: 'rug-rose-floral',
@@ -417,7 +417,7 @@ export const ROOM_ITEMS: RoomItemDefinition[] = [
     category: 'RUG',
     slotId: 'RUG_SLOT',
     assetId: 'rug-rose-floral',
-    price: 280,
+    price: 28,
   },
   {
     id: 'rug-sky-cloud',
@@ -425,7 +425,7 @@ export const ROOM_ITEMS: RoomItemDefinition[] = [
     category: 'RUG',
     slotId: 'RUG_SLOT',
     assetId: 'rug-sky-cloud',
-    price: 320,
+    price: 32,
   },
   {
     id: 'rug-sun',
@@ -433,7 +433,7 @@ export const ROOM_ITEMS: RoomItemDefinition[] = [
     category: 'RUG',
     slotId: 'RUG_SLOT',
     assetId: 'rug-sun',
-    price: 340,
+    price: 34,
   },
   {
     id: 'bookcase-small',
@@ -441,7 +441,7 @@ export const ROOM_ITEMS: RoomItemDefinition[] = [
     category: 'BOOKCASE',
     slotId: 'APPLIANCE_SLOT',
     assetId: 'bookcase-small',
-    price: 300,
+    price: 30,
     symbol: '📚',
   },
   {
@@ -450,7 +450,7 @@ export const ROOM_ITEMS: RoomItemDefinition[] = [
     category: 'BOOKCASE',
     slotId: 'APPLIANCE_SLOT',
     assetId: 'bookcase-cream',
-    price: 360,
+    price: 36,
   },
   {
     id: 'bookcase-sage',
@@ -458,7 +458,7 @@ export const ROOM_ITEMS: RoomItemDefinition[] = [
     category: 'BOOKCASE',
     slotId: 'APPLIANCE_SLOT',
     assetId: 'bookcase-sage',
-    price: 380,
+    price: 38,
   },
   {
     id: 'bookcase-walnut',
@@ -466,7 +466,7 @@ export const ROOM_ITEMS: RoomItemDefinition[] = [
     category: 'BOOKCASE',
     slotId: 'APPLIANCE_SLOT',
     assetId: 'bookcase-walnut',
-    price: 420,
+    price: 42,
   },
   {
     id: 'bookcase-sky',
@@ -474,7 +474,7 @@ export const ROOM_ITEMS: RoomItemDefinition[] = [
     category: 'BOOKCASE',
     slotId: 'APPLIANCE_SLOT',
     assetId: 'bookcase-sky',
-    price: 400,
+    price: 40,
   },
   {
     id: 'wall-calendar',
@@ -482,7 +482,7 @@ export const ROOM_ITEMS: RoomItemDefinition[] = [
     category: 'WALL_ART',
     slotId: 'WALL_ART_SLOT',
     assetId: 'wall-calendar',
-    price: 160,
+    price: 16,
   },
   {
     id: 'wall-poster',
@@ -490,7 +490,7 @@ export const ROOM_ITEMS: RoomItemDefinition[] = [
     category: 'WALL_ART',
     slotId: 'WALL_ART_SLOT',
     assetId: 'wall-poster',
-    price: 200,
+    price: 20,
   },
   {
     id: 'drink-coffee',
@@ -498,7 +498,7 @@ export const ROOM_ITEMS: RoomItemDefinition[] = [
     category: 'DRINK',
     slotId: 'DESK_DRINK_SLOT',
     assetId: 'drink-coffee',
-    price: 100,
+    price: 10,
   },
   {
     id: 'drink-beer',
@@ -506,7 +506,7 @@ export const ROOM_ITEMS: RoomItemDefinition[] = [
     category: 'DRINK',
     slotId: 'DESK_DRINK_SLOT',
     assetId: 'drink-beer',
-    price: 140,
+    price: 14,
     scale: 0.82,
   },
   {
@@ -515,7 +515,7 @@ export const ROOM_ITEMS: RoomItemDefinition[] = [
     category: 'DRINK',
     slotId: 'DESK_DRINK_SLOT',
     assetId: 'drink-barley',
-    price: 120,
+    price: 12,
   },
   {
     id: 'pet-cat',
@@ -523,7 +523,7 @@ export const ROOM_ITEMS: RoomItemDefinition[] = [
     category: 'PET',
     slotId: 'PET_SLOT',
     assetId: 'pet-cat-floor',
-    price: 500,
+    price: 50,
     symbol: '🐈',
     allowedSlotIds: ['PET_SLOT'],
   },
@@ -533,7 +533,7 @@ export const ROOM_ITEMS: RoomItemDefinition[] = [
     category: 'PET',
     slotId: 'PET_SLOT_2',
     assetId: 'pet-dog-floor',
-    price: 650,
+    price: 65,
     symbol: '🐕',
     allowedSlotIds: ['PET_SLOT_2'],
   },
@@ -543,7 +543,7 @@ export const ROOM_ITEMS: RoomItemDefinition[] = [
     category: 'PET',
     slotId: 'PET_SLOT',
     assetId: 'pet-cat-gray-floor',
-    price: 550,
+    price: 55,
     symbol: '🐈',
     allowedSlotIds: ['PET_SLOT'],
   },
@@ -553,7 +553,7 @@ export const ROOM_ITEMS: RoomItemDefinition[] = [
     category: 'PET',
     slotId: 'PET_SLOT_2',
     assetId: 'pet-dog-brown-floor',
-    price: 700,
+    price: 70,
     symbol: '🐕',
     allowedSlotIds: ['PET_SLOT_2'],
   },

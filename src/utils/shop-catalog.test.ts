@@ -2,6 +2,21 @@ import { SHOP_ITEMS } from '../constants/shop-items';
 import { itemsForShopTab } from './shop-catalog';
 
 describe('itemsForShopTab', () => {
+  it('uses the reduced public shop prices', () => {
+    const price = (id: string) =>
+      SHOP_ITEMS.find((item) => item.id === id)?.price;
+
+    expect(price('sticker-coffee')).toBe(3);
+    expect(price('bed-canopy-lavender')).toBe(98);
+    expect(price('room-theme-rattan')).toBe(90);
+    expect(
+      SHOP_ITEMS.every(
+        (item) =>
+          Number.isInteger(item.price) && item.price >= 0 && item.price <= 98,
+      ),
+    ).toBe(true);
+  });
+
   it('groups all purchasable diary decorations together', () => {
     const items = itemsForShopTab(SHOP_ITEMS, 'diary');
     expect(items.map((item) => item.id)).toEqual([

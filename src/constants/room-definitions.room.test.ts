@@ -5,8 +5,17 @@ import {
   roomItemAsset,
   roomItemDefinition,
 } from './room-definitions';
+import { SHOP_ITEMS } from './shop-items';
 
 describe('fixed room slots', () => {
+  it('keeps room definition prices aligned with the public shop', () => {
+    const shopPrices = new Map(SHOP_ITEMS.map((item) => [item.id, item.price]));
+
+    expect(
+      ROOM_ITEMS.every((item) => shopPrices.get(item.id) === item.price),
+    ).toBe(true);
+  });
+
   it('keeps every plant in the single floor slot', () => {
     const plants = ROOM_ITEMS.filter((item) => item.category === 'PLANT');
 
