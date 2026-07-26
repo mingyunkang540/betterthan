@@ -3,6 +3,7 @@ import {
   type StorageDriver,
   loadDraft,
   loadRecords,
+  migrateLegacyDraftStep,
   saveDraft,
   saveRecords,
   upsertRecord,
@@ -63,6 +64,17 @@ describe('record storage', () => {
     await saveDraft(createEmptyDraft('2026-07-16'), driver);
     await expect(loadDraft('2026-07-17', driver)).resolves.toBeNull();
     expect(driver.values.size).toBe(0);
+  });
+
+  it.each([
+    [0, 0],
+    [1, 1],
+    [2, 2],
+    [3, 2],
+    [4, 3],
+    [5, 4],
+  ])('기존 6단계 초안의 %i단계를 새 %i단계로 변환한다', (oldStep, newStep) => {
+    expect(migrateLegacyDraftStep(oldStep)).toBe(newStep);
   });
 
   it('손상된 저장 데이터는 조용히 초기화하지 않고 오류를 알린다', async () => {

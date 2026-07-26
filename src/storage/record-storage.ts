@@ -4,6 +4,11 @@ const RECORDS_KEY = 'better-than-yesterday:records:v1';
 const RECORDS_BACKUP_KEY = 'better-than-yesterday:records:backup:v1';
 const DRAFT_KEY = 'better-than-yesterday:draft:v1';
 
+export function migrateLegacyDraftStep(step: unknown): number {
+  if (!Number.isInteger(step)) return 0;
+  return [0, 1, 2, 2, 3, 4][Math.max(0, Math.min(Number(step), 5))] ?? 0;
+}
+
 export interface StorageDriver {
   getItem(key: string): Promise<string | null>;
   setItem(key: string, value: string): Promise<void>;

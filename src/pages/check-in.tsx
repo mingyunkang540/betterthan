@@ -1,5 +1,5 @@
 import { createRoute } from '@granite-js/react-native';
-import React, { useMemo, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import {
   StyleSheet,
   Text,
@@ -7,7 +7,6 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import { RecordView } from '../components/record-view';
 import {
   AppScreen,
   BackButton,
@@ -24,19 +23,20 @@ import {
   IMPROVEMENTS,
   MOODS,
 } from '../constants/check-in-options';
-import type { DailyRecord, Score } from '../models/daily-record';
+import type { Score } from '../models/daily-record';
 import { useApp } from '../state/app-context';
+import { migrateLegacyDraftStep } from '../storage/record-storage';
 
 export const Route = createRoute('/check-in', { component: CheckInPage });
 
 const QUESTIONS = [
   '오늘 상태는 어땠나요?',
   '오늘 어떤 일을 했나요?',
-  '오늘 나를 가장 막은 것은?',
-  '오늘 어제보다 나아진 점은?',
+  '오늘 하루를 돌아볼까요?',
   '내일 딱 하나만 바꾼다면?',
   '오늘 기억하고 싶은 한 문장은?',
 ] as const;
+const LEGACY_STEP_FOR_CURRENT = [0, 1, 2, 4, 5] as const;
 
 function Scale({
   label,
@@ -77,31 +77,16 @@ function Scale({
 export function CheckInPage() {
   const navigation = Route.useNavigation();
   const { draft, updateDraft, saveCurrentDraft } = useApp();
-  const [step, setStep] = useState(Math.min(draft.step, 5));
-  const [preview, setPreview] = useState(false);
+  const [step, setStep] = useState(() => migrateLegacyDraftStep(draft.step));
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState<string>();
-
-  const previewRecord = useMemo<DailyRecord | null>(() => {
-    if (!draft.mood || !draft.energy || !draft.focus) return null;
-    const now = new Date().toISOString();
-    return {
-      ...draft,
-      mood: draft.mood,
-      energy: draft.energy,
-      focus: draft.focus,
-      id: 'preview',
-      createdAt: now,
-      updatedAt: now,
-      oneLine: draft.oneLine.trim() || undefined,
-    };
-  }, [draft]);
+  const savingRef = useRef(false);
 
   const requiredComplete = Boolean(draft.mood && draft.energy && draft.focus);
 
   const move = (next: number) => {
     setStep(next);
-    updateDraft({ step: next });
+    updateDraft({ step: LEGACY_STEP_FOR_CURRENT[next] ?? 0 });
   };
 
   const next = () => {
@@ -110,17 +95,18 @@ export function CheckInPage() {
       return;
     }
     setError(undefined);
-    if (step === 5) setPreview(true);
-    else move(step + 1);
+    move(step + 1);
   };
 
   const back = () => {
-    if (preview) setPreview(false);
-    else if (step > 0) move(step - 1);
+    if (savingRef.current) return;
+    if (step > 0) move(step - 1);
     else navigation.goBack();
   };
 
   const complete = async () => {
+    if (savingRef.current) return;
+    savingRef.current = true;
     setSaving(true);
     setError(undefined);
     try {
@@ -129,6 +115,7 @@ export function CheckInPage() {
     } catch {
       setError('기록을 저장하지 못했어요. 잠시 후 다시 시도해 주세요.');
     } finally {
+      savingRef.current = false;
       setSaving(false);
     }
   };
@@ -143,38 +130,18 @@ export function CheckInPage() {
     });
   };
 
-  if (preview && previewRecord) {
-    return (
-      <AppScreen>
-        <BackButton label="수정하기" onPress={back} />
-        <Text style={styles.eyebrow}>오늘 기록 미리보기</Text>
-        <Text style={styles.title}>이렇게 남길까요?</Text>
-        <RecordView record={previewRecord} />
-        <ErrorMessage>{error}</ErrorMessage>
-        <View style={styles.bottomButtons}>
-          <PrimaryButton
-            label={saving ? '저장하고 있어요' : '기록 완료'}
-            disabled={saving}
-            onPress={() => void complete()}
-          />
-          <PrimaryButton label="수정하기" secondary onPress={back} />
-        </View>
-      </AppScreen>
-    );
-  }
-
   return (
     <AppScreen>
       <View style={styles.topBar}>
         <BackButton onPress={back} />
-        <Text style={styles.progress}>{step + 1} / 6</Text>
+        <Text style={styles.progress}>{step + 1} / 5</Text>
       </View>
       <View style={styles.progressTrack}>
         <View
-          accessibilityLabel={`기록 작성 ${step + 1}단계, 전체 6단계`}
+          accessibilityLabel={`기록 작성 ${step + 1}단계, 전체 5단계`}
           accessibilityRole="progressbar"
-          accessibilityValue={{ min: 1, max: 6, now: step + 1 }}
-          style={[styles.progressFill, { width: `${((step + 1) / 6) * 100}%` }]}
+          accessibilityValue={{ min: 1, max: 5, now: step + 1 }}
+          style={[styles.progressFill, { width: `${((step + 1) / 5) * 100}%` }]}
         />
       </View>
       <Text style={styles.title}>{QUESTIONS[step]}</Text>
@@ -230,38 +197,43 @@ export function CheckInPage() {
           </>
         ) : null}
         {step === 2 ? (
-          <View style={styles.moodGrid}>
-            {BLOCKERS.map((item) => (
-              <ChoiceChip
-                key={item}
-                label={item}
-                selected={draft.blocker === item}
-                onPress={() =>
-                  updateDraft({
-                    blocker: draft.blocker === item ? undefined : item,
-                  })
-                }
-              />
-            ))}
-          </View>
+          <>
+            <Text style={styles.sectionLabel}>오늘 나를 가장 막은 것은?</Text>
+            <View style={styles.moodGrid}>
+              {BLOCKERS.map((item) => (
+                <ChoiceChip
+                  key={item}
+                  label={item}
+                  selected={draft.blocker === item}
+                  onPress={() =>
+                    updateDraft({
+                      blocker: draft.blocker === item ? undefined : item,
+                    })
+                  }
+                />
+              ))}
+            </View>
+            <Text style={[styles.sectionLabel, styles.reflectionSection]}>
+              그래도 오늘 나아진 점은?
+            </Text>
+            <View style={styles.moodGrid}>
+              {IMPROVEMENTS.map((item) => (
+                <ChoiceChip
+                  key={item}
+                  label={item}
+                  selected={draft.improvement === item}
+                  onPress={() =>
+                    updateDraft({
+                      improvement:
+                        draft.improvement === item ? undefined : item,
+                    })
+                  }
+                />
+              ))}
+            </View>
+          </>
         ) : null}
         {step === 3 ? (
-          <View style={styles.moodGrid}>
-            {IMPROVEMENTS.map((item) => (
-              <ChoiceChip
-                key={item}
-                label={item}
-                selected={draft.improvement === item}
-                onPress={() =>
-                  updateDraft({
-                    improvement: draft.improvement === item ? undefined : item,
-                  })
-                }
-              />
-            ))}
-          </View>
-        ) : null}
-        {step === 4 ? (
           <>
             <Text style={styles.sectionLabel}>카테고리</Text>
             <View style={styles.chipGrid}>
@@ -307,7 +279,7 @@ export function CheckInPage() {
             ) : null}
           </>
         ) : null}
-        {step === 5 ? (
+        {step === 4 ? (
           <View>
             <TextInput
               accessibilityLabel="오늘의 한 줄"
@@ -326,7 +298,13 @@ export function CheckInPage() {
         ) : null}
       </View>
       <ErrorMessage>{error}</ErrorMessage>
-      <PrimaryButton label={step === 5 ? '결과 확인' : '다음'} onPress={next} />
+      <PrimaryButton
+        disabled={saving}
+        label={
+          step === 4 ? (saving ? '저장하고 있어요' : '오늘 기록 완료') : '다음'
+        }
+        onPress={step === 4 ? () => void complete() : next}
+      />
     </AppScreen>
   );
 }
@@ -347,12 +325,6 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
   },
   progressFill: { height: 4, backgroundColor: colors.primary },
-  eyebrow: {
-    color: colors.primary,
-    fontSize: 15,
-    fontWeight: '700',
-    marginTop: 16,
-  },
   title: {
     color: colors.text,
     fontSize: 28,
@@ -396,6 +368,7 @@ const styles = StyleSheet.create({
   scaleText: { color: colors.secondary, fontSize: 18, fontWeight: '700' },
   scaleTextSelected: { color: colors.primary },
   optionTitle: { marginTop: 28 },
+  reflectionSection: { marginTop: 36 },
   input: {
     minHeight: 58,
     borderWidth: 1,
@@ -412,5 +385,4 @@ const styles = StyleSheet.create({
     textAlign: 'right',
     marginTop: 8,
   },
-  bottomButtons: { gap: 10, marginTop: 24 },
 });
