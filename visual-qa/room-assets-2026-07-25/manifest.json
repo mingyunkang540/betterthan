@@ -48,18 +48,18 @@
           "itemId": "bed-basic",
           "assetId": "bed-basic",
           "slotId": "BED_SLOT",
-          "x": 201,
-          "y": 226,
+          "x": 191,
+          "y": 216,
           "width": 152,
           "height": 152,
           "zIndex": 20,
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            220,
-            244,
-            337,
-            359
+            210,
+            234,
+            327,
+            349
           ],
           "clipped": false
         }
@@ -83,18 +83,18 @@
           "itemId": "bed-mint",
           "assetId": "bed-mint",
           "slotId": "BED_SLOT",
-          "x": 201,
-          "y": 226,
+          "x": 191,
+          "y": 216,
           "width": 152,
           "height": 152,
           "zIndex": 20,
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            220,
-            244,
-            337,
-            359
+            210,
+            234,
+            327,
+            349
           ],
           "clipped": false
         }
@@ -118,18 +118,18 @@
           "itemId": "bed-rose",
           "assetId": "bed-rose",
           "slotId": "BED_SLOT",
-          "x": 201,
-          "y": 226,
+          "x": 191,
+          "y": 216,
           "width": 152,
           "height": 152,
           "zIndex": 20,
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            220,
-            244,
-            337,
-            359
+            210,
+            234,
+            327,
+            349
           ],
           "clipped": false
         }
@@ -153,18 +153,18 @@
           "itemId": "bed-sky",
           "assetId": "bed-sky",
           "slotId": "BED_SLOT",
-          "x": 201,
-          "y": 226,
+          "x": 191,
+          "y": 216,
           "width": 152,
           "height": 152,
           "zIndex": 20,
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            220,
-            244,
-            337,
-            359
+            210,
+            234,
+            327,
+            349
           ],
           "clipped": false
         }
@@ -188,18 +188,18 @@
           "itemId": "bed-princess",
           "assetId": "bed-princess",
           "slotId": "BED_SLOT",
-          "x": 194,
-          "y": 213,
+          "x": 184,
+          "y": 203,
           "width": 165,
           "height": 165,
           "zIndex": 20,
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            215,
-            224,
-            335,
-            368
+            205,
+            214,
+            325,
+            358
           ],
           "clipped": false
         }
@@ -223,18 +223,18 @@
           "itemId": "bed-canopy-lavender",
           "assetId": "bed-canopy-lavender",
           "slotId": "BED_SLOT",
-          "x": 201,
-          "y": 226,
+          "x": 191,
+          "y": 216,
           "width": 152,
           "height": 152,
           "zIndex": 20,
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            219,
-            231,
-            335,
-            370
+            209,
+            221,
+            325,
+            360
           ],
           "clipped": false
         }
@@ -258,18 +258,18 @@
           "itemId": "bed-sleigh-navy",
           "assetId": "bed-sleigh-navy",
           "slotId": "BED_SLOT",
-          "x": 201,
-          "y": 226,
+          "x": 191,
+          "y": 216,
           "width": 152,
           "height": 152,
           "zIndex": 20,
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            218,
-            240,
-            341,
-            362
+            208,
+            230,
+            331,
+            352
           ],
           "clipped": false
         }
@@ -293,18 +293,18 @@
           "itemId": "bed-iron-sage",
           "assetId": "bed-iron-sage",
           "slotId": "BED_SLOT",
-          "x": 201,
-          "y": 226,
+          "x": 191,
+          "y": 216,
           "width": 152,
           "height": 152,
           "zIndex": 20,
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            221,
-            244,
-            337,
-            358
+            211,
+            234,
+            327,
+            348
           ],
           "clipped": false
         }
@@ -328,18 +328,18 @@
           "itemId": "bed-upholstered-wine",
           "assetId": "bed-upholstered-wine",
           "slotId": "BED_SLOT",
-          "x": 201,
-          "y": 226,
+          "x": 191,
+          "y": 216,
           "width": 152,
           "height": 152,
           "zIndex": 20,
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            219,
-            240,
-            339,
-            362
+            209,
+            230,
+            329,
+            352
           ],
           "clipped": false
         }
@@ -808,18 +808,18 @@
           "itemId": "plant-pothos",
           "assetId": "plant-pothos",
           "slotId": "PLANT_SLOT_1",
-          "x": 310,
-          "y": 299,
+          "x": 284,
+          "y": 289,
           "width": 66,
           "height": 89,
           "zIndex": 50,
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            322,
-            318,
-            362,
-            365
+            296,
+            308,
+            336,
+            355
           ],
           "clipped": false
         }
@@ -843,18 +843,18 @@
           "itemId": "plant-olive",
           "assetId": "plant-olive",
           "slotId": "PLANT_SLOT_1",
-          "x": 310,
-          "y": 299,
+          "x": 284,
+          "y": 289,
           "width": 66,
           "height": 89,
           "zIndex": 50,
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            326,
-            311,
-            360,
-            374
+            300,
+            301,
+            334,
+            364
           ],
           "clipped": false
         }
@@ -878,18 +878,18 @@
           "itemId": "plant-succulent",
           "assetId": "plant-succulent",
           "slotId": "PLANT_SLOT_1",
-          "x": 300,
-          "y": 272,
+          "x": 274,
+          "y": 262,
           "width": 86,
           "height": 116,
           "zIndex": 50,
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            326,
-            309,
-            360,
-            348
+            300,
+            299,
+            334,
+            338
           ],
           "clipped": false
         }
@@ -913,18 +913,18 @@
           "itemId": "plant-fern",
           "assetId": "plant-fern",
           "slotId": "PLANT_SLOT_1",
-          "x": 308,
-          "y": 295,
+          "x": 283,
+          "y": 285,
           "width": 69,
           "height": 93,
           "zIndex": 50,
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            317,
-            311,
-            366,
-            371
+            292,
+            301,
+            341,
+            361
           ],
           "clipped": false
         }
@@ -948,18 +948,18 @@
           "itemId": "plant-fiddle",
           "assetId": "plant-fiddle",
           "slotId": "PLANT_SLOT_1",
-          "x": 305,
-          "y": 286,
+          "x": 279,
+          "y": 276,
           "width": 76,
           "height": 102,
           "zIndex": 50,
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            327,
             301,
-            359,
-            371
+            291,
+            333,
+            361
           ],
           "clipped": false
         }
@@ -1578,18 +1578,18 @@
           "itemId": "drink-coffee",
           "assetId": "drink-coffee",
           "slotId": "DESK_DRINK_SLOT",
-          "x": 161,
-          "y": 234,
+          "x": 146,
+          "y": 267,
           "width": 33,
           "height": 33,
           "zIndex": 37,
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            168,
-            241,
-            187,
-            260
+            153,
+            274,
+            172,
+            293
           ],
           "clipped": false
         }
@@ -1613,18 +1613,18 @@
           "itemId": "drink-beer",
           "assetId": "drink-beer",
           "slotId": "DESK_DRINK_SLOT",
-          "x": 164,
-          "y": 240,
+          "x": 149,
+          "y": 273,
           "width": 27,
           "height": 27,
           "zIndex": 37,
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            171,
-            244,
-            184,
-            262
+            156,
+            277,
+            169,
+            295
           ],
           "clipped": false
         }
@@ -1648,18 +1648,18 @@
           "itemId": "drink-barley",
           "assetId": "drink-barley",
           "slotId": "DESK_DRINK_SLOT",
-          "x": 161,
-          "y": 234,
+          "x": 146,
+          "y": 267,
           "width": 33,
           "height": 33,
           "zIndex": 37,
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            167,
-            238,
-            188,
-            263
+            152,
+            271,
+            173,
+            296
           ],
           "clipped": false
         }
@@ -1850,18 +1850,18 @@
           "itemId": "drink-coffee",
           "assetId": "drink-coffee",
           "slotId": "DESK_DRINK_SLOT",
-          "x": 161,
-          "y": 234,
+          "x": 146,
+          "y": 267,
           "width": 33,
           "height": 33,
           "zIndex": 37,
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            168,
-            241,
-            187,
-            260
+            153,
+            274,
+            172,
+            293
           ],
           "clipped": false
         },
@@ -1966,18 +1966,18 @@
           "itemId": "bed-basic",
           "assetId": "bed-basic",
           "slotId": "BED_SLOT",
-          "x": 201,
-          "y": 226,
+          "x": 191,
+          "y": 216,
           "width": 152,
           "height": 152,
           "zIndex": 20,
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            220,
-            244,
-            337,
-            359
+            210,
+            234,
+            327,
+            349
           ],
           "clipped": false
         },
@@ -2070,18 +2070,18 @@
           "itemId": "plant-fiddle",
           "assetId": "plant-fiddle",
           "slotId": "PLANT_SLOT_1",
-          "x": 305,
-          "y": 286,
+          "x": 279,
+          "y": 276,
           "width": 76,
           "height": 102,
           "zIndex": 50,
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            327,
             301,
-            359,
-            371
+            291,
+            333,
+            361
           ],
           "clipped": false
         },
@@ -2202,18 +2202,18 @@
           "itemId": "bed-princess",
           "assetId": "bed-princess",
           "slotId": "BED_SLOT",
-          "x": 194,
-          "y": 213,
+          "x": 184,
+          "y": 203,
           "width": 165,
           "height": 165,
           "zIndex": 20,
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            215,
-            224,
-            335,
-            368
+            205,
+            214,
+            325,
+            358
           ],
           "clipped": false
         },
@@ -2240,18 +2240,18 @@
           "itemId": "drink-barley",
           "assetId": "drink-barley",
           "slotId": "DESK_DRINK_SLOT",
-          "x": 161,
-          "y": 234,
+          "x": 146,
+          "y": 267,
           "width": 33,
           "height": 33,
           "zIndex": 37,
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            167,
-            238,
-            188,
-            263
+            152,
+            271,
+            173,
+            296
           ],
           "clipped": false
         },
@@ -2316,18 +2316,18 @@
           "itemId": "plant-fiddle",
           "assetId": "plant-fiddle",
           "slotId": "PLANT_SLOT_1",
-          "x": 305,
-          "y": 286,
+          "x": 279,
+          "y": 276,
           "width": 76,
           "height": 102,
           "zIndex": 50,
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            327,
             301,
-            359,
-            371
+            291,
+            333,
+            361
           ],
           "clipped": false
         },
@@ -2486,18 +2486,18 @@
           "itemId": "bed-princess",
           "assetId": "bed-princess",
           "slotId": "BED_SLOT",
-          "x": 179,
-          "y": 197,
+          "x": 170,
+          "y": 188,
           "width": 152,
           "height": 152,
           "zIndex": 20,
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
+            189,
             198,
-            207,
-            309,
-            340
+            300,
+            331
           ],
           "clipped": false
         },
@@ -2524,18 +2524,18 @@
           "itemId": "drink-barley",
           "assetId": "drink-barley",
           "slotId": "DESK_DRINK_SLOT",
-          "x": 149,
-          "y": 216,
+          "x": 135,
+          "y": 247,
           "width": 30,
           "height": 30,
           "zIndex": 37,
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            155,
-            220,
-            173,
-            242
+            141,
+            251,
+            159,
+            273
           ],
           "clipped": false
         },
@@ -2600,18 +2600,18 @@
           "itemId": "plant-fiddle",
           "assetId": "plant-fiddle",
           "slotId": "PLANT_SLOT_1",
-          "x": 281,
-          "y": 265,
+          "x": 258,
+          "y": 255,
           "width": 70,
           "height": 94,
           "zIndex": 50,
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            301,
             278,
-            331,
-            344
+            268,
+            308,
+            334
           ],
           "clipped": false
         },
@@ -2770,18 +2770,18 @@
           "itemId": "bed-princess",
           "assetId": "bed-princess",
           "slotId": "BED_SLOT",
-          "x": 194,
-          "y": 213,
+          "x": 184,
+          "y": 203,
           "width": 165,
           "height": 165,
           "zIndex": 20,
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            215,
-            224,
-            335,
-            368
+            205,
+            214,
+            325,
+            358
           ],
           "clipped": false
         },
@@ -2808,18 +2808,18 @@
           "itemId": "drink-barley",
           "assetId": "drink-barley",
           "slotId": "DESK_DRINK_SLOT",
-          "x": 161,
-          "y": 234,
+          "x": 146,
+          "y": 267,
           "width": 33,
           "height": 33,
           "zIndex": 37,
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            167,
-            238,
-            188,
-            263
+            152,
+            271,
+            173,
+            296
           ],
           "clipped": false
         },
@@ -2884,18 +2884,18 @@
           "itemId": "plant-fiddle",
           "assetId": "plant-fiddle",
           "slotId": "PLANT_SLOT_1",
-          "x": 305,
-          "y": 286,
+          "x": 279,
+          "y": 276,
           "width": 76,
           "height": 102,
           "zIndex": 50,
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            327,
             301,
-            359,
-            371
+            291,
+            333,
+            361
           ],
           "clipped": false
         },
@@ -3054,18 +3054,18 @@
           "itemId": "bed-princess",
           "assetId": "bed-princess",
           "slotId": "BED_SLOT",
-          "x": 215,
-          "y": 236,
+          "x": 203,
+          "y": 225,
           "width": 181,
           "height": 181,
           "zIndex": 20,
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            238,
-            248,
-            369,
-            406
+            226,
+            237,
+            357,
+            395
           ],
           "clipped": false
         },
@@ -3092,18 +3092,18 @@
           "itemId": "drink-barley",
           "assetId": "drink-barley",
           "slotId": "DESK_DRINK_SLOT",
-          "x": 178,
-          "y": 258,
+          "x": 161,
+          "y": 294,
           "width": 36,
           "height": 36,
           "zIndex": 37,
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            185,
-            263,
-            207,
-            289
+            168,
+            299,
+            190,
+            325
           ],
           "clipped": false
         },
@@ -3168,18 +3168,18 @@
           "itemId": "plant-fiddle",
           "assetId": "plant-fiddle",
           "slotId": "PLANT_SLOT_1",
-          "x": 336,
-          "y": 315,
+          "x": 308,
+          "y": 304,
           "width": 84,
           "height": 113,
           "zIndex": 50,
           "renderOffsetX": 0,
           "renderOffsetY": 0,
           "visibleAlphaBounds": [
-            361,
-            331,
-            395,
-            409
+            333,
+            320,
+            367,
+            398
           ],
           "clipped": false
         },

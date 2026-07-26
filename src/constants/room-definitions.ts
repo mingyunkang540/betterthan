@@ -53,8 +53,8 @@ export const STUDIO_001_SLOTS: RoomSlotDefinition[] = [
   {
     id: 'BED_SLOT',
     category: 'BED',
-    x: 545,
-    y: 745,
+    x: 525,
+    y: 725,
     width: 300,
     height: 300,
     zIndex: 20,
@@ -73,8 +73,8 @@ export const STUDIO_001_SLOTS: RoomSlotDefinition[] = [
   {
     id: 'DESK_DRINK_SLOT',
     category: 'DRINK',
-    x: 350,
-    y: 525,
+    x: 320,
+    y: 590,
     width: 65,
     height: 65,
     zIndex: 37,
@@ -103,8 +103,8 @@ export const STUDIO_001_SLOTS: RoomSlotDefinition[] = [
   {
     id: 'PLANT_SLOT_1',
     category: 'PLANT',
-    x: 675,
-    y: 765,
+    x: 625,
+    y: 745,
     width: 130,
     height: 175,
     zIndex: 50,

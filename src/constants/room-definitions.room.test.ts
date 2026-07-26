@@ -44,6 +44,15 @@ describe('fixed room slots', () => {
     expect(slot('APPLIANCE_SLOT')).toMatchObject({ x: 105, y: 755 });
   });
 
+  it('anchors the bed, desk drink, and floor plant inside their surfaces', () => {
+    const slot = (id: string) =>
+      STUDIO_001_SLOTS.find((candidate) => candidate.id === id);
+
+    expect(slot('BED_SLOT')).toMatchObject({ x: 525, y: 725 });
+    expect(slot('DESK_DRINK_SLOT')).toMatchObject({ x: 320, y: 590 });
+    expect(slot('PLANT_SLOT_1')).toMatchObject({ x: 625, y: 745 });
+  });
+
   it('uses a stable floor plant asset without visit randomness', () => {
     const first = roomItemAsset('plant-pothos', 'PLANT_SLOT_1');
     const second = roomItemAsset('plant-pothos', 'PLANT_SLOT_1');
