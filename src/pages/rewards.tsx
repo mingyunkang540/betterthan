@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import {
   AppScreen,
-  BackButton,
   Card,
   ErrorMessage,
   LoadingScreen,
@@ -18,7 +17,6 @@ import { toLocalMonthKey } from '../utils/date';
 export const Route = createRoute('/rewards', { component: RewardsPage });
 
 function RewardsPage() {
-  const navigation = Route.useNavigation();
   const { loading, records, rewardBalance, rewardTransactions, claimReward } =
     useApp();
   const [claiming, setClaiming] = useState<MonthlyMilestone>();
@@ -51,7 +49,6 @@ function RewardsPage() {
 
   return (
     <AppScreen>
-      <BackButton onPress={() => navigation.goBack()} />
       <Text style={styles.title}>나의 기록 조각</Text>
       <Text style={styles.subtitle}>
         기록할 때마다 차곡차곡 모여요. 쉬어도 줄어들지 않아요.

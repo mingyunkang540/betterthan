@@ -13,7 +13,6 @@ import {
 } from 'react-native';
 import {
   AppScreen,
-  BackButton,
   Card,
   ChoiceChip,
   ErrorMessage,
@@ -45,7 +44,6 @@ import {
 export const Route = createRoute('/shop', { component: ShopPage });
 
 function ShopPage() {
-  const navigation = Route.useNavigation();
   const { rewardBalance, decorationState, purchaseOrApplyDecoration } =
     useApp();
   const [tab, setTab] = useState<ShopTab>('furniture');
@@ -104,7 +102,6 @@ function ShopPage() {
   return (
     <>
       <AppScreen>
-        <BackButton onPress={() => navigation.goBack()} />
         <View style={styles.header}>
           <View style={styles.headingCopy}>
             <Text style={styles.title}>포근한 상점</Text>

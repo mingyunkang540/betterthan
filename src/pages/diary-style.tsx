@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import {
   AppScreen,
-  BackButton,
   Card,
   ErrorMessage,
   PrimaryButton,
@@ -16,7 +15,6 @@ import { useApp } from '../state/app-context';
 export const Route = createRoute('/diary-style', { component: DiaryStylePage });
 
 function DiaryStylePage() {
-  const navigation = Route.useNavigation();
   const { decorationState, applyDecoration } = useApp();
   const [error, setError] = useState<string>();
   const ownedIds = new Set(decorationState.owned.map((item) => item.itemId));
@@ -37,7 +35,6 @@ function DiaryStylePage() {
 
   return (
     <AppScreen>
-      <BackButton onPress={() => navigation.goBack()} />
       <Text style={styles.title}>나의 일기장</Text>
       <Text style={styles.subtitle}>
         모아 둔 표지와 장식으로 포근하게 꾸며요.

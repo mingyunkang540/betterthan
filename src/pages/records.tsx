@@ -3,7 +3,6 @@ import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import {
   AppScreen,
-  BackButton,
   Card,
   EmptyState,
   LoadingScreen,
@@ -22,7 +21,6 @@ function RecordsPage() {
   if (loading) return <LoadingScreen />;
   return (
     <AppScreen>
-      <BackButton onPress={() => navigation.goBack()} />
       <Text style={styles.title}>나의 기록</Text>
       <Text style={styles.subtitle}>최근 기록부터 차곡차곡 모았어요.</Text>
       {records.length === 0 ? (

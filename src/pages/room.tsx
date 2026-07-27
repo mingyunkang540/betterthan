@@ -8,7 +8,7 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import { AppScreen, BackButton, ErrorMessage, colors } from '../components/ui';
+import { AppScreen, ErrorMessage, colors } from '../components/ui';
 import {
   roomBackgroundSource,
   roomAssetSource,
@@ -83,7 +83,6 @@ function RoomPage() {
 
   return (
     <AppScreen>
-      <BackButton onPress={() => navigation.goBack()} />
       <View style={styles.header}>
         <View>
           <Text style={styles.title}>나의 작은 방</Text>
