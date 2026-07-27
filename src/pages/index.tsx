@@ -1,3 +1,4 @@
+import { InlineAd } from '@apps-in-toss/framework';
 import { createRoute } from '@granite-js/react-native';
 import React, { useState } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
@@ -9,6 +10,7 @@ import {
   PrimaryButton,
   colors,
 } from '../components/ui';
+import { HOME_BANNER_AD_GROUP_ID } from '../constants/ad-config';
 import { MOODS } from '../constants/check-in-options';
 import type { ExperimentOutcome } from '../models/daily-record';
 import { useApp } from '../state/app-context';
@@ -194,6 +196,15 @@ export function HomePage() {
         />
         <Text style={styles.monthly}>이번 달 {monthCount}일 기록했어요.</Text>
       </View>
+      <View style={styles.bannerAd}>
+        <InlineAd
+          adGroupId={HOME_BANNER_AD_GROUP_ID}
+          impressFallbackOnMount
+          theme="light"
+          tone="grey"
+          variant="expanded"
+        />
+      </View>
     </AppScreen>
   );
 }
@@ -293,5 +304,11 @@ const styles = StyleSheet.create({
     fontSize: 15,
     textAlign: 'center',
     marginTop: 6,
+  },
+  bannerAd: {
+    width: '100%',
+    height: 96,
+    marginTop: 24,
+    overflow: 'hidden',
   },
 });
