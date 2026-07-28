@@ -3,7 +3,6 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import {
   AppScreen,
-  BackButton,
   Card,
   LoadingScreen,
   colors,
@@ -24,7 +23,6 @@ function Stat({ label, value }: { label: string; value: string }) {
 }
 
 function StatisticsPage() {
-  const navigation = Route.useNavigation();
   const { loading, records } = useApp();
   const stats = calculateMonthlyStatistics(
     records,
@@ -33,7 +31,6 @@ function StatisticsPage() {
   if (loading) return <LoadingScreen />;
   return (
     <AppScreen>
-      <BackButton onPress={() => navigation.goBack()} />
       <Text style={styles.title}>이번 달 기록</Text>
       <Text style={styles.count}>{stats.recordCount}일</Text>
       {stats.recordCount < 3 ? (

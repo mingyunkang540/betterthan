@@ -98,3 +98,26 @@ export const EXPERIMENTS = {
 } as const;
 
 export type ExperimentCategory = keyof typeof EXPERIMENTS;
+
+const BLOCKER_EXPERIMENT_CATEGORIES: Record<string, ExperimentCategory> = {
+  피곤함: '휴식',
+  '집중이 안 됨': '집중',
+  '하기 싫었음': '시작',
+  '시간이 부족했음': '시작',
+  '방법을 몰랐음': '시작',
+  '너무 크게 시작했음': '시작',
+  '다른 일에 밀렸음': '집중',
+  '사람·소통 문제': '관계',
+  '걱정이 많았음': '휴식',
+  '예상 밖의 일': '생활',
+  '특별히 막히지 않음': '건강',
+};
+
+export function recommendedExperiments(blocker?: string): {
+  category: ExperimentCategory;
+  experiments: readonly string[];
+} {
+  const category =
+    (blocker && BLOCKER_EXPERIMENT_CATEGORIES[blocker]) || '시작';
+  return { category, experiments: EXPERIMENTS[category].slice(0, 3) };
+}

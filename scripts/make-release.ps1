@@ -1,26 +1,8 @@
-param(
-  [string]$IconUrl
-)
-
 $ErrorActionPreference = 'Stop'
 $projectRoot = Split-Path -Parent $PSScriptRoot
 
-if ([string]::IsNullOrWhiteSpace($IconUrl)) {
-  Write-Host ''
-  Write-Host 'Paste the AppsInToss console icon HTTPS URL.' -ForegroundColor Cyan
-  $IconUrl = Read-Host 'Icon URL'
-}
-
-$parsedUrl = $null
-if (-not [Uri]::TryCreate($IconUrl.Trim(), [UriKind]::Absolute, [ref]$parsedUrl) -or $parsedUrl.Scheme -ne 'https') {
-  Write-Host ''
-  Write-Host 'ERROR: Enter a valid icon URL beginning with https://' -ForegroundColor Red
-  exit 1
-}
-
 Push-Location $projectRoot
 try {
-  $env:AIT_ICON_URL = $IconUrl.Trim()
   Write-Host ''
   Write-Host 'Validating and building the final release candidate.' -ForegroundColor Cyan
   & npm.cmd run release:build

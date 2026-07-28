@@ -8,12 +8,26 @@ import {
 
 describe('decoration room slots', () => {
   it('starts with only the simple starter furniture', () => {
-    const slots = createDefaultDecorationState().roomState.slots;
+    const state = createDefaultDecorationState();
+    const slots = state.roomState.slots;
     expect(slots.BED_SLOT).toBe('bed-basic');
     expect(slots.DESK_SLOT).toBe('desk-basic');
     expect(slots.CHAIR_SLOT).toBe('chair-cushion');
     expect(slots.SHELF_SLOT).toBe('shelf-basic');
     expect(Object.values(slots).filter(Boolean)).toHaveLength(4);
+    expect(state.equipped.roomTheme).toBe('room-theme-wood');
+  });
+
+  it('purchases and equips a room theme without changing furniture', () => {
+    const initial = createDefaultDecorationState();
+    const theme = SHOP_ITEMS.find(
+      (candidate) => candidate.id === 'room-theme-sage',
+    );
+    if (!theme) throw new Error('room-theme-sage fixture is missing');
+    const next = purchaseOrEquipDecoration(initial, theme, 1000);
+    expect(next.equipped.roomTheme).toBe(theme.id);
+    expect(next.roomState.slots).toEqual(initial.roomState.slots);
+    expect(next.purchases.at(-1)?.amount).toBe(-theme.price);
   });
 
   it('saves, replaces, and clears a fixed slot', () => {
@@ -50,7 +64,7 @@ describe('decoration room slots', () => {
     expect(purchased.roomState.slots).toEqual(initial.roomState.slots);
   });
 
-  it('supports four independent plant slots and two pet slots', () => {
+  it('supports one floor plant slot and two pet slots', () => {
     const initial = createDefaultDecorationState();
     const owned = {
       ...initial,
@@ -71,16 +85,10 @@ describe('decoration room slots', () => {
     const saved = saveRoomSlots(owned, {
       ...owned.roomState.slots,
       PLANT_SLOT_1: 'plant-pothos',
-      PLANT_SLOT_2: 'plant-pothos',
-      SIDE_TABLE_SLOT: 'plant-pothos',
-      FLOOR_LAMP_SLOT: 'plant-pothos',
       PET_SLOT: 'pet-cat',
       PET_SLOT_2: 'pet-dog',
     });
     expect(saved.roomState.slots.PLANT_SLOT_1).toBe('plant-pothos');
-    expect(saved.roomState.slots.PLANT_SLOT_2).toBe('plant-pothos');
-    expect(saved.roomState.slots.SIDE_TABLE_SLOT).toBe('plant-pothos');
-    expect(saved.roomState.slots.FLOOR_LAMP_SLOT).toBe('plant-pothos');
     expect(saved.roomState.slots.PET_SLOT).toBe('pet-cat');
     expect(saved.roomState.slots.PET_SLOT_2).toBe('pet-dog');
   });
@@ -108,5 +116,54 @@ describe('decoration room slots', () => {
     expect(
       Object.values(loaded.roomState.slots).every((item) => item === null),
     ).toBe(true);
+  });
+
+  it('removes tester-only default unlocks from public release saves', async () => {
+    const initial = createDefaultDecorationState();
+    const testerSave = {
+      ...initial,
+      owned: [
+        ...initial.owned,
+        {
+          itemId: 'bed-mint',
+          acquiredAt: '2026-07-19T00:00:00.000Z',
+          acquisitionType: 'DEFAULT' as const,
+        },
+        {
+          itemId: 'pet-cat',
+          acquiredAt: '2026-07-19T00:00:00.000Z',
+          acquisitionType: 'PURCHASE' as const,
+        },
+      ],
+      purchases: [
+        {
+          id: 'purchase:pet-cat',
+          itemId: 'pet-cat',
+          amount: -500,
+          createdAt: '2026-07-19T00:00:00.000Z',
+        },
+      ],
+      roomState: {
+        ...initial.roomState,
+        slots: { ...initial.roomState.slots, BED_SLOT: 'bed-mint' },
+      },
+    };
+    const values = new Map<string, string>([
+      ['better-than-yesterday:decoration:v1', JSON.stringify(testerSave)],
+    ]);
+    const loaded = await loadDecorationState({
+      getItem: async (key) => values.get(key) ?? null,
+      setItem: async (key, value) => {
+        values.set(key, value);
+      },
+      removeItem: async (key) => {
+        values.delete(key);
+      },
+    });
+
+    expect(loaded.owned.some((item) => item.itemId === 'bed-mint')).toBe(false);
+    expect(loaded.owned.some((item) => item.itemId === 'pet-cat')).toBe(false);
+    expect(loaded.purchases).toEqual([]);
+    expect(loaded.roomState.slots.BED_SLOT).toBe('bed-basic');
   });
 });

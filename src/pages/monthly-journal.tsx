@@ -4,7 +4,6 @@ import React, { useMemo, useState } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import {
   AppScreen,
-  BackButton,
   Card,
   EmptyState,
   ErrorMessage,
@@ -37,7 +36,6 @@ function monthLabel(monthKey: string) {
 }
 
 function MonthlyJournalPage() {
-  const navigation = Route.useNavigation();
   const { loading, records } = useApp();
   const currentMonth = toLocalMonthKey(new Date());
   const [selectedMonth, setSelectedMonth] = useState(currentMonth);
@@ -64,7 +62,6 @@ function MonthlyJournalPage() {
 
   return (
     <AppScreen>
-      <BackButton onPress={() => navigation.goBack()} />
       <Text style={styles.title}>월간 일기</Text>
       <Text style={styles.subtitle}>
         한 달의 기록을 모아 읽고 메모 앱 등에 별도로 보관할 수 있어요.

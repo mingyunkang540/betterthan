@@ -10,14 +10,15 @@
     "build": "ait build",
     "release:check": "node scripts/release-check.cjs",
     "release:build": "npm run prepare:assets && npm run release:check && npm run typecheck && npm test -- --runInBand && npm run build",
+    "qa:room:visual": "python scripts/render-room-visual-qa.py",
     "test": "jest --passWithNoTests",
     "typecheck": "tsc --noEmit",
     "lint": "biome check --write",
     "deploy": "ait deploy"
   },
   "dependencies": {
-    "@apps-in-toss/framework": "^2.10.6",
-    "@apps-in-toss/native-modules": "^2.10.6",
+    "@apps-in-toss/framework": "^2.10.7",
+    "@apps-in-toss/native-modules": "^2.10.7",
     "@granite-js/native": "1.0.36",
     "@granite-js/react-native": "1.0.36",
     "brick-module": "0.5.1",
@@ -39,6 +40,7 @@
     "babel-preset-granite": "1.0.36",
     "jest": "^29.7.0",
     "react-test-renderer": "19.2.3",
+    "sharp": "^0.35.3",
     "typescript": "^5.8.3"
   },
   "dependenciesMeta": {

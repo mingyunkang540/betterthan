@@ -4,7 +4,6 @@ import { StyleSheet, Text } from 'react-native';
 import { RecordView } from '../components/record-view';
 import {
   AppScreen,
-  BackButton,
   EmptyState,
   LoadingScreen,
   colors,
@@ -19,14 +18,12 @@ export const Route = createRoute('/record-detail', {
 });
 
 function RecordDetailPage() {
-  const navigation = Route.useNavigation();
   const { id } = Route.useParams();
   const { loading, records } = useApp();
   if (loading) return <LoadingScreen />;
   const record = records.find((item) => item.id === id);
   return (
     <AppScreen>
-      <BackButton onPress={() => navigation.goBack()} />
       {record ? (
         <>
           <Text style={styles.date}>{formatDateKey(record.date)}</Text>

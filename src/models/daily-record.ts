@@ -1,4 +1,9 @@
 export type Score = 1 | 2 | 3 | 4 | 5;
+export type ExperimentOutcome =
+  | 'DONE'
+  | 'PARTLY_DONE'
+  | 'NOT_DONE'
+  | 'DONT_REMEMBER';
 
 export interface DailyRecord {
   id: string;
@@ -11,6 +16,7 @@ export interface DailyRecord {
   improvement?: string;
   experimentCategory?: string;
   experiment?: string;
+  experimentOutcome?: ExperimentOutcome;
   oneLine?: string;
   createdAt: string;
   updatedAt: string;

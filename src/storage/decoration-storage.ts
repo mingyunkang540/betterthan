@@ -1,9 +1,10 @@
 import {
   ROOM_SLOT_IDS,
-  STUDIO_001_SLOTS,
+  canPlaceRoomItem,
   roomItemDefinition,
 } from '../constants/room-definitions';
 import { DEFAULT_DECORATION_IDS, SHOP_ITEMS } from '../constants/shop-items';
+import { TESTER_ROOM_ITEMS_UNLOCKED } from '../constants/tester-config';
 import type {
   DecorationState,
   RoomPosition,
@@ -37,7 +38,11 @@ export function createDefaultDecorationState(
   now = new Date(),
 ): DecorationState {
   const timestamp = now.toISOString();
-  const defaults = SHOP_ITEMS.filter((item) => item.isDefault);
+  const defaults = SHOP_ITEMS.filter(
+    (item) =>
+      item.isDefault ||
+      (TESTER_ROOM_ITEMS_UNLOCKED && Boolean(roomItemDefinition(item.id))),
+  );
   return {
     owned: defaults.map((item) => ({
       itemId: item.id,
@@ -69,8 +74,22 @@ function normalizeState(value: unknown): DecorationState | null {
     return null;
   const defaults = createDefaultDecorationState();
   const validIds = new Set(SHOP_ITEMS.map((item) => item.id));
+  const actualDefaultIds = new Set(DEFAULT_DECORATION_IDS);
+  const hasTesterDefaultUnlock =
+    !TESTER_ROOM_ITEMS_UNLOCKED &&
+    state.owned.some(
+      (item) =>
+        item?.acquisitionType === 'DEFAULT' &&
+        !actualDefaultIds.has(item.itemId),
+    );
   const savedOwned = state.owned.filter(
-    (item) => item && validIds.has(item.itemId),
+    (item) =>
+      item &&
+      !hasTesterDefaultUnlock &&
+      validIds.has(item.itemId) &&
+      (TESTER_ROOM_ITEMS_UNLOCKED ||
+        item.acquisitionType !== 'DEFAULT' ||
+        actualDefaultIds.has(item.itemId)),
   );
   const owned = [
     ...defaults.owned.filter(
@@ -91,9 +110,15 @@ function normalizeState(value: unknown): DecorationState | null {
         typeof itemId === 'string' ? roomItemDefinition(itemId) : undefined;
       if (
         itemId === null ||
-        (definition?.slotId === slotId && ownedIds.has(itemId))
+        (definition &&
+          canPlaceRoomItem(definition, slotId) &&
+          ownedIds.has(itemId))
       )
         slots[slotId] = itemId;
+      else if (definition && ownedIds.has(itemId)) {
+        const targetSlot = definition.slotId;
+        if (slots[targetSlot] === null) slots[targetSlot] = itemId;
+      }
     }
   } else if (Array.isArray(state.placedRoomItems)) {
     for (const placed of state.placedRoomItems) {
@@ -120,9 +145,11 @@ function normalizeState(value: unknown): DecorationState | null {
       slots,
       updatedAt: state.roomState?.updatedAt ?? timestamp,
     },
-    purchases: state.purchases.filter(
-      (item) => item && validIds.has(item.itemId) && item.amount < 0,
-    ),
+    purchases: hasTesterDefaultUnlock
+      ? []
+      : state.purchases.filter(
+          (item) => item && validIds.has(item.itemId) && item.amount < 0,
+        ),
     updatedAt: timestamp,
   };
 }
@@ -236,12 +263,9 @@ export function saveRoomSlots(
       continue;
     }
     const definition = roomItemDefinition(itemId);
-    const slotCategory = STUDIO_001_SLOTS.find(
-      (slot) => slot.id === slotId,
-    )?.category;
     if (
       !definition ||
-      (definition.slotId !== slotId && definition.category !== slotCategory) ||
+      !canPlaceRoomItem(definition, slotId) ||
       !ownedIds.has(itemId)
     )
       throw new Error('이 슬롯에 배치할 수 없는 아이템이에요.');

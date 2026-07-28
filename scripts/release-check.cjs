@@ -3,7 +3,15 @@ const path = require('node:path');
 
 const root = path.resolve(__dirname, '..');
 const configPath = path.join(root, 'granite.config.ts');
+const testerConfigPath = path.join(
+  root,
+  'src',
+  'constants',
+  'tester-config.ts',
+);
 const iconPath = path.join(root, 'assets', 'brand', 'app-icon-600-v1.png');
+const consoleIconUrl =
+  'https://static.toss.im/appsintoss/60223/fbecb575-1537-4486-968e-e81aae24cc02.png';
 const failures = [];
 
 function pngDimensions(filePath) {
@@ -14,23 +22,26 @@ function pngDimensions(filePath) {
 }
 
 const config = fs.readFileSync(configPath, 'utf8');
+const testerConfig = fs.readFileSync(testerConfigPath, 'utf8');
 if (!config.includes("appName: 'betterthan'"))
   failures.push('granite.config.ts의 appName이 betterthan이 아니에요.');
 if (!config.includes("displayName: '어제보다'"))
   failures.push('granite.config.ts의 표시 이름이 어제보다가 아니에요.');
 if (!config.includes("permissions: []"))
   failures.push('1차 출시 권한 목록이 비어 있지 않아요.');
-
-const iconUrl = process.env.AIT_ICON_URL?.trim();
-if (!iconUrl) {
-  failures.push('AIT_ICON_URL 환경 변수에 콘솔 아이콘 URL을 입력해 주세요.');
-} else {
-  try {
-    const parsed = new URL(iconUrl);
-    if (parsed.protocol !== 'https:')
-      failures.push('AIT_ICON_URL은 https URL이어야 해요.');
-  } catch {
-    failures.push('AIT_ICON_URL이 올바른 URL 형식이 아니에요.');
+if (!testerConfig.includes('export const TESTER_REWARD_GRANT = 0;'))
+  failures.push('공개 출시 빌드에 테스터용 기록 조각이 남아 있어요.');
+if (!config.includes(`'${consoleIconUrl}'`))
+  failures.push('brand.icon이 콘솔에 등록한 아이콘 URL과 다릅니다.');
+const sourceRoot = path.join(root, 'src');
+const sourceFiles = fs
+  .readdirSync(sourceRoot, { recursive: true, withFileTypes: true })
+  .filter((entry) => entry.isFile() && /\.(ts|tsx)$/.test(entry.name));
+for (const entry of sourceFiles) {
+  const sourcePath = path.join(entry.parentPath, entry.name);
+  if (fs.readFileSync(sourcePath, 'utf8').includes('ait-ad-test-')) {
+    failures.push('출시 번들에 테스트용 광고 그룹 ID가 남아 있어요.');
+    break;
   }
 }
 
@@ -50,6 +61,8 @@ if (failures.length > 0) {
   console.log('출시 필수 설정 검사를 통과했어요.');
   console.log('- appName: betterthan');
   console.log('- displayName: 어제보다');
-  console.log('- icon: 600×600 PNG + HTTPS URL');
+  console.log('- icon: 콘솔 등록 URL과 일치');
   console.log('- permissions: 없음');
+  console.log('- ads: 사용하지 않음');
+  console.log('- initial tester grant: 0조각');
 }

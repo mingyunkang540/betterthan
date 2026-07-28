@@ -18,10 +18,10 @@ export const Route = createRoute('/result', {
   component: ResultPage,
 });
 
-function ResultPage() {
+export function ResultPage() {
   const navigation = Route.useNavigation();
   const { id } = Route.useParams();
-  const { records, rewardTransactions } = useApp();
+  const { records, rewardTransactions, editTodayRecord } = useApp();
   const record = records.find((item) => item.id === id);
   const earned = rewardTransactions
     .filter(
@@ -54,6 +54,17 @@ function ResultPage() {
         />
       )}
       <View style={styles.actions}>
+        {record ? (
+          <PrimaryButton
+            label="오늘 기록 수정하기"
+            secondary
+            onPress={() => {
+              void editTodayRecord(record).then(() =>
+                navigation.navigate('/check-in'),
+              );
+            }}
+          />
+        ) : null}
         <PrimaryButton
           label="홈으로"
           onPress={() => navigation.navigate('/')}

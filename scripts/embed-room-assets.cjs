@@ -1,5 +1,6 @@
 const fs = require('node:fs');
 const path = require('node:path');
+const sharp = require('sharp');
 
 const root = path.resolve(__dirname, '..');
 const outputPath = path.join(
@@ -11,21 +12,43 @@ const outputPath = path.join(
 
 const assets = {
   roomBackground: 'assets/room/cozy-approved-v2/room-empty.png',
+  'room-theme-cream': 'assets/room/cozy-approved-v7/room-cream.png',
+  'room-theme-walnut': 'assets/room/cozy-approved-v7/room-walnut.png',
+  'room-theme-sage': 'assets/room/cozy-approved-v7/room-sage.png',
+  'room-theme-rattan': 'assets/room/cozy-approved-v7/room-rattan.png',
   'bed-basic': 'assets/room/cozy-approved-v2/bed-basic.png',
   'bed-mint': 'assets/room/cozy-approved-v2/bed-mint.png',
   'desk-basic': 'assets/room/cozy-approved-v2/desk-basic.png',
   'desk-cream': 'assets/room/cozy-approved-v2/desk-cream.png',
-  'chair-cushion': 'assets/room/cozy-approved-v3/chair-basic.png',
-  'chair-mint': 'assets/room/cozy-approved-v3/chair-mint.png',
+  'desk-walnut-drawers':
+    'assets/room/cozy-approved-v5/desk-walnut-drawers.png',
+  'desk-sage': 'assets/room/cozy-approved-v5/desk-sage.png',
+  'desk-rattan': 'assets/room/cozy-approved-v5/desk-rattan.png',
+  'chair-cushion': 'assets/room/cozy-approved-v2/chair-basic.png',
+  'chair-mint': 'assets/room/cozy-approved-v2/chair-mint.png',
+  'chair-walnut': 'assets/room/cozy-approved-v5/chair-walnut.png',
+  'chair-lavender': 'assets/room/cozy-approved-v5/chair-lavender.png',
+  'chair-rattan-blue':
+    'assets/room/cozy-approved-v5/chair-rattan-blue.png',
   'bed-rose': 'assets/room/cozy-approved-v3/bed-rose.png',
   'bed-sky': 'assets/room/cozy-approved-v3/bed-sky.png',
   'bed-princess': 'assets/room/cozy-approved-v3/bed-princess.png',
+  'bed-canopy-lavender':
+    'assets/room/cozy-approved-v4/bed-canopy-lavender.png',
+  'bed-sleigh-navy': 'assets/room/cozy-approved-v4/bed-sleigh-navy.png',
+  'bed-iron-sage': 'assets/room/cozy-approved-v4/bed-iron-sage.png',
+  'bed-upholstered-wine':
+    'assets/room/cozy-approved-v4/bed-upholstered-wine.png',
   'plant-pothos': 'assets/room/cozy-approved/plant-floor.png',
-  'plant-olive': 'assets/room/cozy-approved/plant-floor.png',
+  'plant-olive': 'assets/room/cozy-approved-v3/plant-olive.png',
   'plant-desk': 'assets/room/cozy-approved/plant-desk.png',
-  'plant-shelf': 'assets/room/cozy-approved/plant-shelf.png',
+  'plant-shelf': 'assets/room/cozy-approved-v3/plant-succulent.png',
   'plant-window': 'assets/room/cozy-approved/plant-window.png',
   'plant-floor': 'assets/room/cozy-approved/plant-floor.png',
+  'pet-cat-floor': 'assets/room/cozy-approved/cat-sit.png',
+  'pet-dog-floor': 'assets/room/cozy-approved/dog-sit.png',
+  'pet-cat-gray-floor': 'assets/room/cozy-approved-v3/cat-gray-plant.png',
+  'pet-dog-brown-floor': 'assets/room/cozy-approved-v3/dog-brown-eat.png',
   'pet-cat-window': 'assets/room/cozy-approved-v2/cat-window.png',
   'pet-cat-bed': 'assets/room/cozy-approved-v2/cat-bed.png',
   'pet-cat-shelf': 'assets/room/cozy-approved-v2/cat-shelf.png',
@@ -44,9 +67,20 @@ const assets = {
   'pet-dog-brown-eat': 'assets/room/cozy-approved-v3/dog-brown-eat.png',
   'diary-book': 'assets/room/cozy-approved-v2/diary-book.png',
   'bookcase-small': 'assets/room/cozy-approved-v3/bookcase-small.png',
+  'bookcase-cream': 'assets/room/cozy-approved-v6/bookcase-cream.png',
+  'bookcase-sage': 'assets/room/cozy-approved-v6/bookcase-sage.png',
+  'bookcase-walnut': 'assets/room/cozy-approved-v6/bookcase-walnut.png',
+  'bookcase-sky': 'assets/room/cozy-approved-v6/bookcase-sky.png',
   'shelf-basic': 'assets/room/cozy-approved-v2/shelf-basic.png',
+  'shelf-walnut': 'assets/room/cozy-approved-v5/shelf-walnut.png',
+  'shelf-cream': 'assets/room/cozy-approved-v5/shelf-cream.png',
+  'shelf-sage': 'assets/room/cozy-approved-v5/shelf-sage.png',
+  'shelf-navy': 'assets/room/cozy-approved-v5/shelf-navy.png',
   'rug-round': 'assets/room/cozy-approved-v2/rug-round.png',
-  'curtain-linen': 'assets/room/cozy-approved-v2/curtain-linen.png',
+  'rug-mint-braid': 'assets/room/cozy-approved-v6/rug-mint-braid.png',
+  'rug-rose-floral': 'assets/room/cozy-approved-v6/rug-rose-floral.png',
+  'rug-sky-cloud': 'assets/room/cozy-approved-v6/rug-sky-cloud.png',
+  'rug-sun': 'assets/room/cozy-approved-v6/rug-sun.png',
   'wall-calendar': 'assets/room/cozy-approved-v3/wall-calendar.png',
   'wall-poster': 'assets/room/cozy-approved-v3/wall-poster.png',
   'drink-coffee': 'assets/room/cozy-approved-v3/drink-coffee.png',
@@ -57,21 +91,51 @@ const assets = {
   'plant-fiddle': 'assets/room/cozy-approved-v3/plant-fiddle.png',
 };
 
-const entries = Object.entries(assets).map(([key, relativePath]) => {
+async function encodeAsset(key, relativePath) {
   const filePath = path.join(root, relativePath);
   if (!fs.existsSync(filePath)) throw new Error(`Missing room asset: ${relativePath}`);
-  const base64 = fs.readFileSync(filePath).toString('base64');
-  return `  ${JSON.stringify(key)}: ${JSON.stringify(`data:image/png;base64,${base64}`)},`;
+
+  const isBackground = key === 'roomBackground' || key.startsWith('room-theme-');
+  const buffer = await sharp(filePath)
+    .resize({
+      width: isBackground ? 576 : 448,
+      withoutEnlargement: true,
+      fit: 'inside',
+    })
+    .webp({
+      quality: isBackground ? 82 : 86,
+      alphaQuality: 92,
+      effort: 6,
+      smartSubsample: true,
+    })
+    .toBuffer();
+
+  return `  ${JSON.stringify(key)}: ${JSON.stringify(`data:image/webp;base64,${buffer.toString('base64')}`)},`;
+}
+
+async function main() {
+  const entries = await Promise.all(
+    Object.entries(assets).map(([key, relativePath]) =>
+      encodeAsset(key, relativePath),
+    ),
+  );
+  const source = [
+    '// Generated by scripts/embed-room-assets.cjs. Do not edit manually.',
+    '// Optimized WebP data URIs are required because .ait artifacts do not package Metro assets.',
+    'export const EMBEDDED_ROOM_ASSETS = {',
+    ...entries,
+    '} as const;',
+    '',
+  ].join('\n');
+
+  fs.writeFileSync(outputPath, source, 'utf8');
+  const sizeMiB = fs.statSync(outputPath).size / 1024 / 1024;
+  console.log(
+    `Embedded ${entries.length} optimized room assets into ${path.relative(root, outputPath)} (${sizeMiB.toFixed(2)} MiB).`,
+  );
+}
+
+main().catch((error) => {
+  console.error(error);
+  process.exitCode = 1;
 });
-
-const source = [
-  '// Generated by scripts/embed-room-assets.cjs. Do not edit manually.',
-  '// Data URIs are required because .ait artifacts do not package Metro PNG assets.',
-  'export const EMBEDDED_ROOM_ASSETS = {',
-  ...entries,
-  '} as const;',
-  '',
-].join('\n');
-
-fs.writeFileSync(outputPath, source, 'utf8');
-console.log(`Embedded ${entries.length} room assets into ${path.relative(root, outputPath)}.`);

@@ -1,0 +1,3267 @@
+{
+  "environment": {
+    "renderer": "Pillow deterministic scene renderer",
+    "sourceLayout": "src/pages/room.tsx",
+    "sourceDefinitions": "src/constants/room-definitions.ts",
+    "sourceAssets": "scripts/embed-room-assets.cjs",
+    "designSize": [
+      768,
+      1024
+    ],
+    "viewportWidths": [
+      360,
+      390,
+      430
+    ],
+    "limitations": [
+      "Does not include Apps in Toss host navigation or safe-area chrome",
+      "Uses the production Room scene layout formula but not React Native rasterization"
+    ]
+  },
+  "assetCount": 48,
+  "slotCount": 11,
+  "screenshotCount": 57,
+  "cases": [
+    {
+      "caseId": "CASE_001",
+      "name": "EMPTY_ROOM",
+      "viewportWidth": 390,
+      "screenshot": "room-case_001-empty_room-390.png",
+      "items": [],
+      "measurements": [],
+      "issues": [],
+      "result": "PASS"
+    },
+    {
+      "caseId": "CASE_002",
+      "name": "SINGLE_bed-basic_BED_SLOT",
+      "viewportWidth": 390,
+      "screenshot": "room-case_002-single_bed-basic_bed_slot-390.png",
+      "items": [
+        {
+          "itemId": "bed-basic",
+          "slotId": "BED_SLOT"
+        }
+      ],
+      "measurements": [
+        {
+          "itemId": "bed-basic",
+          "assetId": "bed-basic",
+          "slotId": "BED_SLOT",
+          "x": 191,
+          "y": 216,
+          "width": 152,
+          "height": 152,
+          "zIndex": 20,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            210,
+            234,
+            327,
+            349
+          ],
+          "clipped": false
+        }
+      ],
+      "issues": [],
+      "result": "PASS"
+    },
+    {
+      "caseId": "CASE_003",
+      "name": "SINGLE_bed-mint_BED_SLOT",
+      "viewportWidth": 390,
+      "screenshot": "room-case_003-single_bed-mint_bed_slot-390.png",
+      "items": [
+        {
+          "itemId": "bed-mint",
+          "slotId": "BED_SLOT"
+        }
+      ],
+      "measurements": [
+        {
+          "itemId": "bed-mint",
+          "assetId": "bed-mint",
+          "slotId": "BED_SLOT",
+          "x": 191,
+          "y": 216,
+          "width": 152,
+          "height": 152,
+          "zIndex": 20,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            210,
+            234,
+            327,
+            349
+          ],
+          "clipped": false
+        }
+      ],
+      "issues": [],
+      "result": "PASS"
+    },
+    {
+      "caseId": "CASE_004",
+      "name": "SINGLE_bed-rose_BED_SLOT",
+      "viewportWidth": 390,
+      "screenshot": "room-case_004-single_bed-rose_bed_slot-390.png",
+      "items": [
+        {
+          "itemId": "bed-rose",
+          "slotId": "BED_SLOT"
+        }
+      ],
+      "measurements": [
+        {
+          "itemId": "bed-rose",
+          "assetId": "bed-rose",
+          "slotId": "BED_SLOT",
+          "x": 191,
+          "y": 216,
+          "width": 152,
+          "height": 152,
+          "zIndex": 20,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            210,
+            234,
+            327,
+            349
+          ],
+          "clipped": false
+        }
+      ],
+      "issues": [],
+      "result": "PASS"
+    },
+    {
+      "caseId": "CASE_005",
+      "name": "SINGLE_bed-sky_BED_SLOT",
+      "viewportWidth": 390,
+      "screenshot": "room-case_005-single_bed-sky_bed_slot-390.png",
+      "items": [
+        {
+          "itemId": "bed-sky",
+          "slotId": "BED_SLOT"
+        }
+      ],
+      "measurements": [
+        {
+          "itemId": "bed-sky",
+          "assetId": "bed-sky",
+          "slotId": "BED_SLOT",
+          "x": 191,
+          "y": 216,
+          "width": 152,
+          "height": 152,
+          "zIndex": 20,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            210,
+            234,
+            327,
+            349
+          ],
+          "clipped": false
+        }
+      ],
+      "issues": [],
+      "result": "PASS"
+    },
+    {
+      "caseId": "CASE_006",
+      "name": "SINGLE_bed-princess_BED_SLOT",
+      "viewportWidth": 390,
+      "screenshot": "room-case_006-single_bed-princess_bed_slot-390.png",
+      "items": [
+        {
+          "itemId": "bed-princess",
+          "slotId": "BED_SLOT"
+        }
+      ],
+      "measurements": [
+        {
+          "itemId": "bed-princess",
+          "assetId": "bed-princess",
+          "slotId": "BED_SLOT",
+          "x": 184,
+          "y": 203,
+          "width": 165,
+          "height": 165,
+          "zIndex": 20,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            205,
+            214,
+            325,
+            358
+          ],
+          "clipped": false
+        }
+      ],
+      "issues": [],
+      "result": "PASS"
+    },
+    {
+      "caseId": "CASE_007",
+      "name": "SINGLE_bed-canopy-lavender_BED_SLOT",
+      "viewportWidth": 390,
+      "screenshot": "room-case_007-single_bed-canopy-lavender_bed_slot-390.png",
+      "items": [
+        {
+          "itemId": "bed-canopy-lavender",
+          "slotId": "BED_SLOT"
+        }
+      ],
+      "measurements": [
+        {
+          "itemId": "bed-canopy-lavender",
+          "assetId": "bed-canopy-lavender",
+          "slotId": "BED_SLOT",
+          "x": 191,
+          "y": 216,
+          "width": 152,
+          "height": 152,
+          "zIndex": 20,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            209,
+            221,
+            325,
+            360
+          ],
+          "clipped": false
+        }
+      ],
+      "issues": [],
+      "result": "PASS"
+    },
+    {
+      "caseId": "CASE_008",
+      "name": "SINGLE_bed-sleigh-navy_BED_SLOT",
+      "viewportWidth": 390,
+      "screenshot": "room-case_008-single_bed-sleigh-navy_bed_slot-390.png",
+      "items": [
+        {
+          "itemId": "bed-sleigh-navy",
+          "slotId": "BED_SLOT"
+        }
+      ],
+      "measurements": [
+        {
+          "itemId": "bed-sleigh-navy",
+          "assetId": "bed-sleigh-navy",
+          "slotId": "BED_SLOT",
+          "x": 191,
+          "y": 216,
+          "width": 152,
+          "height": 152,
+          "zIndex": 20,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            208,
+            230,
+            331,
+            352
+          ],
+          "clipped": false
+        }
+      ],
+      "issues": [],
+      "result": "PASS"
+    },
+    {
+      "caseId": "CASE_009",
+      "name": "SINGLE_bed-iron-sage_BED_SLOT",
+      "viewportWidth": 390,
+      "screenshot": "room-case_009-single_bed-iron-sage_bed_slot-390.png",
+      "items": [
+        {
+          "itemId": "bed-iron-sage",
+          "slotId": "BED_SLOT"
+        }
+      ],
+      "measurements": [
+        {
+          "itemId": "bed-iron-sage",
+          "assetId": "bed-iron-sage",
+          "slotId": "BED_SLOT",
+          "x": 191,
+          "y": 216,
+          "width": 152,
+          "height": 152,
+          "zIndex": 20,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            211,
+            234,
+            327,
+            348
+          ],
+          "clipped": false
+        }
+      ],
+      "issues": [],
+      "result": "PASS"
+    },
+    {
+      "caseId": "CASE_010",
+      "name": "SINGLE_bed-upholstered-wine_BED_SLOT",
+      "viewportWidth": 390,
+      "screenshot": "room-case_010-single_bed-upholstered-wine_bed_slot-390.png",
+      "items": [
+        {
+          "itemId": "bed-upholstered-wine",
+          "slotId": "BED_SLOT"
+        }
+      ],
+      "measurements": [
+        {
+          "itemId": "bed-upholstered-wine",
+          "assetId": "bed-upholstered-wine",
+          "slotId": "BED_SLOT",
+          "x": 191,
+          "y": 216,
+          "width": 152,
+          "height": 152,
+          "zIndex": 20,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            209,
+            230,
+            329,
+            352
+          ],
+          "clipped": false
+        }
+      ],
+      "issues": [],
+      "result": "PASS"
+    },
+    {
+      "caseId": "CASE_011",
+      "name": "SINGLE_desk-basic_DESK_SLOT",
+      "viewportWidth": 390,
+      "screenshot": "room-case_011-single_desk-basic_desk_slot-390.png",
+      "items": [
+        {
+          "itemId": "desk-basic",
+          "slotId": "DESK_SLOT"
+        }
+      ],
+      "measurements": [
+        {
+          "itemId": "desk-basic",
+          "assetId": "desk-basic",
+          "slotId": "DESK_SLOT",
+          "x": 48,
+          "y": 224,
+          "width": 178,
+          "height": 152,
+          "zIndex": 30,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            77,
+            242,
+            198,
+            357
+          ],
+          "clipped": false
+        },
+        {
+          "itemId": "diary-book",
+          "assetId": "diary-book",
+          "slotId": "DESK_SLOT",
+          "x": 136,
+          "y": 255,
+          "width": 47,
+          "height": 40,
+          "zIndex": 38,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            142,
+            259,
+            176,
+            290
+          ],
+          "clipped": false
+        }
+      ],
+      "issues": [],
+      "result": "PASS"
+    },
+    {
+      "caseId": "CASE_012",
+      "name": "SINGLE_desk-cream_DESK_SLOT",
+      "viewportWidth": 390,
+      "screenshot": "room-case_012-single_desk-cream_desk_slot-390.png",
+      "items": [
+        {
+          "itemId": "desk-cream",
+          "slotId": "DESK_SLOT"
+        }
+      ],
+      "measurements": [
+        {
+          "itemId": "desk-cream",
+          "assetId": "desk-cream",
+          "slotId": "DESK_SLOT",
+          "x": 48,
+          "y": 224,
+          "width": 178,
+          "height": 152,
+          "zIndex": 30,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            83,
+            243,
+            191,
+            355
+          ],
+          "clipped": false
+        },
+        {
+          "itemId": "diary-book",
+          "assetId": "diary-book",
+          "slotId": "DESK_SLOT",
+          "x": 136,
+          "y": 255,
+          "width": 47,
+          "height": 40,
+          "zIndex": 38,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            142,
+            259,
+            176,
+            290
+          ],
+          "clipped": false
+        }
+      ],
+      "issues": [],
+      "result": "PASS"
+    },
+    {
+      "caseId": "CASE_013",
+      "name": "SINGLE_desk-walnut-drawers_DESK_SLOT",
+      "viewportWidth": 390,
+      "screenshot": "room-case_013-single_desk-walnut-drawers_desk_slot-390.png",
+      "items": [
+        {
+          "itemId": "desk-walnut-drawers",
+          "slotId": "DESK_SLOT"
+        }
+      ],
+      "measurements": [
+        {
+          "itemId": "desk-walnut-drawers",
+          "assetId": "desk-walnut-drawers",
+          "slotId": "DESK_SLOT",
+          "x": 48,
+          "y": 224,
+          "width": 178,
+          "height": 152,
+          "zIndex": 30,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            80,
+            245,
+            195,
+            354
+          ],
+          "clipped": false
+        },
+        {
+          "itemId": "diary-book",
+          "assetId": "diary-book",
+          "slotId": "DESK_SLOT",
+          "x": 136,
+          "y": 255,
+          "width": 47,
+          "height": 40,
+          "zIndex": 38,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            142,
+            259,
+            176,
+            290
+          ],
+          "clipped": false
+        }
+      ],
+      "issues": [],
+      "result": "PASS"
+    },
+    {
+      "caseId": "CASE_014",
+      "name": "SINGLE_desk-sage_DESK_SLOT",
+      "viewportWidth": 390,
+      "screenshot": "room-case_014-single_desk-sage_desk_slot-390.png",
+      "items": [
+        {
+          "itemId": "desk-sage",
+          "slotId": "DESK_SLOT"
+        }
+      ],
+      "measurements": [
+        {
+          "itemId": "desk-sage",
+          "assetId": "desk-sage",
+          "slotId": "DESK_SLOT",
+          "x": 48,
+          "y": 224,
+          "width": 178,
+          "height": 152,
+          "zIndex": 30,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            79,
+            241,
+            198,
+            356
+          ],
+          "clipped": false
+        },
+        {
+          "itemId": "diary-book",
+          "assetId": "diary-book",
+          "slotId": "DESK_SLOT",
+          "x": 136,
+          "y": 255,
+          "width": 47,
+          "height": 40,
+          "zIndex": 38,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            142,
+            259,
+            176,
+            290
+          ],
+          "clipped": false
+        }
+      ],
+      "issues": [],
+      "result": "PASS"
+    },
+    {
+      "caseId": "CASE_015",
+      "name": "SINGLE_desk-rattan_DESK_SLOT",
+      "viewportWidth": 390,
+      "screenshot": "room-case_015-single_desk-rattan_desk_slot-390.png",
+      "items": [
+        {
+          "itemId": "desk-rattan",
+          "slotId": "DESK_SLOT"
+        }
+      ],
+      "measurements": [
+        {
+          "itemId": "desk-rattan",
+          "assetId": "desk-rattan",
+          "slotId": "DESK_SLOT",
+          "x": 48,
+          "y": 224,
+          "width": 178,
+          "height": 152,
+          "zIndex": 30,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            79,
+            244,
+            196,
+            355
+          ],
+          "clipped": false
+        },
+        {
+          "itemId": "diary-book",
+          "assetId": "diary-book",
+          "slotId": "DESK_SLOT",
+          "x": 136,
+          "y": 255,
+          "width": 47,
+          "height": 40,
+          "zIndex": 38,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            142,
+            259,
+            176,
+            290
+          ],
+          "clipped": false
+        }
+      ],
+      "issues": [],
+      "result": "PASS"
+    },
+    {
+      "caseId": "CASE_016",
+      "name": "SINGLE_chair-cushion_CHAIR_SLOT",
+      "viewportWidth": 390,
+      "screenshot": "room-case_016-single_chair-cushion_chair_slot-390.png",
+      "items": [
+        {
+          "itemId": "chair-cushion",
+          "slotId": "CHAIR_SLOT"
+        }
+      ],
+      "measurements": [
+        {
+          "itemId": "chair-cushion",
+          "assetId": "chair-cushion",
+          "slotId": "CHAIR_SLOT",
+          "x": 128,
+          "y": 268,
+          "width": 87,
+          "height": 114,
+          "zIndex": 40,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            146,
+            293,
+            196,
+            356
+          ],
+          "clipped": false
+        }
+      ],
+      "issues": [],
+      "result": "PASS"
+    },
+    {
+      "caseId": "CASE_017",
+      "name": "SINGLE_chair-mint_CHAIR_SLOT",
+      "viewportWidth": 390,
+      "screenshot": "room-case_017-single_chair-mint_chair_slot-390.png",
+      "items": [
+        {
+          "itemId": "chair-mint",
+          "slotId": "CHAIR_SLOT"
+        }
+      ],
+      "measurements": [
+        {
+          "itemId": "chair-mint",
+          "assetId": "chair-mint",
+          "slotId": "CHAIR_SLOT",
+          "x": 128,
+          "y": 268,
+          "width": 87,
+          "height": 114,
+          "zIndex": 40,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            146,
+            293,
+            196,
+            356
+          ],
+          "clipped": false
+        }
+      ],
+      "issues": [],
+      "result": "PASS"
+    },
+    {
+      "caseId": "CASE_018",
+      "name": "SINGLE_chair-walnut_CHAIR_SLOT",
+      "viewportWidth": 390,
+      "screenshot": "room-case_018-single_chair-walnut_chair_slot-390.png",
+      "items": [
+        {
+          "itemId": "chair-walnut",
+          "slotId": "CHAIR_SLOT"
+        }
+      ],
+      "measurements": [
+        {
+          "itemId": "chair-walnut",
+          "assetId": "chair-walnut",
+          "slotId": "CHAIR_SLOT",
+          "x": 128,
+          "y": 268,
+          "width": 87,
+          "height": 114,
+          "zIndex": 40,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            147,
+            294,
+            196,
+            356
+          ],
+          "clipped": false
+        }
+      ],
+      "issues": [],
+      "result": "PASS"
+    },
+    {
+      "caseId": "CASE_019",
+      "name": "SINGLE_chair-lavender_CHAIR_SLOT",
+      "viewportWidth": 390,
+      "screenshot": "room-case_019-single_chair-lavender_chair_slot-390.png",
+      "items": [
+        {
+          "itemId": "chair-lavender",
+          "slotId": "CHAIR_SLOT"
+        }
+      ],
+      "measurements": [
+        {
+          "itemId": "chair-lavender",
+          "assetId": "chair-lavender",
+          "slotId": "CHAIR_SLOT",
+          "x": 128,
+          "y": 268,
+          "width": 87,
+          "height": 114,
+          "zIndex": 40,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            147,
+            292,
+            198,
+            357
+          ],
+          "clipped": false
+        }
+      ],
+      "issues": [],
+      "result": "PASS"
+    },
+    {
+      "caseId": "CASE_020",
+      "name": "SINGLE_chair-rattan-blue_CHAIR_SLOT",
+      "viewportWidth": 390,
+      "screenshot": "room-case_020-single_chair-rattan-blue_chair_slot-390.png",
+      "items": [
+        {
+          "itemId": "chair-rattan-blue",
+          "slotId": "CHAIR_SLOT"
+        }
+      ],
+      "measurements": [
+        {
+          "itemId": "chair-rattan-blue",
+          "assetId": "chair-rattan-blue",
+          "slotId": "CHAIR_SLOT",
+          "x": 128,
+          "y": 268,
+          "width": 87,
+          "height": 114,
+          "zIndex": 40,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            146,
+            291,
+            197,
+            357
+          ],
+          "clipped": false
+        }
+      ],
+      "issues": [],
+      "result": "PASS"
+    },
+    {
+      "caseId": "CASE_021",
+      "name": "SINGLE_plant-pothos_PLANT_SLOT_1",
+      "viewportWidth": 390,
+      "screenshot": "room-case_021-single_plant-pothos_plant_slot_1-390.png",
+      "items": [
+        {
+          "itemId": "plant-pothos",
+          "slotId": "PLANT_SLOT_1"
+        }
+      ],
+      "measurements": [
+        {
+          "itemId": "plant-pothos",
+          "assetId": "plant-pothos",
+          "slotId": "PLANT_SLOT_1",
+          "x": 284,
+          "y": 289,
+          "width": 66,
+          "height": 89,
+          "zIndex": 50,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            296,
+            308,
+            336,
+            355
+          ],
+          "clipped": false
+        }
+      ],
+      "issues": [],
+      "result": "PASS"
+    },
+    {
+      "caseId": "CASE_022",
+      "name": "SINGLE_plant-olive_PLANT_SLOT_1",
+      "viewportWidth": 390,
+      "screenshot": "room-case_022-single_plant-olive_plant_slot_1-390.png",
+      "items": [
+        {
+          "itemId": "plant-olive",
+          "slotId": "PLANT_SLOT_1"
+        }
+      ],
+      "measurements": [
+        {
+          "itemId": "plant-olive",
+          "assetId": "plant-olive",
+          "slotId": "PLANT_SLOT_1",
+          "x": 284,
+          "y": 289,
+          "width": 66,
+          "height": 89,
+          "zIndex": 50,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            300,
+            301,
+            334,
+            364
+          ],
+          "clipped": false
+        }
+      ],
+      "issues": [],
+      "result": "PASS"
+    },
+    {
+      "caseId": "CASE_023",
+      "name": "SINGLE_plant-succulent_PLANT_SLOT_1",
+      "viewportWidth": 390,
+      "screenshot": "room-case_023-single_plant-succulent_plant_slot_1-390.png",
+      "items": [
+        {
+          "itemId": "plant-succulent",
+          "slotId": "PLANT_SLOT_1"
+        }
+      ],
+      "measurements": [
+        {
+          "itemId": "plant-succulent",
+          "assetId": "plant-succulent",
+          "slotId": "PLANT_SLOT_1",
+          "x": 274,
+          "y": 262,
+          "width": 86,
+          "height": 116,
+          "zIndex": 50,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            300,
+            299,
+            334,
+            338
+          ],
+          "clipped": false
+        }
+      ],
+      "issues": [],
+      "result": "PASS"
+    },
+    {
+      "caseId": "CASE_024",
+      "name": "SINGLE_plant-fern_PLANT_SLOT_1",
+      "viewportWidth": 390,
+      "screenshot": "room-case_024-single_plant-fern_plant_slot_1-390.png",
+      "items": [
+        {
+          "itemId": "plant-fern",
+          "slotId": "PLANT_SLOT_1"
+        }
+      ],
+      "measurements": [
+        {
+          "itemId": "plant-fern",
+          "assetId": "plant-fern",
+          "slotId": "PLANT_SLOT_1",
+          "x": 283,
+          "y": 285,
+          "width": 69,
+          "height": 93,
+          "zIndex": 50,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            292,
+            301,
+            341,
+            361
+          ],
+          "clipped": false
+        }
+      ],
+      "issues": [],
+      "result": "PASS"
+    },
+    {
+      "caseId": "CASE_025",
+      "name": "SINGLE_plant-fiddle_PLANT_SLOT_1",
+      "viewportWidth": 390,
+      "screenshot": "room-case_025-single_plant-fiddle_plant_slot_1-390.png",
+      "items": [
+        {
+          "itemId": "plant-fiddle",
+          "slotId": "PLANT_SLOT_1"
+        }
+      ],
+      "measurements": [
+        {
+          "itemId": "plant-fiddle",
+          "assetId": "plant-fiddle",
+          "slotId": "PLANT_SLOT_1",
+          "x": 279,
+          "y": 276,
+          "width": 76,
+          "height": 102,
+          "zIndex": 50,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            301,
+            291,
+            333,
+            361
+          ],
+          "clipped": false
+        }
+      ],
+      "issues": [],
+      "result": "PASS"
+    },
+    {
+      "caseId": "CASE_026",
+      "name": "SINGLE_shelf-basic_SHELF_SLOT",
+      "viewportWidth": 390,
+      "screenshot": "room-case_026-single_shelf-basic_shelf_slot-390.png",
+      "items": [
+        {
+          "itemId": "shelf-basic",
+          "slotId": "SHELF_SLOT"
+        }
+      ],
+      "measurements": [
+        {
+          "itemId": "shelf-basic",
+          "assetId": "shelf-basic",
+          "slotId": "SHELF_SLOT",
+          "x": 235,
+          "y": 178,
+          "width": 114,
+          "height": 76,
+          "zIndex": 71,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            264,
+            190,
+            320,
+            238
+          ],
+          "clipped": false
+        }
+      ],
+      "issues": [],
+      "result": "PASS"
+    },
+    {
+      "caseId": "CASE_027",
+      "name": "SINGLE_shelf-walnut_SHELF_SLOT",
+      "viewportWidth": 390,
+      "screenshot": "room-case_027-single_shelf-walnut_shelf_slot-390.png",
+      "items": [
+        {
+          "itemId": "shelf-walnut",
+          "slotId": "SHELF_SLOT"
+        }
+      ],
+      "measurements": [
+        {
+          "itemId": "shelf-walnut",
+          "assetId": "shelf-walnut",
+          "slotId": "SHELF_SLOT",
+          "x": 235,
+          "y": 178,
+          "width": 114,
+          "height": 76,
+          "zIndex": 71,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            260,
+            189,
+            324,
+            243
+          ],
+          "clipped": false
+        }
+      ],
+      "issues": [],
+      "result": "PASS"
+    },
+    {
+      "caseId": "CASE_028",
+      "name": "SINGLE_shelf-cream_SHELF_SLOT",
+      "viewportWidth": 390,
+      "screenshot": "room-case_028-single_shelf-cream_shelf_slot-390.png",
+      "items": [
+        {
+          "itemId": "shelf-cream",
+          "slotId": "SHELF_SLOT"
+        }
+      ],
+      "measurements": [
+        {
+          "itemId": "shelf-cream",
+          "assetId": "shelf-cream",
+          "slotId": "SHELF_SLOT",
+          "x": 235,
+          "y": 178,
+          "width": 114,
+          "height": 76,
+          "zIndex": 71,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            263,
+            189,
+            321,
+            239
+          ],
+          "clipped": false
+        }
+      ],
+      "issues": [],
+      "result": "PASS"
+    },
+    {
+      "caseId": "CASE_029",
+      "name": "SINGLE_shelf-sage_SHELF_SLOT",
+      "viewportWidth": 390,
+      "screenshot": "room-case_029-single_shelf-sage_shelf_slot-390.png",
+      "items": [
+        {
+          "itemId": "shelf-sage",
+          "slotId": "SHELF_SLOT"
+        }
+      ],
+      "measurements": [
+        {
+          "itemId": "shelf-sage",
+          "assetId": "shelf-sage",
+          "slotId": "SHELF_SLOT",
+          "x": 235,
+          "y": 178,
+          "width": 114,
+          "height": 76,
+          "zIndex": 71,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            261,
+            190,
+            323,
+            241
+          ],
+          "clipped": false
+        }
+      ],
+      "issues": [],
+      "result": "PASS"
+    },
+    {
+      "caseId": "CASE_030",
+      "name": "SINGLE_shelf-navy_SHELF_SLOT",
+      "viewportWidth": 390,
+      "screenshot": "room-case_030-single_shelf-navy_shelf_slot-390.png",
+      "items": [
+        {
+          "itemId": "shelf-navy",
+          "slotId": "SHELF_SLOT"
+        }
+      ],
+      "measurements": [
+        {
+          "itemId": "shelf-navy",
+          "assetId": "shelf-navy",
+          "slotId": "SHELF_SLOT",
+          "x": 235,
+          "y": 178,
+          "width": 114,
+          "height": 76,
+          "zIndex": 71,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            261,
+            191,
+            323,
+            241
+          ],
+          "clipped": false
+        }
+      ],
+      "issues": [],
+      "result": "PASS"
+    },
+    {
+      "caseId": "CASE_031",
+      "name": "SINGLE_rug-round_RUG_SLOT",
+      "viewportWidth": 390,
+      "screenshot": "room-case_031-single_rug-round_rug_slot-390.png",
+      "items": [
+        {
+          "itemId": "rug-round",
+          "slotId": "RUG_SLOT"
+        }
+      ],
+      "measurements": [
+        {
+          "itemId": "rug-round",
+          "assetId": "rug-round",
+          "slotId": "RUG_SLOT",
+          "x": 86,
+          "y": 289,
+          "width": 218,
+          "height": 127,
+          "zIndex": 10,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            144,
+            314,
+            245,
+            388
+          ],
+          "clipped": false
+        }
+      ],
+      "issues": [],
+      "result": "PASS"
+    },
+    {
+      "caseId": "CASE_032",
+      "name": "SINGLE_rug-mint-braid_RUG_SLOT",
+      "viewportWidth": 390,
+      "screenshot": "room-case_032-single_rug-mint-braid_rug_slot-390.png",
+      "items": [
+        {
+          "itemId": "rug-mint-braid",
+          "slotId": "RUG_SLOT"
+        }
+      ],
+      "measurements": [
+        {
+          "itemId": "rug-mint-braid",
+          "assetId": "rug-mint-braid",
+          "slotId": "RUG_SLOT",
+          "x": 86,
+          "y": 289,
+          "width": 218,
+          "height": 127,
+          "zIndex": 10,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            136,
+            314,
+            253,
+            393
+          ],
+          "clipped": false
+        }
+      ],
+      "issues": [],
+      "result": "PASS"
+    },
+    {
+      "caseId": "CASE_033",
+      "name": "SINGLE_rug-rose-floral_RUG_SLOT",
+      "viewportWidth": 390,
+      "screenshot": "room-case_033-single_rug-rose-floral_rug_slot-390.png",
+      "items": [
+        {
+          "itemId": "rug-rose-floral",
+          "slotId": "RUG_SLOT"
+        }
+      ],
+      "measurements": [
+        {
+          "itemId": "rug-rose-floral",
+          "assetId": "rug-rose-floral",
+          "slotId": "RUG_SLOT",
+          "x": 86,
+          "y": 289,
+          "width": 218,
+          "height": 127,
+          "zIndex": 10,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            139,
+            322,
+            250,
+            384
+          ],
+          "clipped": false
+        }
+      ],
+      "issues": [],
+      "result": "PASS"
+    },
+    {
+      "caseId": "CASE_034",
+      "name": "SINGLE_rug-sky-cloud_RUG_SLOT",
+      "viewportWidth": 390,
+      "screenshot": "room-case_034-single_rug-sky-cloud_rug_slot-390.png",
+      "items": [
+        {
+          "itemId": "rug-sky-cloud",
+          "slotId": "RUG_SLOT"
+        }
+      ],
+      "measurements": [
+        {
+          "itemId": "rug-sky-cloud",
+          "assetId": "rug-sky-cloud",
+          "slotId": "RUG_SLOT",
+          "x": 86,
+          "y": 289,
+          "width": 218,
+          "height": 127,
+          "zIndex": 10,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            141,
+            312,
+            252,
+            391
+          ],
+          "clipped": false
+        }
+      ],
+      "issues": [],
+      "result": "PASS"
+    },
+    {
+      "caseId": "CASE_035",
+      "name": "SINGLE_rug-sun_RUG_SLOT",
+      "viewportWidth": 390,
+      "screenshot": "room-case_035-single_rug-sun_rug_slot-390.png",
+      "items": [
+        {
+          "itemId": "rug-sun",
+          "slotId": "RUG_SLOT"
+        }
+      ],
+      "measurements": [
+        {
+          "itemId": "rug-sun",
+          "assetId": "rug-sun",
+          "slotId": "RUG_SLOT",
+          "x": 86,
+          "y": 289,
+          "width": 218,
+          "height": 127,
+          "zIndex": 10,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            139,
+            311,
+            250,
+            398
+          ],
+          "clipped": false
+        }
+      ],
+      "issues": [],
+      "result": "PASS"
+    },
+    {
+      "caseId": "CASE_036",
+      "name": "SINGLE_bookcase-small_APPLIANCE_SLOT",
+      "viewportWidth": 390,
+      "screenshot": "room-case_036-single_bookcase-small_appliance_slot-390.png",
+      "items": [
+        {
+          "itemId": "bookcase-small",
+          "slotId": "APPLIANCE_SLOT"
+        }
+      ],
+      "measurements": [
+        {
+          "itemId": "bookcase-small",
+          "assetId": "bookcase-small",
+          "slotId": "APPLIANCE_SLOT",
+          "x": 8,
+          "y": 273,
+          "width": 91,
+          "height": 110,
+          "zIndex": 38,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            25,
+            288,
+            82,
+            363
+          ],
+          "clipped": false
+        }
+      ],
+      "issues": [],
+      "result": "PASS"
+    },
+    {
+      "caseId": "CASE_037",
+      "name": "SINGLE_bookcase-cream_APPLIANCE_SLOT",
+      "viewportWidth": 390,
+      "screenshot": "room-case_037-single_bookcase-cream_appliance_slot-390.png",
+      "items": [
+        {
+          "itemId": "bookcase-cream",
+          "slotId": "APPLIANCE_SLOT"
+        }
+      ],
+      "measurements": [
+        {
+          "itemId": "bookcase-cream",
+          "assetId": "bookcase-cream",
+          "slotId": "APPLIANCE_SLOT",
+          "x": 8,
+          "y": 273,
+          "width": 91,
+          "height": 110,
+          "zIndex": 38,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            25,
+            288,
+            82,
+            364
+          ],
+          "clipped": false
+        }
+      ],
+      "issues": [],
+      "result": "PASS"
+    },
+    {
+      "caseId": "CASE_038",
+      "name": "SINGLE_bookcase-sage_APPLIANCE_SLOT",
+      "viewportWidth": 390,
+      "screenshot": "room-case_038-single_bookcase-sage_appliance_slot-390.png",
+      "items": [
+        {
+          "itemId": "bookcase-sage",
+          "slotId": "APPLIANCE_SLOT"
+        }
+      ],
+      "measurements": [
+        {
+          "itemId": "bookcase-sage",
+          "assetId": "bookcase-sage",
+          "slotId": "APPLIANCE_SLOT",
+          "x": 8,
+          "y": 273,
+          "width": 91,
+          "height": 110,
+          "zIndex": 38,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            25,
+            288,
+            82,
+            364
+          ],
+          "clipped": false
+        }
+      ],
+      "issues": [],
+      "result": "PASS"
+    },
+    {
+      "caseId": "CASE_039",
+      "name": "SINGLE_bookcase-walnut_APPLIANCE_SLOT",
+      "viewportWidth": 390,
+      "screenshot": "room-case_039-single_bookcase-walnut_appliance_slot-390.png",
+      "items": [
+        {
+          "itemId": "bookcase-walnut",
+          "slotId": "APPLIANCE_SLOT"
+        }
+      ],
+      "measurements": [
+        {
+          "itemId": "bookcase-walnut",
+          "assetId": "bookcase-walnut",
+          "slotId": "APPLIANCE_SLOT",
+          "x": 8,
+          "y": 273,
+          "width": 91,
+          "height": 110,
+          "zIndex": 38,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            25,
+            288,
+            82,
+            364
+          ],
+          "clipped": false
+        }
+      ],
+      "issues": [],
+      "result": "PASS"
+    },
+    {
+      "caseId": "CASE_040",
+      "name": "SINGLE_bookcase-sky_APPLIANCE_SLOT",
+      "viewportWidth": 390,
+      "screenshot": "room-case_040-single_bookcase-sky_appliance_slot-390.png",
+      "items": [
+        {
+          "itemId": "bookcase-sky",
+          "slotId": "APPLIANCE_SLOT"
+        }
+      ],
+      "measurements": [
+        {
+          "itemId": "bookcase-sky",
+          "assetId": "bookcase-sky",
+          "slotId": "APPLIANCE_SLOT",
+          "x": 8,
+          "y": 273,
+          "width": 91,
+          "height": 110,
+          "zIndex": 38,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            25,
+            288,
+            82,
+            364
+          ],
+          "clipped": false
+        }
+      ],
+      "issues": [],
+      "result": "PASS"
+    },
+    {
+      "caseId": "CASE_041",
+      "name": "SINGLE_wall-calendar_WALL_ART_SLOT",
+      "viewportWidth": 390,
+      "screenshot": "room-case_041-single_wall-calendar_wall_art_slot-390.png",
+      "items": [
+        {
+          "itemId": "wall-calendar",
+          "slotId": "WALL_ART_SLOT"
+        }
+      ],
+      "measurements": [
+        {
+          "itemId": "wall-calendar",
+          "assetId": "wall-calendar",
+          "slotId": "WALL_ART_SLOT",
+          "x": 240,
+          "y": 132,
+          "width": 63,
+          "height": 76,
+          "zIndex": 69,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            256,
+            147,
+            289,
+            190
+          ],
+          "clipped": false
+        }
+      ],
+      "issues": [],
+      "result": "PASS"
+    },
+    {
+      "caseId": "CASE_042",
+      "name": "SINGLE_wall-poster_WALL_ART_SLOT",
+      "viewportWidth": 390,
+      "screenshot": "room-case_042-single_wall-poster_wall_art_slot-390.png",
+      "items": [
+        {
+          "itemId": "wall-poster",
+          "slotId": "WALL_ART_SLOT"
+        }
+      ],
+      "measurements": [
+        {
+          "itemId": "wall-poster",
+          "assetId": "wall-poster",
+          "slotId": "WALL_ART_SLOT",
+          "x": 240,
+          "y": 132,
+          "width": 63,
+          "height": 76,
+          "zIndex": 69,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            259,
+            147,
+            284,
+            190
+          ],
+          "clipped": false
+        }
+      ],
+      "issues": [],
+      "result": "PASS"
+    },
+    {
+      "caseId": "CASE_043",
+      "name": "SINGLE_drink-coffee_DESK_DRINK_SLOT",
+      "viewportWidth": 390,
+      "screenshot": "room-case_043-single_drink-coffee_desk_drink_slot-390.png",
+      "items": [
+        {
+          "itemId": "drink-coffee",
+          "slotId": "DESK_DRINK_SLOT"
+        }
+      ],
+      "measurements": [
+        {
+          "itemId": "drink-coffee",
+          "assetId": "drink-coffee",
+          "slotId": "DESK_DRINK_SLOT",
+          "x": 95,
+          "y": 254,
+          "width": 33,
+          "height": 33,
+          "zIndex": 37,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            102,
+            261,
+            121,
+            280
+          ],
+          "clipped": false
+        }
+      ],
+      "issues": [],
+      "result": "PASS"
+    },
+    {
+      "caseId": "CASE_044",
+      "name": "SINGLE_drink-beer_DESK_DRINK_SLOT",
+      "viewportWidth": 390,
+      "screenshot": "room-case_044-single_drink-beer_desk_drink_slot-390.png",
+      "items": [
+        {
+          "itemId": "drink-beer",
+          "slotId": "DESK_DRINK_SLOT"
+        }
+      ],
+      "measurements": [
+        {
+          "itemId": "drink-beer",
+          "assetId": "drink-beer",
+          "slotId": "DESK_DRINK_SLOT",
+          "x": 98,
+          "y": 260,
+          "width": 27,
+          "height": 27,
+          "zIndex": 37,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            105,
+            264,
+            118,
+            282
+          ],
+          "clipped": false
+        }
+      ],
+      "issues": [],
+      "result": "PASS"
+    },
+    {
+      "caseId": "CASE_045",
+      "name": "SINGLE_drink-barley_DESK_DRINK_SLOT",
+      "viewportWidth": 390,
+      "screenshot": "room-case_045-single_drink-barley_desk_drink_slot-390.png",
+      "items": [
+        {
+          "itemId": "drink-barley",
+          "slotId": "DESK_DRINK_SLOT"
+        }
+      ],
+      "measurements": [
+        {
+          "itemId": "drink-barley",
+          "assetId": "drink-barley",
+          "slotId": "DESK_DRINK_SLOT",
+          "x": 95,
+          "y": 254,
+          "width": 33,
+          "height": 33,
+          "zIndex": 37,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            101,
+            258,
+            122,
+            283
+          ],
+          "clipped": false
+        }
+      ],
+      "issues": [],
+      "result": "PASS"
+    },
+    {
+      "caseId": "CASE_046",
+      "name": "SINGLE_pet-cat_PET_SLOT",
+      "viewportWidth": 390,
+      "screenshot": "room-case_046-single_pet-cat_pet_slot-390.png",
+      "items": [
+        {
+          "itemId": "pet-cat",
+          "slotId": "PET_SLOT"
+        }
+      ],
+      "measurements": [
+        {
+          "itemId": "pet-cat",
+          "assetId": "pet-cat-floor",
+          "slotId": "PET_SLOT",
+          "x": 80,
+          "y": 345,
+          "width": 62,
+          "height": 72,
+          "zIndex": 52,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            96,
+            356,
+            128,
+            402
+          ],
+          "clipped": false
+        }
+      ],
+      "issues": [],
+      "result": "PASS"
+    },
+    {
+      "caseId": "CASE_047",
+      "name": "SINGLE_pet-dog_PET_SLOT_2",
+      "viewportWidth": 390,
+      "screenshot": "room-case_047-single_pet-dog_pet_slot_2-390.png",
+      "items": [
+        {
+          "itemId": "pet-dog",
+          "slotId": "PET_SLOT_2"
+        }
+      ],
+      "measurements": [
+        {
+          "itemId": "pet-dog",
+          "assetId": "pet-dog-floor",
+          "slotId": "PET_SLOT_2",
+          "x": 235,
+          "y": 345,
+          "width": 67,
+          "height": 75,
+          "zIndex": 53,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            247,
+            350,
+            297,
+            415
+          ],
+          "clipped": false
+        }
+      ],
+      "issues": [],
+      "result": "PASS"
+    },
+    {
+      "caseId": "CASE_048",
+      "name": "SINGLE_pet-cat-gray_PET_SLOT",
+      "viewportWidth": 390,
+      "screenshot": "room-case_048-single_pet-cat-gray_pet_slot-390.png",
+      "items": [
+        {
+          "itemId": "pet-cat-gray",
+          "slotId": "PET_SLOT"
+        }
+      ],
+      "measurements": [
+        {
+          "itemId": "pet-cat-gray",
+          "assetId": "pet-cat-gray-floor",
+          "slotId": "PET_SLOT",
+          "x": 80,
+          "y": 345,
+          "width": 62,
+          "height": 72,
+          "zIndex": 52,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            95,
+            356,
+            129,
+            404
+          ],
+          "clipped": false
+        }
+      ],
+      "issues": [],
+      "result": "PASS"
+    },
+    {
+      "caseId": "CASE_049",
+      "name": "SINGLE_pet-dog-brown_PET_SLOT_2",
+      "viewportWidth": 390,
+      "screenshot": "room-case_049-single_pet-dog-brown_pet_slot_2-390.png",
+      "items": [
+        {
+          "itemId": "pet-dog-brown",
+          "slotId": "PET_SLOT_2"
+        }
+      ],
+      "measurements": [
+        {
+          "itemId": "pet-dog-brown",
+          "assetId": "pet-dog-brown-floor",
+          "slotId": "PET_SLOT_2",
+          "x": 235,
+          "y": 345,
+          "width": 67,
+          "height": 75,
+          "zIndex": 53,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            243,
+            357,
+            296,
+            407
+          ],
+          "clipped": false
+        }
+      ],
+      "issues": [],
+      "result": "PASS"
+    },
+    {
+      "caseId": "CASE_101",
+      "name": "DESK_SET",
+      "viewportWidth": 390,
+      "screenshot": "room-case_101-desk_set-390.png",
+      "items": [
+        {
+          "itemId": "desk-basic",
+          "slotId": "DESK_SLOT"
+        },
+        {
+          "itemId": "chair-cushion",
+          "slotId": "CHAIR_SLOT"
+        },
+        {
+          "itemId": "drink-coffee",
+          "slotId": "DESK_DRINK_SLOT"
+        }
+      ],
+      "measurements": [
+        {
+          "itemId": "desk-basic",
+          "assetId": "desk-basic",
+          "slotId": "DESK_SLOT",
+          "x": 48,
+          "y": 224,
+          "width": 178,
+          "height": 152,
+          "zIndex": 30,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            77,
+            242,
+            198,
+            357
+          ],
+          "clipped": false
+        },
+        {
+          "itemId": "drink-coffee",
+          "assetId": "drink-coffee",
+          "slotId": "DESK_DRINK_SLOT",
+          "x": 95,
+          "y": 254,
+          "width": 33,
+          "height": 33,
+          "zIndex": 37,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            102,
+            261,
+            121,
+            280
+          ],
+          "clipped": false
+        },
+        {
+          "itemId": "diary-book",
+          "assetId": "diary-book",
+          "slotId": "DESK_SLOT",
+          "x": 136,
+          "y": 255,
+          "width": 47,
+          "height": 40,
+          "zIndex": 38,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            142,
+            259,
+            176,
+            290
+          ],
+          "clipped": false
+        },
+        {
+          "itemId": "chair-cushion",
+          "assetId": "chair-cushion",
+          "slotId": "CHAIR_SLOT",
+          "x": 128,
+          "y": 268,
+          "width": 87,
+          "height": 114,
+          "zIndex": 40,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            146,
+            293,
+            196,
+            356
+          ],
+          "clipped": false
+        }
+      ],
+      "issues": [],
+      "result": "PASS"
+    },
+    {
+      "caseId": "CASE_102",
+      "name": "SHELF_SET",
+      "viewportWidth": 390,
+      "screenshot": "room-case_102-shelf_set-390.png",
+      "items": [
+        {
+          "itemId": "shelf-basic",
+          "slotId": "SHELF_SLOT"
+        }
+      ],
+      "measurements": [
+        {
+          "itemId": "shelf-basic",
+          "assetId": "shelf-basic",
+          "slotId": "SHELF_SLOT",
+          "x": 235,
+          "y": 178,
+          "width": 114,
+          "height": 76,
+          "zIndex": 71,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            264,
+            190,
+            320,
+            238
+          ],
+          "clipped": false
+        }
+      ],
+      "issues": [],
+      "result": "PASS"
+    },
+    {
+      "caseId": "CASE_103",
+      "name": "BED_SET",
+      "viewportWidth": 390,
+      "screenshot": "room-case_103-bed_set-390.png",
+      "items": [
+        {
+          "itemId": "bed-basic",
+          "slotId": "BED_SLOT"
+        },
+        {
+          "itemId": "bookcase-small",
+          "slotId": "APPLIANCE_SLOT"
+        },
+        {
+          "itemId": "wall-calendar",
+          "slotId": "WALL_ART_SLOT"
+        }
+      ],
+      "measurements": [
+        {
+          "itemId": "bed-basic",
+          "assetId": "bed-basic",
+          "slotId": "BED_SLOT",
+          "x": 191,
+          "y": 216,
+          "width": 152,
+          "height": 152,
+          "zIndex": 20,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            210,
+            234,
+            327,
+            349
+          ],
+          "clipped": false
+        },
+        {
+          "itemId": "bookcase-small",
+          "assetId": "bookcase-small",
+          "slotId": "APPLIANCE_SLOT",
+          "x": 8,
+          "y": 273,
+          "width": 91,
+          "height": 110,
+          "zIndex": 38,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            25,
+            288,
+            82,
+            363
+          ],
+          "clipped": false
+        },
+        {
+          "itemId": "wall-calendar",
+          "assetId": "wall-calendar",
+          "slotId": "WALL_ART_SLOT",
+          "x": 240,
+          "y": 132,
+          "width": 63,
+          "height": 76,
+          "zIndex": 69,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            256,
+            147,
+            289,
+            190
+          ],
+          "clipped": false
+        }
+      ],
+      "issues": [],
+      "result": "PASS"
+    },
+    {
+      "caseId": "CASE_104",
+      "name": "PET_SET",
+      "viewportWidth": 390,
+      "screenshot": "room-case_104-pet_set-390.png",
+      "items": [
+        {
+          "itemId": "pet-cat",
+          "slotId": "PET_SLOT"
+        },
+        {
+          "itemId": "pet-dog",
+          "slotId": "PET_SLOT_2"
+        },
+        {
+          "itemId": "rug-round",
+          "slotId": "RUG_SLOT"
+        },
+        {
+          "itemId": "plant-fiddle",
+          "slotId": "PLANT_SLOT_1"
+        }
+      ],
+      "measurements": [
+        {
+          "itemId": "rug-round",
+          "assetId": "rug-round",
+          "slotId": "RUG_SLOT",
+          "x": 86,
+          "y": 289,
+          "width": 218,
+          "height": 127,
+          "zIndex": 10,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            144,
+            314,
+            245,
+            388
+          ],
+          "clipped": false
+        },
+        {
+          "itemId": "plant-fiddle",
+          "assetId": "plant-fiddle",
+          "slotId": "PLANT_SLOT_1",
+          "x": 279,
+          "y": 276,
+          "width": 76,
+          "height": 102,
+          "zIndex": 50,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            301,
+            291,
+            333,
+            361
+          ],
+          "clipped": false
+        },
+        {
+          "itemId": "pet-cat",
+          "assetId": "pet-cat-floor",
+          "slotId": "PET_SLOT",
+          "x": 80,
+          "y": 345,
+          "width": 62,
+          "height": 72,
+          "zIndex": 52,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            96,
+            356,
+            128,
+            402
+          ],
+          "clipped": false
+        },
+        {
+          "itemId": "pet-dog",
+          "assetId": "pet-dog-floor",
+          "slotId": "PET_SLOT_2",
+          "x": 235,
+          "y": 345,
+          "width": 67,
+          "height": 75,
+          "zIndex": 53,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            247,
+            350,
+            297,
+            415
+          ],
+          "clipped": false
+        }
+      ],
+      "issues": [],
+      "result": "PASS"
+    },
+    {
+      "caseId": "CASE_201",
+      "name": "FULL_ROOM_STRESS",
+      "viewportWidth": 390,
+      "screenshot": "room-case_201-full_room_stress-390.png",
+      "items": [
+        {
+          "itemId": "rug-round",
+          "slotId": "RUG_SLOT"
+        },
+        {
+          "itemId": "bed-princess",
+          "slotId": "BED_SLOT"
+        },
+        {
+          "itemId": "desk-walnut-drawers",
+          "slotId": "DESK_SLOT"
+        },
+        {
+          "itemId": "drink-barley",
+          "slotId": "DESK_DRINK_SLOT"
+        },
+        {
+          "itemId": "chair-rattan-blue",
+          "slotId": "CHAIR_SLOT"
+        },
+        {
+          "itemId": "wall-poster",
+          "slotId": "WALL_ART_SLOT"
+        },
+        {
+          "itemId": "plant-fiddle",
+          "slotId": "PLANT_SLOT_1"
+        },
+        {
+          "itemId": "pet-cat-gray",
+          "slotId": "PET_SLOT"
+        },
+        {
+          "itemId": "pet-dog-brown",
+          "slotId": "PET_SLOT_2"
+        },
+        {
+          "itemId": "shelf-navy",
+          "slotId": "SHELF_SLOT"
+        },
+        {
+          "itemId": "bookcase-small",
+          "slotId": "APPLIANCE_SLOT"
+        }
+      ],
+      "measurements": [
+        {
+          "itemId": "rug-round",
+          "assetId": "rug-round",
+          "slotId": "RUG_SLOT",
+          "x": 86,
+          "y": 289,
+          "width": 218,
+          "height": 127,
+          "zIndex": 10,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            144,
+            314,
+            245,
+            388
+          ],
+          "clipped": false
+        },
+        {
+          "itemId": "bed-princess",
+          "assetId": "bed-princess",
+          "slotId": "BED_SLOT",
+          "x": 184,
+          "y": 203,
+          "width": 165,
+          "height": 165,
+          "zIndex": 20,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            205,
+            214,
+            325,
+            358
+          ],
+          "clipped": false
+        },
+        {
+          "itemId": "desk-walnut-drawers",
+          "assetId": "desk-walnut-drawers",
+          "slotId": "DESK_SLOT",
+          "x": 48,
+          "y": 224,
+          "width": 178,
+          "height": 152,
+          "zIndex": 30,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            80,
+            245,
+            195,
+            354
+          ],
+          "clipped": false
+        },
+        {
+          "itemId": "drink-barley",
+          "assetId": "drink-barley",
+          "slotId": "DESK_DRINK_SLOT",
+          "x": 95,
+          "y": 254,
+          "width": 33,
+          "height": 33,
+          "zIndex": 37,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            101,
+            258,
+            122,
+            283
+          ],
+          "clipped": false
+        },
+        {
+          "itemId": "bookcase-small",
+          "assetId": "bookcase-small",
+          "slotId": "APPLIANCE_SLOT",
+          "x": 8,
+          "y": 273,
+          "width": 91,
+          "height": 110,
+          "zIndex": 38,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            25,
+            288,
+            82,
+            363
+          ],
+          "clipped": false
+        },
+        {
+          "itemId": "diary-book",
+          "assetId": "diary-book",
+          "slotId": "DESK_SLOT",
+          "x": 136,
+          "y": 255,
+          "width": 47,
+          "height": 40,
+          "zIndex": 38,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            142,
+            259,
+            176,
+            290
+          ],
+          "clipped": false
+        },
+        {
+          "itemId": "chair-rattan-blue",
+          "assetId": "chair-rattan-blue",
+          "slotId": "CHAIR_SLOT",
+          "x": 128,
+          "y": 268,
+          "width": 87,
+          "height": 114,
+          "zIndex": 40,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            146,
+            291,
+            197,
+            357
+          ],
+          "clipped": false
+        },
+        {
+          "itemId": "plant-fiddle",
+          "assetId": "plant-fiddle",
+          "slotId": "PLANT_SLOT_1",
+          "x": 279,
+          "y": 276,
+          "width": 76,
+          "height": 102,
+          "zIndex": 50,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            301,
+            291,
+            333,
+            361
+          ],
+          "clipped": false
+        },
+        {
+          "itemId": "pet-cat-gray",
+          "assetId": "pet-cat-gray-floor",
+          "slotId": "PET_SLOT",
+          "x": 80,
+          "y": 345,
+          "width": 62,
+          "height": 72,
+          "zIndex": 52,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            95,
+            356,
+            129,
+            404
+          ],
+          "clipped": false
+        },
+        {
+          "itemId": "pet-dog-brown",
+          "assetId": "pet-dog-brown-floor",
+          "slotId": "PET_SLOT_2",
+          "x": 235,
+          "y": 345,
+          "width": 67,
+          "height": 75,
+          "zIndex": 53,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            243,
+            357,
+            296,
+            407
+          ],
+          "clipped": false
+        },
+        {
+          "itemId": "wall-poster",
+          "assetId": "wall-poster",
+          "slotId": "WALL_ART_SLOT",
+          "x": 240,
+          "y": 132,
+          "width": 63,
+          "height": 76,
+          "zIndex": 69,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            259,
+            147,
+            284,
+            190
+          ],
+          "clipped": false
+        },
+        {
+          "itemId": "shelf-navy",
+          "assetId": "shelf-navy",
+          "slotId": "SHELF_SLOT",
+          "x": 235,
+          "y": 178,
+          "width": 114,
+          "height": 76,
+          "zIndex": 71,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            261,
+            191,
+            323,
+            241
+          ],
+          "clipped": false
+        }
+      ],
+      "issues": [],
+      "result": "PASS"
+    },
+    {
+      "caseId": "CASE_301",
+      "name": "RESPONSIVE_360",
+      "viewportWidth": 360,
+      "screenshot": "room-case_301-responsive_360-360.png",
+      "items": [
+        {
+          "itemId": "rug-round",
+          "slotId": "RUG_SLOT"
+        },
+        {
+          "itemId": "bed-princess",
+          "slotId": "BED_SLOT"
+        },
+        {
+          "itemId": "desk-walnut-drawers",
+          "slotId": "DESK_SLOT"
+        },
+        {
+          "itemId": "drink-barley",
+          "slotId": "DESK_DRINK_SLOT"
+        },
+        {
+          "itemId": "chair-rattan-blue",
+          "slotId": "CHAIR_SLOT"
+        },
+        {
+          "itemId": "wall-poster",
+          "slotId": "WALL_ART_SLOT"
+        },
+        {
+          "itemId": "plant-fiddle",
+          "slotId": "PLANT_SLOT_1"
+        },
+        {
+          "itemId": "pet-cat-gray",
+          "slotId": "PET_SLOT"
+        },
+        {
+          "itemId": "pet-dog-brown",
+          "slotId": "PET_SLOT_2"
+        },
+        {
+          "itemId": "shelf-navy",
+          "slotId": "SHELF_SLOT"
+        },
+        {
+          "itemId": "bookcase-small",
+          "slotId": "APPLIANCE_SLOT"
+        }
+      ],
+      "measurements": [
+        {
+          "itemId": "rug-round",
+          "assetId": "rug-round",
+          "slotId": "RUG_SLOT",
+          "x": 79,
+          "y": 267,
+          "width": 202,
+          "height": 117,
+          "zIndex": 10,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            133,
+            290,
+            226,
+            358
+          ],
+          "clipped": false
+        },
+        {
+          "itemId": "bed-princess",
+          "assetId": "bed-princess",
+          "slotId": "BED_SLOT",
+          "x": 170,
+          "y": 188,
+          "width": 152,
+          "height": 152,
+          "zIndex": 20,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            189,
+            198,
+            300,
+            331
+          ],
+          "clipped": false
+        },
+        {
+          "itemId": "desk-walnut-drawers",
+          "assetId": "desk-walnut-drawers",
+          "slotId": "DESK_SLOT",
+          "x": 45,
+          "y": 206,
+          "width": 164,
+          "height": 141,
+          "zIndex": 30,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            74,
+            225,
+            180,
+            327
+          ],
+          "clipped": false
+        },
+        {
+          "itemId": "drink-barley",
+          "assetId": "drink-barley",
+          "slotId": "DESK_DRINK_SLOT",
+          "x": 88,
+          "y": 235,
+          "width": 30,
+          "height": 30,
+          "zIndex": 37,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            94,
+            239,
+            112,
+            261
+          ],
+          "clipped": false
+        },
+        {
+          "itemId": "bookcase-small",
+          "assetId": "bookcase-small",
+          "slotId": "APPLIANCE_SLOT",
+          "x": 7,
+          "y": 253,
+          "width": 84,
+          "height": 101,
+          "zIndex": 38,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            22,
+            267,
+            75,
+            336
+          ],
+          "clipped": false
+        },
+        {
+          "itemId": "diary-book",
+          "assetId": "diary-book",
+          "slotId": "DESK_SLOT",
+          "x": 126,
+          "y": 235,
+          "width": 43,
+          "height": 37,
+          "zIndex": 38,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            132,
+            239,
+            163,
+            267
+          ],
+          "clipped": false
+        },
+        {
+          "itemId": "chair-rattan-blue",
+          "assetId": "chair-rattan-blue",
+          "slotId": "CHAIR_SLOT",
+          "x": 118,
+          "y": 248,
+          "width": 81,
+          "height": 105,
+          "zIndex": 40,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            134,
+            269,
+            183,
+            331
+          ],
+          "clipped": false
+        },
+        {
+          "itemId": "plant-fiddle",
+          "assetId": "plant-fiddle",
+          "slotId": "PLANT_SLOT_1",
+          "x": 258,
+          "y": 255,
+          "width": 70,
+          "height": 94,
+          "zIndex": 50,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            278,
+            268,
+            308,
+            334
+          ],
+          "clipped": false
+        },
+        {
+          "itemId": "pet-cat-gray",
+          "assetId": "pet-cat-gray-floor",
+          "slotId": "PET_SLOT",
+          "x": 74,
+          "y": 318,
+          "width": 57,
+          "height": 67,
+          "zIndex": 52,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            87,
+            329,
+            119,
+            373
+          ],
+          "clipped": false
+        },
+        {
+          "itemId": "pet-dog-brown",
+          "assetId": "pet-dog-brown-floor",
+          "slotId": "PET_SLOT_2",
+          "x": 217,
+          "y": 319,
+          "width": 62,
+          "height": 69,
+          "zIndex": 53,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            224,
+            330,
+            273,
+            376
+          ],
+          "clipped": false
+        },
+        {
+          "itemId": "wall-poster",
+          "assetId": "wall-poster",
+          "slotId": "WALL_ART_SLOT",
+          "x": 221,
+          "y": 122,
+          "width": 59,
+          "height": 70,
+          "zIndex": 69,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            239,
+            135,
+            262,
+            176
+          ],
+          "clipped": false
+        },
+        {
+          "itemId": "shelf-navy",
+          "assetId": "shelf-navy",
+          "slotId": "SHELF_SLOT",
+          "x": 217,
+          "y": 164,
+          "width": 105,
+          "height": 70,
+          "zIndex": 71,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            240,
+            176,
+            298,
+            222
+          ],
+          "clipped": false
+        }
+      ],
+      "issues": [],
+      "result": "PASS"
+    },
+    {
+      "caseId": "CASE_302",
+      "name": "RESPONSIVE_390",
+      "viewportWidth": 390,
+      "screenshot": "room-case_302-responsive_390-390.png",
+      "items": [
+        {
+          "itemId": "rug-round",
+          "slotId": "RUG_SLOT"
+        },
+        {
+          "itemId": "bed-princess",
+          "slotId": "BED_SLOT"
+        },
+        {
+          "itemId": "desk-walnut-drawers",
+          "slotId": "DESK_SLOT"
+        },
+        {
+          "itemId": "drink-barley",
+          "slotId": "DESK_DRINK_SLOT"
+        },
+        {
+          "itemId": "chair-rattan-blue",
+          "slotId": "CHAIR_SLOT"
+        },
+        {
+          "itemId": "wall-poster",
+          "slotId": "WALL_ART_SLOT"
+        },
+        {
+          "itemId": "plant-fiddle",
+          "slotId": "PLANT_SLOT_1"
+        },
+        {
+          "itemId": "pet-cat-gray",
+          "slotId": "PET_SLOT"
+        },
+        {
+          "itemId": "pet-dog-brown",
+          "slotId": "PET_SLOT_2"
+        },
+        {
+          "itemId": "shelf-navy",
+          "slotId": "SHELF_SLOT"
+        },
+        {
+          "itemId": "bookcase-small",
+          "slotId": "APPLIANCE_SLOT"
+        }
+      ],
+      "measurements": [
+        {
+          "itemId": "rug-round",
+          "assetId": "rug-round",
+          "slotId": "RUG_SLOT",
+          "x": 86,
+          "y": 289,
+          "width": 218,
+          "height": 127,
+          "zIndex": 10,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            144,
+            314,
+            245,
+            388
+          ],
+          "clipped": false
+        },
+        {
+          "itemId": "bed-princess",
+          "assetId": "bed-princess",
+          "slotId": "BED_SLOT",
+          "x": 184,
+          "y": 203,
+          "width": 165,
+          "height": 165,
+          "zIndex": 20,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            205,
+            214,
+            325,
+            358
+          ],
+          "clipped": false
+        },
+        {
+          "itemId": "desk-walnut-drawers",
+          "assetId": "desk-walnut-drawers",
+          "slotId": "DESK_SLOT",
+          "x": 48,
+          "y": 224,
+          "width": 178,
+          "height": 152,
+          "zIndex": 30,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            80,
+            245,
+            195,
+            354
+          ],
+          "clipped": false
+        },
+        {
+          "itemId": "drink-barley",
+          "assetId": "drink-barley",
+          "slotId": "DESK_DRINK_SLOT",
+          "x": 95,
+          "y": 254,
+          "width": 33,
+          "height": 33,
+          "zIndex": 37,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            101,
+            258,
+            122,
+            283
+          ],
+          "clipped": false
+        },
+        {
+          "itemId": "bookcase-small",
+          "assetId": "bookcase-small",
+          "slotId": "APPLIANCE_SLOT",
+          "x": 8,
+          "y": 273,
+          "width": 91,
+          "height": 110,
+          "zIndex": 38,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            25,
+            288,
+            82,
+            363
+          ],
+          "clipped": false
+        },
+        {
+          "itemId": "diary-book",
+          "assetId": "diary-book",
+          "slotId": "DESK_SLOT",
+          "x": 136,
+          "y": 255,
+          "width": 47,
+          "height": 40,
+          "zIndex": 38,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            142,
+            259,
+            176,
+            290
+          ],
+          "clipped": false
+        },
+        {
+          "itemId": "chair-rattan-blue",
+          "assetId": "chair-rattan-blue",
+          "slotId": "CHAIR_SLOT",
+          "x": 128,
+          "y": 268,
+          "width": 87,
+          "height": 114,
+          "zIndex": 40,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            146,
+            291,
+            197,
+            357
+          ],
+          "clipped": false
+        },
+        {
+          "itemId": "plant-fiddle",
+          "assetId": "plant-fiddle",
+          "slotId": "PLANT_SLOT_1",
+          "x": 279,
+          "y": 276,
+          "width": 76,
+          "height": 102,
+          "zIndex": 50,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            301,
+            291,
+            333,
+            361
+          ],
+          "clipped": false
+        },
+        {
+          "itemId": "pet-cat-gray",
+          "assetId": "pet-cat-gray-floor",
+          "slotId": "PET_SLOT",
+          "x": 80,
+          "y": 345,
+          "width": 62,
+          "height": 72,
+          "zIndex": 52,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            95,
+            356,
+            129,
+            404
+          ],
+          "clipped": false
+        },
+        {
+          "itemId": "pet-dog-brown",
+          "assetId": "pet-dog-brown-floor",
+          "slotId": "PET_SLOT_2",
+          "x": 235,
+          "y": 345,
+          "width": 67,
+          "height": 75,
+          "zIndex": 53,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            243,
+            357,
+            296,
+            407
+          ],
+          "clipped": false
+        },
+        {
+          "itemId": "wall-poster",
+          "assetId": "wall-poster",
+          "slotId": "WALL_ART_SLOT",
+          "x": 240,
+          "y": 132,
+          "width": 63,
+          "height": 76,
+          "zIndex": 69,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            259,
+            147,
+            284,
+            190
+          ],
+          "clipped": false
+        },
+        {
+          "itemId": "shelf-navy",
+          "assetId": "shelf-navy",
+          "slotId": "SHELF_SLOT",
+          "x": 235,
+          "y": 178,
+          "width": 114,
+          "height": 76,
+          "zIndex": 71,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            261,
+            191,
+            323,
+            241
+          ],
+          "clipped": false
+        }
+      ],
+      "issues": [],
+      "result": "PASS"
+    },
+    {
+      "caseId": "CASE_303",
+      "name": "RESPONSIVE_430",
+      "viewportWidth": 430,
+      "screenshot": "room-case_303-responsive_430-430.png",
+      "items": [
+        {
+          "itemId": "rug-round",
+          "slotId": "RUG_SLOT"
+        },
+        {
+          "itemId": "bed-princess",
+          "slotId": "BED_SLOT"
+        },
+        {
+          "itemId": "desk-walnut-drawers",
+          "slotId": "DESK_SLOT"
+        },
+        {
+          "itemId": "drink-barley",
+          "slotId": "DESK_DRINK_SLOT"
+        },
+        {
+          "itemId": "chair-rattan-blue",
+          "slotId": "CHAIR_SLOT"
+        },
+        {
+          "itemId": "wall-poster",
+          "slotId": "WALL_ART_SLOT"
+        },
+        {
+          "itemId": "plant-fiddle",
+          "slotId": "PLANT_SLOT_1"
+        },
+        {
+          "itemId": "pet-cat-gray",
+          "slotId": "PET_SLOT"
+        },
+        {
+          "itemId": "pet-dog-brown",
+          "slotId": "PET_SLOT_2"
+        },
+        {
+          "itemId": "shelf-navy",
+          "slotId": "SHELF_SLOT"
+        },
+        {
+          "itemId": "bookcase-small",
+          "slotId": "APPLIANCE_SLOT"
+        }
+      ],
+      "measurements": [
+        {
+          "itemId": "rug-round",
+          "assetId": "rug-round",
+          "slotId": "RUG_SLOT",
+          "x": 94,
+          "y": 319,
+          "width": 241,
+          "height": 140,
+          "zIndex": 10,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            159,
+            347,
+            269,
+            427
+          ],
+          "clipped": false
+        },
+        {
+          "itemId": "bed-princess",
+          "assetId": "bed-princess",
+          "slotId": "BED_SLOT",
+          "x": 203,
+          "y": 225,
+          "width": 181,
+          "height": 181,
+          "zIndex": 20,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            226,
+            237,
+            357,
+            395
+          ],
+          "clipped": false
+        },
+        {
+          "itemId": "desk-walnut-drawers",
+          "assetId": "desk-walnut-drawers",
+          "slotId": "DESK_SLOT",
+          "x": 53,
+          "y": 246,
+          "width": 196,
+          "height": 168,
+          "zIndex": 30,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            89,
+            269,
+            215,
+            390
+          ],
+          "clipped": false
+        },
+        {
+          "itemId": "drink-barley",
+          "assetId": "drink-barley",
+          "slotId": "DESK_DRINK_SLOT",
+          "x": 105,
+          "y": 280,
+          "width": 36,
+          "height": 36,
+          "zIndex": 37,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            112,
+            285,
+            134,
+            311
+          ],
+          "clipped": false
+        },
+        {
+          "itemId": "bookcase-small",
+          "assetId": "bookcase-small",
+          "slotId": "APPLIANCE_SLOT",
+          "x": 8,
+          "y": 302,
+          "width": 101,
+          "height": 121,
+          "zIndex": 38,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            27,
+            319,
+            89,
+            402
+          ],
+          "clipped": false
+        },
+        {
+          "itemId": "diary-book",
+          "assetId": "diary-book",
+          "slotId": "DESK_SLOT",
+          "x": 150,
+          "y": 281,
+          "width": 52,
+          "height": 44,
+          "zIndex": 38,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            158,
+            286,
+            194,
+            319
+          ],
+          "clipped": false
+        },
+        {
+          "itemId": "chair-rattan-blue",
+          "assetId": "chair-rattan-blue",
+          "slotId": "CHAIR_SLOT",
+          "x": 141,
+          "y": 296,
+          "width": 96,
+          "height": 125,
+          "zIndex": 40,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            161,
+            321,
+            217,
+            393
+          ],
+          "clipped": false
+        },
+        {
+          "itemId": "plant-fiddle",
+          "assetId": "plant-fiddle",
+          "slotId": "PLANT_SLOT_1",
+          "x": 308,
+          "y": 304,
+          "width": 84,
+          "height": 113,
+          "zIndex": 50,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            333,
+            320,
+            367,
+            398
+          ],
+          "clipped": false
+        },
+        {
+          "itemId": "pet-cat-gray",
+          "assetId": "pet-cat-gray-floor",
+          "slotId": "PET_SLOT",
+          "x": 88,
+          "y": 380,
+          "width": 68,
+          "height": 80,
+          "zIndex": 52,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            104,
+            393,
+            142,
+            445
+          ],
+          "clipped": false
+        },
+        {
+          "itemId": "pet-dog-brown",
+          "assetId": "pet-dog-brown-floor",
+          "slotId": "PET_SLOT_2",
+          "x": 259,
+          "y": 381,
+          "width": 74,
+          "height": 83,
+          "zIndex": 53,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            268,
+            395,
+            326,
+            449
+          ],
+          "clipped": false
+        },
+        {
+          "itemId": "wall-poster",
+          "assetId": "wall-poster",
+          "slotId": "WALL_ART_SLOT",
+          "x": 265,
+          "y": 146,
+          "width": 70,
+          "height": 84,
+          "zIndex": 69,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            287,
+            163,
+            313,
+            210
+          ],
+          "clipped": false
+        },
+        {
+          "itemId": "shelf-navy",
+          "assetId": "shelf-navy",
+          "slotId": "SHELF_SLOT",
+          "x": 259,
+          "y": 196,
+          "width": 126,
+          "height": 84,
+          "zIndex": 71,
+          "renderOffsetX": 0,
+          "renderOffsetY": 0,
+          "visibleAlphaBounds": [
+            288,
+            210,
+            356,
+            265
+          ],
+          "clipped": false
+        }
+      ],
+      "issues": [],
+      "result": "PASS"
+    }
+  ]
+}
