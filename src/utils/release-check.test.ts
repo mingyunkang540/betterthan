@@ -21,10 +21,10 @@ describe('release check', () => {
     );
   });
 
-  it('테스트용 광고 그룹 ID가 있으면 출시 빌드를 차단한다', () => {
+  it('광고 없이 출시 필수 설정 검사를 통과한다', () => {
     const result = runReleaseCheck();
 
-    expect(result.status).toBe(1);
-    expect(result.stderr).toContain('테스트용 광고 그룹 ID');
+    expect(result.status).toBe(0);
+    expect(result.stdout).toContain('ads: 사용하지 않음');
   });
 });

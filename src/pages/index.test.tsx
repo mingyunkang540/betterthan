@@ -4,15 +4,6 @@ import { HomePage } from './index';
 const mockNavigate = jest.fn();
 const mockSaveExperimentOutcome = jest.fn();
 
-jest.mock('@apps-in-toss/framework', () => {
-  const { Text } = jest.requireActual('react-native');
-  return {
-    InlineAd: ({ adGroupId }: { adGroupId: string }) => (
-      <Text testID="home-banner-ad">{adGroupId}</Text>
-    ),
-  };
-});
-
 jest.mock('@granite-js/react-native', () => ({
   createRoute: () => ({
     useNavigation: () => ({ navigate: mockNavigate }),
@@ -71,14 +62,6 @@ describe('HomePage yesterday experiment', () => {
         'yesterday',
         'PARTLY_DONE',
       ),
-    );
-  });
-
-  it('메인 화면 하단에 토스 테스트 배너 광고를 표시한다', () => {
-    const screen = render(<HomePage />);
-
-    expect(screen.getByTestId('home-banner-ad').props.children).toBe(
-      'ait-ad-test-banner-id',
     );
   });
 });

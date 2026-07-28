@@ -9,7 +9,6 @@ const testerConfigPath = path.join(
   'constants',
   'tester-config.ts',
 );
-const adConfigPath = path.join(root, 'src', 'constants', 'ad-config.ts');
 const iconPath = path.join(root, 'assets', 'brand', 'app-icon-600-v1.png');
 const consoleIconUrl =
   'https://static.toss.im/appsintoss/60223/fbecb575-1537-4486-968e-e81aae24cc02.png';
@@ -24,7 +23,6 @@ function pngDimensions(filePath) {
 
 const config = fs.readFileSync(configPath, 'utf8');
 const testerConfig = fs.readFileSync(testerConfigPath, 'utf8');
-const adConfig = fs.readFileSync(adConfigPath, 'utf8');
 if (!config.includes("appName: 'betterthan'"))
   failures.push('granite.config.ts의 appName이 betterthan이 아니에요.');
 if (!config.includes("displayName: '어제보다'"))
@@ -35,8 +33,17 @@ if (!testerConfig.includes('export const TESTER_REWARD_GRANT = 0;'))
   failures.push('공개 출시 빌드에 테스터용 기록 조각이 남아 있어요.');
 if (!config.includes(`'${consoleIconUrl}'`))
   failures.push('brand.icon이 콘솔에 등록한 아이콘 URL과 다릅니다.');
-if (adConfig.includes('ait-ad-test-'))
-  failures.push('출시 번들에 테스트용 광고 그룹 ID가 남아 있어요.');
+const sourceRoot = path.join(root, 'src');
+const sourceFiles = fs
+  .readdirSync(sourceRoot, { recursive: true, withFileTypes: true })
+  .filter((entry) => entry.isFile() && /\.(ts|tsx)$/.test(entry.name));
+for (const entry of sourceFiles) {
+  const sourcePath = path.join(entry.parentPath, entry.name);
+  if (fs.readFileSync(sourcePath, 'utf8').includes('ait-ad-test-')) {
+    failures.push('출시 번들에 테스트용 광고 그룹 ID가 남아 있어요.');
+    break;
+  }
+}
 
 if (!fs.existsSync(iconPath)) {
   failures.push('600×600 앱 아이콘 파일이 없어요.');
@@ -56,5 +63,6 @@ if (failures.length > 0) {
   console.log('- displayName: 어제보다');
   console.log('- icon: 콘솔 등록 URL과 일치');
   console.log('- permissions: 없음');
+  console.log('- ads: 사용하지 않음');
   console.log('- initial tester grant: 0조각');
 }
